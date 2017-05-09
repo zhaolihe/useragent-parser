@@ -1,0 +1,422 @@
+﻿########################################################################
+# brand_replacement        OS core, e.g. Windows, Linux, Mac, Android, iOS
+#                          default value is "os_replacement"
+# os_replacement           OS name, e.g. Windows 7, Mac OS X.
+#                          default value is Group 1
+# is_mobile_replacement    true or false.
+#                          default value is "false"
+# v1_replacement        major version.
+#                          default value is Group 2
+# v2_replacement        minor version.
+#                          default value is Group 3
+# is_tv_replacement        true or false
+#                          default value is "false"
+#########################################################################
+
+##########
+# SmartTV special cases
+# Youku SmartTV;5.0.1;Android;4.4.4;xmate_dr31
+##########
+- regex: '(SmartTV;)(\d+)\.(\d+)'
+  os_replacement: 'SmartTV'
+  is_mobile_replacement: 'false'
+  is_tv_replacement : 'true'
+
+- regex: '(SmartTV PlayerSDK;)(\d+)\.(\d+)'
+  os_replacement: 'SmartTV'
+  is_mobile_replacement: 'false'
+  is_tv_replacement : 'true'
+
+
+##########
+# UC (special cases)
+##########
+# Android
+# JUC (Linux; U; 4.0.3; zh-cn; 8720; 720*1280) UCWEB8.7.2.214/145/33788
+- regex: '^JUC[ ]?\((Linux);[ ]?U;[ ]?(\d+)\.(\d+)'
+  os_replacement: 'Android'
+  is_mobile_replacement: 'true'
+# UCWEB/2.0 (Linux; U; Adr 4.0.3; zh-CN; U9200) U2/1.0.0 UCBrowser/9.3.0.321 U2/1.0.0 Mobile
+- regex: '^UCWEB.+\((Linux);[ ]?U;[ ]?Adr[ ]?(\d+)\.(\d+)'
+  os_replacement: 'Android'
+  is_mobile_replacement: 'true'
+
+# iOS
+# IUC(U;iOS 5.1.1;Zh-cn;320*480;)/UCWEB8.7.1.201/42/800
+- regex: '(iOS) (\d+)\.(\d+)'
+  is_mobile_replacement: 'true'
+# UCWEB/2.0 (iOS; U; iPh OS 6_1_4; zh-CN; iPh5,2) U2/1.0.0 UCBrowser/9.0.1.284 U2/1.0.0 Mobile
+- regex: '(iPh OS) (\d)_(\d)'
+  os_replacement: 'iOS'
+  is_mobile_replacement: 'true'
+
+# Windows Phone
+# UCWEB/2.0 (Windows; U; wds 8.0; zh-CN; NOKIA; RM-822_apac_prc_204) U2/1.0.0 UCBrowser/3.1.1.343 U2/1.0.0 Mobile
+- regex: '^UCWEB.+Windows'
+  os_replacement: 'Windows Phone'
+  is_mobile_replacement: 'true'
+
+# Symbian or Java
+# Mozilla/5.0 (Windows; U; Windows NT 6.0; en-US; Desktop) AppleWebKit/534.13 (KHTML, like Gecko) UCBrowser/8.9.0.25
+- regex: 'Windows.+UCBrowser'
+  os_replacement: 'Symbian'
+  is_mobile_replacement: 'true'
+
+##########
+# Android
+##########
+- regex: '(Android)[/\- ]?(\d+)\.(\d+)(?:[.\-]([a-z0-9]+))?'
+  is_mobile_replacement: 'true'
+
+- regex: '(Android) Donut'
+  is_mobile_replacement: 'true'
+  v1_replacement: '1'
+  v2_replacement: '2'
+
+- regex: '(Android) Eclair'
+  is_mobile_replacement: 'true'
+  v1_replacement: '2'
+  v2_replacement: '1'
+
+- regex: '(Android) Froyo'
+  is_mobile_replacement: 'true'
+  v1_replacement: '2'
+  v2_replacement: '2'
+
+- regex: '(Android) Gingerbread'
+  is_mobile_replacement: 'true'
+  v1_replacement: '2'
+  v2_replacement: '3'
+
+- regex: '(Android) Honeycomb'
+  is_mobile_replacement: 'true'
+  v1_replacement: '3'
+
+##########
+# Kindle Android
+##########
+- regex: '(Silk-Accelerated=[a-z]{4,5})'
+  os_replacement: 'Android'
+  is_mobile_replacement: 'true'
+
+##########
+# Windows
+# http://en.wikipedia.org/wiki/Windows_NT#Releases
+# possibility of false positive when different marketing names share same NT kernel
+# e.g. windows server 2003 and windows xp
+# lots of ua strings have Windows NT 4.1 !?!?!?!? !?!? !? !????!?! !!! ??? !?!?! ?
+# (very) roughly ordered in terms of frequency of occurence of regex (win xp currently most frequent, etc)
+##########
+# mobile systems
+- regex: '(Windows Phone) (\d+)\.(\d+)'
+  os_replacement: 'Windows Phone'
+  is_mobile_replacement: 'true'
+
+- regex: '(Windows Phone) OS (\d+)\.(\d+)'
+  os_replacement: 'Windows Phone'
+  is_mobile_replacement: 'true'
+
+# ie mobile desktop mode
+- regex: '(XBLWP7)'
+  os_replacement: 'Windows Phone'
+  is_mobile_replacement: 'true'
+
+- regex: '(Windows ?Mobile) (\d+)\.(\d+)'
+  os_replacement: 'Windows Mobile'
+  is_mobile_replacement: 'true'
+
+- regex: '(Windows CE)'
+  os_replacement: 'Windows CE'
+  is_mobile_replacement: 'true'
+
+# desktop systems
+- regex: '(Windows (?:NT 5\.2|NT 5\.1))'
+  brand_replacement: 'Windows'
+  os_replacement: 'Windows XP'
+
+- regex: '([Ww]indows [Nn][Tt] 6\.1)'
+  brand_replacement: 'Windows'
+  os_replacement: 'Windows 7'
+
+- regex: '(Windows NT 6\.0)'
+  brand_replacement: 'Windows'
+  os_replacement: 'Windows Vista'
+
+- regex: '(Win 9x 4\.90)'
+  brand_replacement: 'Windows'
+  os_replacement: 'Windows Me'
+
+- regex: '(Windows 98|Windows XP|Windows ME|Windows 95|Windows 7|Windows NT 4\.0|Windows Vista|Windows 2000|Windows 3.1)'
+  brand_replacement: 'Windows'
+
+- regex: '(Windows NT 6\.2; ARM;)'
+  os_replacement: 'Windows RT'
+  is_mobile_replacement: 'true'
+
+- regex: '(Windows NT 6\.2)'
+  brand_replacement: 'Windows'
+  os_replacement: 'Windows 8'
+
+#add second
+- regex: '(Windows NT 6\.3)'
+  brand_replacement: 'Windows'
+  os_replacement: 'Windows 8.1'
+
+- regex: '(Windows NT [6\.4 10\.0])'
+  brand_replacement: 'Windows'
+  os_replacement: 'Windows 10'
+
+- regex: '(Windows NT 5\.0)'
+  brand_replacement: 'Windows'
+  os_replacement: 'Windows 2000'
+
+- regex: '(WinNT4.0)'
+  brand_replacement: 'Windows'
+  os_replacement: 'Windows NT 4.0'
+
+- regex: '(Win98)'
+  brand_replacement: 'Windows'
+  os_replacement: 'Windows 98'
+
+##########
+# Mac OS
+# http://en.wikipedia.org/wiki/Mac_OS_X#Versions
+##########
+- regex: '(Mac OS X) (\d+)[_.](\d+)(?:[_.](\d+))?'
+  brand_replacement: 'Mac'
+
+# IE on Mac doesn't specify version number
+- regex: 'Mac_PowerPC'
+  brand_replacement: 'Mac'
+  os_replacement: 'Mac OS'
+
+# builds before tiger don't seem to specify version?
+
+# ios devices spoof (mac os x), so including intel/ppc prefixes
+- regex: '(?:PPC|Intel) (Mac OS X)'
+  brand_replacement: 'Mac'
+
+##########
+# iOS
+# http://en.wikipedia.org/wiki/IOS_version_history
+##########
+- regex: '(CPU OS|iPhone OS) (\d+)_(\d+)(?:_(\d+))?'
+  os_replacement: 'iOS'
+  is_mobile_replacement: 'true'
+
+# remaining cases are mostly only opera uas, so catch opera as to not catch iphone spoofs
+- regex: '(iPhone|iPad|iPod); Opera'
+  os_replacement: 'iOS'
+  is_mobile_replacement: 'true'
+
+# few more stragglers
+- regex: '(iPhone|iPad|iPod).*Mac OS X.*Version/(\d+)\.(\d+)'
+  os_replacement: 'iOS'
+  is_mobile_replacement: 'true'
+
+# few more stragglers
+- regex: '(iPhone|iPad|iPod); CPU OS (\d+)\.(\d+).*?like Mac OS X'
+  os_replacement: 'iOS'
+  is_mobile_replacement: 'true'
+
+# few more stragglers
+- regex: '(iPhone|iPad|iPod); U;[ ]{0,1}CPU OS (\d+) like Mac OS X'
+  os_replacement: 'iOS'
+  is_mobile_replacement: 'true'
+
+- regex: '(iPhone|iPad|iPod); CPU iPhone OS like Mac OS'
+  os_replacement: 'iOS'
+  is_mobile_replacement: 'true'
+
+# From Mobile App
+- regex: '(iPhone OS)[; ](\d+).(\d+)'
+  os_replacement: 'iOS'
+  is_mobile_replacement: 'true'
+
+- regex: '(LetvIphoneClient|LetvIpadClient)'
+  os_replacement: 'iOS'
+  is_mobile_replacement: 'true'
+
+##########
+# Darwin
+# https://nl.wikipedia.org/wiki/Darwin_OS
+#########
+
+- regex: '(CFNetwork/\d+\.\d+\.\d+\.d+) Darwin'
+  brand_replacement: 'iOS'
+  os_replacement: 'iOS'
+  is_mobile_replacement: 'true'
+
+- regex: '(CFNetwork/\d+\.\d+\.\d+) Darwin'
+  os_replacement: 'iOS'
+  is_mobile_replacement: 'true'
+
+- regex: '(CFNetwork/\d+\.\d+) Darwin'
+  os_replacement: 'iOS'
+  is_mobile_replacement: 'true'
+
+- regex: '(CFNetwork/\d+) Darwin'
+  os_replacement: 'iOS'
+  is_mobile_replacement: 'true'
+
+##########
+# Chrome OS
+# if version 0.0.0, probably this stuff:
+# http://code.google.com/p/chromium-os/issues/detail?id=11573
+# http://code.google.com/p/chromium-os/issues/detail?id=13790
+##########
+- regex: '(CrOS) [a-z0-9_]+ (\d+)\.(\d+)(?:\.(\d+))?'
+  os_replacement: 'Chrome OS'
+
+##########
+# Linux distros
+##########
+- regex: '([Dd]ebian)'
+  brand_replacement: 'Linux'
+  os_replacement: 'Debian'
+
+- regex: '(Linux Mint)(?:/(\d+))?'
+  brand_replacement: 'Linux'
+
+- regex: '(Mandriva)(?: Linux)?/(?:[\d.-]+m[a-z]{2}(\d+).(\d))?'
+  brand_replacement: 'Linux'
+
+##########
+# Symbian + Symbian OS
+# http://en.wikipedia.org/wiki/History_of_Symbian
+##########
+- regex: '(Symbian[Oo][Ss])/(\d+)\.(\d+)'
+  os_replacement: 'Symbian'
+  is_mobile_replacement: 'true'
+
+- regex: '(Symbian/3)'
+  brand_replacement: 'Symbian'
+  os_replacement: 'Symbian^3'
+  is_mobile_replacement: 'true'
+
+- regex: '(Series 60|SymbOS|S60)'
+  brand_replacement: 'Symbian'
+  os_replacement: 'Symbian S60'
+  is_mobile_replacement: 'true'
+
+- regex: 'Symbian [Oo][Ss]'
+  os_replacement: 'Symbian'
+  is_mobile_replacement: 'true'
+
+- regex: 'Series40;'
+  brand_replacement: 'Symbian'
+  os_replacement: 'Symbian S40'
+  is_mobile_replacement: 'true'
+
+- regex: '(MeeGo)'
+  is_mobile_replacement: 'true'
+
+##########
+# BlackBerry devices
+##########
+- regex: '(BB10);.+Version/(\d+)\.(\d+)\.(\d+)'
+  os_replacement: 'BlackBerry'
+  is_mobile_replacement: 'true'
+
+- regex: '(Black[Bb]erry)[0-9a-z]+/(\d+)\.(\d+)\.(\d+)(?:\.(\d+))?'
+  os_replacement: 'BlackBerry'
+  is_mobile_replacement: 'true'
+
+- regex: '(Black[Bb]erry).+Version/(\d+)\.(\d+)\.(\d+)(?:\.(\d+))?'
+  os_replacement: 'BlackBerry'
+  is_mobile_replacement: 'true'
+
+- regex: '(RIM Tablet OS) (\d+)\.(\d+)\.(\d+)'
+  os_replacement: 'BlackBerry'
+  is_mobile_replacement: 'true'
+
+- regex: '(Play[Bb]ook)'
+  os_replacement: 'BlackBerry'
+  is_mobile_replacement: 'true'
+
+- regex: '(Black[Bb]erry)'
+  os_replacement: 'BlackBerry'
+  is_mobile_replacement: 'true'
+##########
+# Firefox OS
+##########
+- regex: '\(Mobile;.+Firefox/\d+\.\d+'
+  os_replacement: 'Firefox OS'
+
+##########
+# BREW
+# yes, Brew is lower-cased for Brew MP
+##########
+- regex: '(BREW)[ /](\d+)\.(\d+)\.(\d+)'
+  is_mobile_replacement: 'true'
+
+- regex: '(BREW);'
+  is_mobile_replacement: 'true'
+
+- regex: '(Brew MP|BMP)[ /](\d+)\.(\d+)\.(\d+)'
+  os_replacement: 'BREW'
+  is_mobile_replacement: 'true'
+
+- regex: 'BMP;'
+  os_replacement: 'BREW'
+  is_mobile_replacement: 'true'
+
+##########
+# Palm webOS
+##########
+- regex: '(hpw|web)OS/(\d+)\.(\d+)(?:\.(\d+))?'
+  os_replacement: 'webOS'
+  is_mobile_replacement: 'true'
+
+##########
+# Generic patterns
+# since the majority of os cases are very specific, these go last
+##########
+# first.second.third.fourth bits
+- regex: '(Fedora|Red Hat|PCLinuxOS)/(\d+)\.(\d+)\.(\d+)\.(\d+)'
+  brand_replacement: 'Linux'
+
+# first.second.third bits
+- regex: '(Red Hat|Puppy|PCLinuxOS)/(\d+)\.(\d+)\.(\d+)'
+  brand_replacement: 'Linux'
+
+# first.second bits
+- regex: '(Ubuntu|Lubuntu|BackTrack|Red Hat|Slackware)/(\d+)\.(\d+)'
+  brand_replacement: 'Linux'
+# Kindle
+- regex: '(Kindle)/(\d+)\.(\d+)'
+  brand_replacement: 'Android'
+  is_mobile_replacement: 'true'
+# Bada
+- regex: '(Bada)/(\d+)\.(\d+)'
+  is_mobile_replacement: 'true'
+
+# just os
+- regex: '(Windows)'
+- regex: '(Android)'
+  is_mobile_replacement: 'true'
+
+- regex: '(OpenBSD|FreeBSD|NetBSD)'
+  brand_replacement: 'Unix'
+- regex: '(BSD)'
+  brand_replacement: 'Unix'
+- regex: 'SunOS'
+  brand_replacement: 'Unix'
+  os_replacement: 'Solaris'
+
+########
+#Android
+########
+- regex: '(Linux); \w; (\d+)\.(\d+)\.(\d+); \w+-\w+'
+  os_replacement: 'Android'
+
+########
+#YunOs
+########
+- regex: 'Linux; \w; (YunOs) (\d+)\.(\d+)\.\w+'
+  os_replacement: 'YunOs'
+
+- regex: '(Ubuntu|Kubuntu|Arch Linux|CentOS|Slackware|Gentoo|openSUSE|SUSE|Red Hat|Fedora|PCLinuxOS|Gentoo|Mageia)'
+  brand_replacement: 'Linux'
+- regex: '(Linux)/(\d+)\.(\d+)'
+- regex: '(Linux)'
