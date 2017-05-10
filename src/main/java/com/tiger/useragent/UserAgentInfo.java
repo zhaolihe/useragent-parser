@@ -10,8 +10,8 @@ import org.apache.avro.specific.SpecificData;
 @SuppressWarnings("all")
 @org.apache.avro.specific.AvroGenerated
 public class UserAgentInfo extends org.apache.avro.specific.SpecificRecordBase implements org.apache.avro.specific.SpecificRecord {
-  private static final long serialVersionUID = -8545421332192778041L;
-  public static final org.apache.avro.Schema SCHEMA$ = new org.apache.avro.Schema.Parser().parse("{\"type\":\"record\",\"name\":\"UserAgentInfo\",\"namespace\":\"com.yanhe.useragent\",\"fields\":[{\"name\":\"os_name\",\"type\":\"string\",\"default\":\"-\"},{\"name\":\"os_detail\",\"type\":\"string\",\"default\":\"-\"},{\"name\":\"browser_name\",\"type\":\"string\",\"default\":\"-\"},{\"name\":\"browser_detail\",\"type\":\"string\",\"default\":\"-\"},{\"name\":\"device_brand\",\"type\":\"string\",\"default\":\"-\"},{\"name\":\"device_name\",\"type\":\"string\",\"default\":\"-\"},{\"name\":\"device_type\",\"type\":\"string\",\"default\":\"-\"},{\"name\":\"is_mobile\",\"type\":\"boolean\",\"default\":false},{\"name\":\"dotnet_version\",\"type\":\"string\",\"default\":\"-\"},{\"name\":\"screen_size\",\"type\":\"float\",\"default\":0}]}");
+  private static final long serialVersionUID = 1868754832032361418L;
+  public static final org.apache.avro.Schema SCHEMA$ = new org.apache.avro.Schema.Parser().parse("{\"type\":\"record\",\"name\":\"UserAgentInfo\",\"namespace\":\"com.tiger.useragent\",\"fields\":[{\"name\":\"os_name\",\"type\":\"string\",\"default\":\"-\"},{\"name\":\"os_detail\",\"type\":\"string\",\"default\":\"-\"},{\"name\":\"browser_name\",\"type\":\"string\",\"default\":\"-\"},{\"name\":\"browser_detail\",\"type\":\"string\",\"default\":\"-\"},{\"name\":\"device_brand\",\"type\":\"string\",\"default\":\"-\"},{\"name\":\"device_name\",\"type\":\"string\",\"default\":\"-\"},{\"name\":\"device_type\",\"type\":\"string\",\"default\":\"-\"},{\"name\":\"is_mobile\",\"type\":\"boolean\",\"default\":false},{\"name\":\"dotnet_version\",\"type\":\"string\",\"default\":\"-\"},{\"name\":\"screen_size\",\"type\":\"float\",\"default\":0}]}");
   public static org.apache.avro.Schema getClassSchema() { return SCHEMA$; }
   @Deprecated public java.lang.CharSequence os_name;
   @Deprecated public java.lang.CharSequence os_detail;
@@ -257,8 +257,8 @@ public class UserAgentInfo extends org.apache.avro.specific.SpecificRecordBase i
    * Creates a new UserAgentInfo RecordBuilder.
    * @return A new UserAgentInfo RecordBuilder
    */
-  public static UserAgentInfo.Builder newBuilder() {
-    return new UserAgentInfo.Builder();
+  public static com.tiger.useragent.UserAgentInfo.Builder newBuilder() {
+    return new com.tiger.useragent.UserAgentInfo.Builder();
   }
 
   /**
@@ -266,8 +266,8 @@ public class UserAgentInfo extends org.apache.avro.specific.SpecificRecordBase i
    * @param other The existing builder to copy.
    * @return A new UserAgentInfo RecordBuilder
    */
-  public static UserAgentInfo.Builder newBuilder(UserAgentInfo.Builder other) {
-    return new UserAgentInfo.Builder(other);
+  public static com.tiger.useragent.UserAgentInfo.Builder newBuilder(com.tiger.useragent.UserAgentInfo.Builder other) {
+    return new com.tiger.useragent.UserAgentInfo.Builder(other);
   }
 
   /**
@@ -275,8 +275,8 @@ public class UserAgentInfo extends org.apache.avro.specific.SpecificRecordBase i
    * @param other The existing instance to copy.
    * @return A new UserAgentInfo RecordBuilder
    */
-  public static UserAgentInfo.Builder newBuilder(UserAgentInfo other) {
-    return new UserAgentInfo.Builder(other);
+  public static com.tiger.useragent.UserAgentInfo.Builder newBuilder(com.tiger.useragent.UserAgentInfo other) {
+    return new com.tiger.useragent.UserAgentInfo.Builder(other);
   }
 
   /**
@@ -305,7 +305,7 @@ public class UserAgentInfo extends org.apache.avro.specific.SpecificRecordBase i
      * Creates a Builder by copying an existing Builder.
      * @param other The existing Builder to copy.
      */
-    private Builder(UserAgentInfo.Builder other) {
+    private Builder(com.tiger.useragent.UserAgentInfo.Builder other) {
       super(other);
       if (isValidValue(fields()[0], other.os_name)) {
         this.os_name = data().deepCopy(fields()[0].schema(), other.os_name);
@@ -353,7 +353,7 @@ public class UserAgentInfo extends org.apache.avro.specific.SpecificRecordBase i
      * Creates a Builder by copying an existing UserAgentInfo instance
      * @param other The existing instance to copy.
      */
-    private Builder(UserAgentInfo other) {
+    private Builder(com.tiger.useragent.UserAgentInfo other) {
             super(SCHEMA$);
       if (isValidValue(fields()[0], other.os_name)) {
         this.os_name = data().deepCopy(fields()[0].schema(), other.os_name);
@@ -410,7 +410,7 @@ public class UserAgentInfo extends org.apache.avro.specific.SpecificRecordBase i
       * @param value The value of 'os_name'.
       * @return This builder.
       */
-    public UserAgentInfo.Builder setOsName(java.lang.CharSequence value) {
+    public com.tiger.useragent.UserAgentInfo.Builder setOsName(java.lang.CharSequence value) {
       validate(fields()[0], value);
       this.os_name = value;
       fieldSetFlags()[0] = true;
@@ -430,7 +430,7 @@ public class UserAgentInfo extends org.apache.avro.specific.SpecificRecordBase i
       * Clears the value of the 'os_name' field.
       * @return This builder.
       */
-    public UserAgentInfo.Builder clearOsName() {
+    public com.tiger.useragent.UserAgentInfo.Builder clearOsName() {
       os_name = null;
       fieldSetFlags()[0] = false;
       return this;
@@ -449,7 +449,7 @@ public class UserAgentInfo extends org.apache.avro.specific.SpecificRecordBase i
       * @param value The value of 'os_detail'.
       * @return This builder.
       */
-    public UserAgentInfo.Builder setOsDetail(java.lang.CharSequence value) {
+    public com.tiger.useragent.UserAgentInfo.Builder setOsDetail(java.lang.CharSequence value) {
       validate(fields()[1], value);
       this.os_detail = value;
       fieldSetFlags()[1] = true;
@@ -469,7 +469,7 @@ public class UserAgentInfo extends org.apache.avro.specific.SpecificRecordBase i
       * Clears the value of the 'os_detail' field.
       * @return This builder.
       */
-    public UserAgentInfo.Builder clearOsDetail() {
+    public com.tiger.useragent.UserAgentInfo.Builder clearOsDetail() {
       os_detail = null;
       fieldSetFlags()[1] = false;
       return this;
@@ -488,7 +488,7 @@ public class UserAgentInfo extends org.apache.avro.specific.SpecificRecordBase i
       * @param value The value of 'browser_name'.
       * @return This builder.
       */
-    public UserAgentInfo.Builder setBrowserName(java.lang.CharSequence value) {
+    public com.tiger.useragent.UserAgentInfo.Builder setBrowserName(java.lang.CharSequence value) {
       validate(fields()[2], value);
       this.browser_name = value;
       fieldSetFlags()[2] = true;
@@ -508,7 +508,7 @@ public class UserAgentInfo extends org.apache.avro.specific.SpecificRecordBase i
       * Clears the value of the 'browser_name' field.
       * @return This builder.
       */
-    public UserAgentInfo.Builder clearBrowserName() {
+    public com.tiger.useragent.UserAgentInfo.Builder clearBrowserName() {
       browser_name = null;
       fieldSetFlags()[2] = false;
       return this;
@@ -527,7 +527,7 @@ public class UserAgentInfo extends org.apache.avro.specific.SpecificRecordBase i
       * @param value The value of 'browser_detail'.
       * @return This builder.
       */
-    public UserAgentInfo.Builder setBrowserDetail(java.lang.CharSequence value) {
+    public com.tiger.useragent.UserAgentInfo.Builder setBrowserDetail(java.lang.CharSequence value) {
       validate(fields()[3], value);
       this.browser_detail = value;
       fieldSetFlags()[3] = true;
@@ -547,7 +547,7 @@ public class UserAgentInfo extends org.apache.avro.specific.SpecificRecordBase i
       * Clears the value of the 'browser_detail' field.
       * @return This builder.
       */
-    public UserAgentInfo.Builder clearBrowserDetail() {
+    public com.tiger.useragent.UserAgentInfo.Builder clearBrowserDetail() {
       browser_detail = null;
       fieldSetFlags()[3] = false;
       return this;
@@ -566,7 +566,7 @@ public class UserAgentInfo extends org.apache.avro.specific.SpecificRecordBase i
       * @param value The value of 'device_brand'.
       * @return This builder.
       */
-    public UserAgentInfo.Builder setDeviceBrand(java.lang.CharSequence value) {
+    public com.tiger.useragent.UserAgentInfo.Builder setDeviceBrand(java.lang.CharSequence value) {
       validate(fields()[4], value);
       this.device_brand = value;
       fieldSetFlags()[4] = true;
@@ -586,7 +586,7 @@ public class UserAgentInfo extends org.apache.avro.specific.SpecificRecordBase i
       * Clears the value of the 'device_brand' field.
       * @return This builder.
       */
-    public UserAgentInfo.Builder clearDeviceBrand() {
+    public com.tiger.useragent.UserAgentInfo.Builder clearDeviceBrand() {
       device_brand = null;
       fieldSetFlags()[4] = false;
       return this;
@@ -605,7 +605,7 @@ public class UserAgentInfo extends org.apache.avro.specific.SpecificRecordBase i
       * @param value The value of 'device_name'.
       * @return This builder.
       */
-    public UserAgentInfo.Builder setDeviceName(java.lang.CharSequence value) {
+    public com.tiger.useragent.UserAgentInfo.Builder setDeviceName(java.lang.CharSequence value) {
       validate(fields()[5], value);
       this.device_name = value;
       fieldSetFlags()[5] = true;
@@ -625,7 +625,7 @@ public class UserAgentInfo extends org.apache.avro.specific.SpecificRecordBase i
       * Clears the value of the 'device_name' field.
       * @return This builder.
       */
-    public UserAgentInfo.Builder clearDeviceName() {
+    public com.tiger.useragent.UserAgentInfo.Builder clearDeviceName() {
       device_name = null;
       fieldSetFlags()[5] = false;
       return this;
@@ -644,7 +644,7 @@ public class UserAgentInfo extends org.apache.avro.specific.SpecificRecordBase i
       * @param value The value of 'device_type'.
       * @return This builder.
       */
-    public UserAgentInfo.Builder setDeviceType(java.lang.CharSequence value) {
+    public com.tiger.useragent.UserAgentInfo.Builder setDeviceType(java.lang.CharSequence value) {
       validate(fields()[6], value);
       this.device_type = value;
       fieldSetFlags()[6] = true;
@@ -664,7 +664,7 @@ public class UserAgentInfo extends org.apache.avro.specific.SpecificRecordBase i
       * Clears the value of the 'device_type' field.
       * @return This builder.
       */
-    public UserAgentInfo.Builder clearDeviceType() {
+    public com.tiger.useragent.UserAgentInfo.Builder clearDeviceType() {
       device_type = null;
       fieldSetFlags()[6] = false;
       return this;
@@ -683,7 +683,7 @@ public class UserAgentInfo extends org.apache.avro.specific.SpecificRecordBase i
       * @param value The value of 'is_mobile'.
       * @return This builder.
       */
-    public UserAgentInfo.Builder setIsMobile(boolean value) {
+    public com.tiger.useragent.UserAgentInfo.Builder setIsMobile(boolean value) {
       validate(fields()[7], value);
       this.is_mobile = value;
       fieldSetFlags()[7] = true;
@@ -703,7 +703,7 @@ public class UserAgentInfo extends org.apache.avro.specific.SpecificRecordBase i
       * Clears the value of the 'is_mobile' field.
       * @return This builder.
       */
-    public UserAgentInfo.Builder clearIsMobile() {
+    public com.tiger.useragent.UserAgentInfo.Builder clearIsMobile() {
       fieldSetFlags()[7] = false;
       return this;
     }
@@ -721,7 +721,7 @@ public class UserAgentInfo extends org.apache.avro.specific.SpecificRecordBase i
       * @param value The value of 'dotnet_version'.
       * @return This builder.
       */
-    public UserAgentInfo.Builder setDotnetVersion(java.lang.CharSequence value) {
+    public com.tiger.useragent.UserAgentInfo.Builder setDotnetVersion(java.lang.CharSequence value) {
       validate(fields()[8], value);
       this.dotnet_version = value;
       fieldSetFlags()[8] = true;
@@ -741,7 +741,7 @@ public class UserAgentInfo extends org.apache.avro.specific.SpecificRecordBase i
       * Clears the value of the 'dotnet_version' field.
       * @return This builder.
       */
-    public UserAgentInfo.Builder clearDotnetVersion() {
+    public com.tiger.useragent.UserAgentInfo.Builder clearDotnetVersion() {
       dotnet_version = null;
       fieldSetFlags()[8] = false;
       return this;
@@ -760,7 +760,7 @@ public class UserAgentInfo extends org.apache.avro.specific.SpecificRecordBase i
       * @param value The value of 'screen_size'.
       * @return This builder.
       */
-    public UserAgentInfo.Builder setScreenSize(float value) {
+    public com.tiger.useragent.UserAgentInfo.Builder setScreenSize(float value) {
       validate(fields()[9], value);
       this.screen_size = value;
       fieldSetFlags()[9] = true;
@@ -780,7 +780,7 @@ public class UserAgentInfo extends org.apache.avro.specific.SpecificRecordBase i
       * Clears the value of the 'screen_size' field.
       * @return This builder.
       */
-    public UserAgentInfo.Builder clearScreenSize() {
+    public com.tiger.useragent.UserAgentInfo.Builder clearScreenSize() {
       fieldSetFlags()[9] = false;
       return this;
     }
