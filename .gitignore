@@ -1,0 +1,6 @@
+# suffix to ignore
+*.iml
+.idea
+target
+*.class
+.DS_Store
