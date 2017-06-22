@@ -79,8 +79,11 @@ public class Parser {
         Os os = parseOS(agentString);
         Browser browser = parseBrowser(agentString);
         String dotNet = parseDotNet(agentString);
+        if(os==null){
+            os = Os.DEFAULT_OS;
 
-        if (os.isTv) {
+        }
+        else if (os.isTv) {
             device = Device.DEFAULT_TV;
         } else if (os.isMobile && !device.isMobile && !(device.deviceType == DeviceType.TV)) {
             device = Device.DEFAULT_PHONE_SCREEN;

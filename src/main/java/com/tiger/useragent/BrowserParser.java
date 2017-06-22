@@ -30,7 +30,7 @@ class BrowserParser {
 
     public Browser parse(final String uaString){
         if(Strings.isNullOrEmpty(uaString)){
-            return null;
+            return Browser.DEFAULT_BROWSER;
         }
 
         Browser browser;

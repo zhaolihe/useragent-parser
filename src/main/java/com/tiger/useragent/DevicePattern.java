@@ -84,7 +84,7 @@ public class DevicePattern {
 
         if (Strings.isNullOrEmpty(brandReplacement)) {
             brand = brandReplacement;
-        } else if (groupCount >= 0) {
+        } else if (groupCount > 0) {
             brand = matcher.group(1);
         }
 
