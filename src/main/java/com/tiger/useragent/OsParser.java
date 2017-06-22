@@ -31,7 +31,7 @@ class OsParser {
 
     public Os parse(String agentString) {
         if (Strings.isNullOrEmpty(agentString)) {
-            return null;
+            return Os.DEFAULT_OS;
         }
 
         Os os;

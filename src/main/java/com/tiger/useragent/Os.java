@@ -7,7 +7,7 @@ package com.tiger.useragent;
  * date : 2017/5/8
  */
 class Os {
-    public static final Os DEFAULT_OS=null;
+    public static final Os DEFAULT_OS = new Os("-", "-", "0", "0", false, false);
     public final String brand;
     public final String family;
     public final String major;

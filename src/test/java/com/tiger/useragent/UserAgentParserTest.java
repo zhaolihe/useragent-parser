@@ -1,14 +1,15 @@
 package com.tiger.useragent;
 
 import com.google.common.base.Function;
-import org.apache.commons.lang3.time.StopWatch;
 import org.junit.BeforeClass;
 import org.junit.Test;
 
 import java.io.IOException;
+import java.util.Arrays;
+import java.util.List;
 
-import static org.hamcrest.core.Is.is;
-import static org.junit.Assert.assertThat;
+import static org.hamcrest.CoreMatchers.is;
+import static org.junit.Assert.*;
 
 
 /**
@@ -72,22 +73,25 @@ public class UserAgentParserTest {
                }
            }
        };
+        List<String> systems = Arrays.asList("Mac","Windows","iOS","Android");
+        List<String> browsers = Arrays.asList("Safari","IE","firefox","Chrome","opera","Maxthon","QQ","360","android","Taobao","LieBao","Sogou");
+        List<String> deviceTypes = Arrays.asList("PC","Phone","Pad");
         UserAgentParser ua = function.apply("");
         for (String str : uas) {
-            StopWatch stopWatch = new StopWatch();
-            stopWatch.start();
-
             UserAgentInfo info = ua.getUserAgentInfo(str);
-            System.out.println(info.getBrowserDetail()+"$$"+info.getDeviceType()+"$$"+info.getDeviceName()+"$$"+info.getOsDetail()+"$$"+info.getScreenSize());
-            stopWatch.stop();
-            System.out.println(stopWatch.getNanoTime());
+            assertNotNull(info);
+            assertTrue(systems.contains(info.getOsName()));
+            assertTrue(browsers.contains(info.getBrowserName()));
+            assertTrue(deviceTypes.contains(info.getDeviceType()));
         }
     }
 
     @Test
     public void testNullException(){
-        String userAgent ="Mozilla/5.0 (Linux; U; Android 2.3.7; en-us; Nexus One Build/FRF91) AppleWebKit/533.1 (KHTML, like Gecko) Version/4.0 Mobile Safari/533.1";
+        String userAgent ="Mozilla/4.0 (compatible; MSIE 8.0; Windows NT 6.1; WOW64; Trident/4.0; SLCC2; .NET CLR 2.0.50727; .NET CLR 3.5.30729; .NET CLR 3.0.30729; Media Center PC 6.0)";
         UserAgentInfo info = parser.getUserAgentInfo(userAgent);
-        System.out.println(info.getBrowserDetail());
+        assertNotNull(info);
+        assertThat(info.getOsDetail().toString(), is("Windows 7"));
+        assertThat(info.getBrowserDetail().toString(),is("IE 8"));
     }
 }
