@@ -285,6 +285,10 @@
 - regex: '(MEIZU|meizu)[\W_]?(\w+)'
   brand_replacement: 'Meizu'
 
+- regex: '(M570)(C|Q|M)\s\w+'
+  brand_replacement: 'Meizu'
+   device_replacement: 'M570 $2'
+
 ##########
 # Meitu
 ##########
@@ -425,6 +429,10 @@
 # smartisan
 ########
 - regex: '(SM\d+) Build/SANFRANCISCO'
+  brand_replacement: 'smartisan'
+  device_replacement: '$1'
+
+- regex: '(YQ601)\s\w+'
   brand_replacement: 'smartisan'
   device_replacement: '$1'
 
