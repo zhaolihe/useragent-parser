@@ -35,9 +35,6 @@ class DeviceParser {
 
         Device device;
         for (DevicePattern p : patterns) {
-            if(p.match(agentString)!=null){
-                String aa = "hello";
-            }
             if ((device = p.match(agentString)) != null) {
                 return device;
             }
