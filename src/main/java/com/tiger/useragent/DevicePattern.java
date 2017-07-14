@@ -82,7 +82,7 @@ public class DevicePattern {
         DeviceType deviceType = deviceTypeReplacement;
         boolean isMobile = isMobileReplacement;
 
-        if (Strings.isNullOrEmpty(brandReplacement)) {
+        if (!Strings.isNullOrEmpty(brandReplacement)) {
             brand = brandReplacement;
         } else if (groupCount > 0) {
             brand = matcher.group(1);
