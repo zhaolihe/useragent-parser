@@ -94,4 +94,50 @@ public class UserAgentParserTest {
         assertThat(info.getOsDetail().toString(), is("Windows 7"));
         assertThat(info.getBrowserDetail().toString(),is("IE 8"));
     }
+
+    @Test
+    public void testGIONEE(){
+        String uaExpr ="Mozilla/5.0 (Linux; U; Android 5.1; zh-cn;GIONEE-GN3003/GN3003 Build/IMM76D) AppleWebKit534.30(KHTML,like Gecko)Version/4.0 Mobile Safari/534.30 Id/25E4601A243673900E601298CB629449 RV/5.0.16";
+        UserAgentInfo info = parser.getUserAgentInfo(uaExpr);
+        assertNotNull(info);
+    }
+
+    @Test
+    public void testXIAOMIMX(){
+        String uaExpr ="Mozilla/5.0 (Linux; Android 5.0.2; XiaoMi M5 Note Build/RJV90N; wv) AppleWebKit/537.36 (KHTML, like Gecko) Version/4.0 Chrome";
+        UserAgentInfo info = parser.getUserAgentInfo(uaExpr);
+        assertNotNull(info);
+        assertThat(info.getDeviceBrand().toString(),is("Xiaomi"));
+        assertThat(info.getDeviceName().toString(),is("Xiaomi M5 Note"));
+
+        uaExpr="Mozilla/5.0 (Linux; Android 5.1; XiaoMi M3 Build/PTV69B; wv) AppleWebKit/537.36 (KHTML, like Gecko) Version/4.0 Chrome";
+        info = parser.getUserAgentInfo(uaExpr);
+        assertNotNull(info);
+        assertThat(info.getDeviceBrand().toString(),is("Xiaomi"));
+        assertThat(info.getDeviceName().toString(),is("Xiaomi M3"));
+    }
+
+    @Test
+    public void testMeizuMX4(){
+        String uaExpr="Mozilla/5.0 (Linux; U; Android 4.4.5; zh-cn; MX4 Pro Build/JLS36C) AppleWebKit/537.36 (KHTML, like Gecko) Version/4.0 Mobile Safari/537.36";
+        UserAgentInfo info = parser.getUserAgentInfo(uaExpr);
+        assertNotNull(info);
+        assertThat(info.getDeviceBrand().toString(),is("Meizu"));
+        assertThat(info.getDeviceName().toString(),is("Meizu MX4 Pro"));
+    }
+
+    @Test
+    public void testVivoX9(){
+        String uaExpr ="Mozilla/5.0 (Linux; U; Android 4.0.3; zh-CN; X9 Build/KOT49H) AppleWebKit/537.36 (KHTML,like Gecko) Version/4.0 Chrome/40.0.2214.89 UCBrowser/11.5.2.942 Mobile Safari/537.36";
+        UserAgentInfo info = parser.getUserAgentInfo(uaExpr);
+        assertNotNull(info);
+    }
+
+    @Test
+    public void testHTC(){
+        String uaExpr = "Mozilla/5.0 (Linux; Android 4.3; HTC X920e Build/JSS15J) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/58.0.3029.83 Mobile Safari/537.36";
+        UserAgentInfo info = parser.getUserAgentInfo(uaExpr);
+        assertNotNull(info);
+        assertThat(info.getDeviceBrand().toString(),is("HTC"));
+    }
 }
