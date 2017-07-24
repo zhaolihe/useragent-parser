@@ -260,7 +260,6 @@ GN5001S,,Gionee,,GN5001S,,Phone,,5.0
 F100,,Gionee,,F100,,Phone,,5.0
 F105,,Gionee,,F105,,Phone,,5.0
 F100A,,Gionee,,F100A,,Phone,,5.0
-M3s,,Gionee,,M3s,,Phone,,5.0
 F103S,,Gionee,,F103S,,Phone,,5.0
 S3,,Gionee,,S3,,Phone,,5.2
 M5L,,Gionee,,M5L,,Phone,,5.5

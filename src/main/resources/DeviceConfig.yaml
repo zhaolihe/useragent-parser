@@ -148,6 +148,10 @@
 - regex: '(SAMSUNG|Samsung|samsung)[\W_]?(\w+)?'
   brand_replacement: 'Samsung'
 
+- regex: 'Build/JRO03C'
+  brand_replacement: 'Samsung'
+  device_replacement: 'Galaxy'
+
 ##########
 # Xiaomi
 # http://developer.xiaomi.com/doc/?p=254
@@ -182,7 +186,7 @@
 - regex: '\b(Xiaomi)'
   brand_replacement: 'Xiaomi'
 
-- regex: 'XiaoMi (\w+([\s]\w+)?) Build'
+- regex: 'XiaoMi (\w+([\s,-]\w+)?) Build'
   brand_replacement: 'Xiaomi'
   device_replacement: '$1'
 
@@ -451,7 +455,11 @@
 #########
 #ONEPLUS
 ########
-#- regex: '(ONEPLUS) (\w+\d+)\w+'
+- regex: '(ONEPLUS) (\w+\d+)\w+'
+  brand_replacement: 'OnePlus'
+
+- regex: '(OnePlus) (\w+\d+)\s+'
+  brand_replacement: 'OnePlus'
 
 ########
 #DESAY
@@ -702,6 +710,9 @@
 - regex: '\b(Xperia|XPERIA)[\W_]?(\w+)'
   brand_replacement: 'Sony'
   device_replacement: '$1 $2'
+- regex: '\b(E[6])(\d+)'
+  brand_replacement: 'Sony'
+  device_replacement: '$1$2'
 
 # e.g. ME525, MB525, XT910
 - regex: '\b(XT|MB|ME)(\d{3})\b'
