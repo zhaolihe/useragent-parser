@@ -527,29 +527,6 @@
   family_replacement: 'Chrome'
 
 ##########
-# android UAs
-##########
-- regex: '(android)[ /](\d+)\.(\d+)'
-- regex: '(android) donut'
-  v1_replacement: '1'
-  v2_replacement: '2'
-
-- regex: '(android) eclair'
-  v1_replacement: '2'
-  v2_replacement: '1'
-
-- regex: '(android) froyo'
-  v1_replacement: '2'
-  v2_replacement: '2'
-
-- regex: '(android) gingerbread'
-  v1_replacement: '2'
-  v2_replacement: '3'
-
-- regex: '(android) honeycomb'
-  v1_replacement: '3'
-
-##########
 # IE Mobile
 ##########
 - regex: '(iemobile)[ /](\d+)\.(\d+)'
@@ -686,3 +663,26 @@
   family_replacement: 'IE'
 - regex: 'trident(.*)rv.(\d+)'
   family_replacement: 'IE'
+
+##########
+# android UAs
+##########
+- regex: '(android)[ /](\d+)\.(\d+)'
+- regex: '(android) donut'
+  v1_replacement: '1'
+  v2_replacement: '2'
+
+- regex: '(android) eclair'
+  v1_replacement: '2'
+  v2_replacement: '1'
+
+- regex: '(android) froyo'
+  v1_replacement: '2'
+  v2_replacement: '2'
+
+- regex: '(android) gingerbread'
+  v1_replacement: '2'
+  v2_replacement: '3'
+
+- regex: '(android) honeycomb'
+  v1_replacement: '3'
