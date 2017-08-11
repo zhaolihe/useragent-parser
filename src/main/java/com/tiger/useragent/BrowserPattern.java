@@ -68,13 +68,13 @@ class BrowserPattern {
         String brand = (Strings.isNullOrEmpty(brandReplacement)) ? family : brandReplacement;
         if (!Strings.isNullOrEmpty(majorReplacement)) {
             major = majorReplacement;
-        } else if (groupCount > 2) {
+        } else if (groupCount > 1) {
             major = matcher.group(2);
         }
 
         if (!Strings.isNullOrEmpty(minorReplacement)) {
             minor = minorReplacement;
-        } else if (groupCount > 3) {
+        } else if (groupCount > 2) {
             minor = matcher.group(3);
         }
 

@@ -91,4 +91,18 @@ public class BrowserParserTest {
             assertThat(group,is("360SE"));
         }
     }
+
+    @Test
+    public void testChrome(){
+        String ua = "Mozilla/5.0 (Linux; Android 5.1.1; vivo X9 Build/HQU06P; wv) AppleWebKit/537.36 (KHTML, like Gecko) Version/4.0 Chrome";
+        Browser browser = parse(ua);
+        assertThat(browser.brand,is("Chrome"));
+    }
+
+    @Test
+    public void testFunshion(){
+        String ua="Funshion/2.7.1.4 (Android/4.2.2; aphone; T200-C)";
+        Browser browser = parse(ua);
+        assertThat(browser.brand,is("Funshion"));
+    }
 }

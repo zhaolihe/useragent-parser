@@ -155,4 +155,12 @@ public class UserAgentParserTest {
         assertNotNull(info);
         assertThat(info.getDeviceBrand().toString(),is("HTC"));
     }
+
+    @Test
+    public void testFunshion(){
+        String uaExpr="Funshion/3.2.12.2 (ios/9.0); iphone; iPhone8.2)";
+        UserAgentInfo info = parser.getUserAgentInfo(uaExpr);
+        assertNotNull(info);
+        assertThat(info.getBrowserName().toString(),is("Funshion"));
+    }
 }
