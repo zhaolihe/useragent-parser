@@ -16,4 +16,10 @@ try{
 ```
 the description of  UserAgentInfo is `/main/resource/UserAgentInfo.avsc`
 
-now, only finish coding to parse useragent, but no much time to tesing,so it maybe have some questions. but i will optimize it using free time. if have any question of using this libary, please let me know, thank you!
+now, this libary has be using, if having any question in using, please let me know. and i will optimize it using free time. 
+
+### support
+* 风行app
+* 常见浏览器
+* 常见移动设备
+
