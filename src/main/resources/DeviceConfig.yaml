@@ -567,6 +567,10 @@
   brand_replacement: 'Apple'
   device_replacement: '$1'
 
+- regex: '(iPhone)([\d|.]*)'
+  brand_replacement: 'Apple'
+  device_replacement: '$1 $2'
+
 - regex: '(iPhone);'
   brand_replacement: 'Apple'
   device_replacement: '$1'
