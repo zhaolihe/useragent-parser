@@ -163,4 +163,32 @@ public class UserAgentParserTest {
         assertNotNull(info);
         assertThat(info.getBrowserName().toString(),is("Funshion"));
     }
+
+    @Test
+    public void testHonor8(){
+        String uaExpr = "Mozilla/5.0(Linux;Android7.0;zh-cn;FRD-DL00Build/FRD-DL00)AppleWebKit/534.30(KHTML,likeGecko)Version/4.0MobileSafari/534.30)";
+        UserAgentInfo info = parser.getUserAgentInfo(uaExpr);
+        assertNotNull(info);
+        assertThat(info.getDeviceName().toString(),is("Huawei Honor 8"));
+        uaExpr ="UCWEB/2.0 (MIDP-2.0; U; zh-CN; VKY-AL00) U2/1.0.0 UCBrowser/10.7.2.940  U2/1.0.0 Mobile";
+        info = parser.getUserAgentInfo(uaExpr);
+        assertThat(info.getDeviceName().toString(),is("Huawei P10 Plus"));
+    }
+
+    @Test
+    public void testQQ(){
+        String uaExpr="Mozilla/5.0 (Linux; U; Android 2.3.5; zh-cn; D510 Build/MocorDroid2.3.5) AppleWebKit/533.1 (KHTML, like Gecko) Version/4.0 Mobile Safari/533.1 V1_AND_SQ_4.6.1_9_YYB_D QQ/5.3.1.660 NetType/WIFI 10000507";
+        UserAgentInfo info = parser.getUserAgentInfo(uaExpr);
+        assertNotNull(info);
+        assertThat(info.getBrowserName().toString(),is("QQ"));
+        assertThat(info.getNetType().toString(),is("WIFI"));
+    }
+
+    @Test
+    public void testQingtingFM(){
+        String uaExpr="Android-QingtingFM Dalvik/2.1.0 (Linux; U; Android 6.0; M621C Build/MRA58K)";
+        UserAgentInfo info = parser.getUserAgentInfo(uaExpr);
+        assertNotNull(info);
+        assertThat(info.getBrowserName().toString(),is("QingtingFM"));
+    }
 }

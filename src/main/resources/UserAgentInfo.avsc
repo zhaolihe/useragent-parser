@@ -13,6 +13,7 @@
      {"name": "device_type", "type": "string", "default": "-"},
      {"name": "is_mobile", "type": "boolean", "default": false},
      {"name": "dotnet_version", "type": "string", "default": "-"},
+     {"name": "net_type", "type":"string", "default": "-"},
      {"name": "screen_size","type":"float","default":0}
   ]
 }
