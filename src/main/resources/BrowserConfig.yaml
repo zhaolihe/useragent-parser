@@ -28,6 +28,13 @@
   brand_replacement: 'Funshion'
 
 ##########
+# QQ
+#########
+- regex: '(qq)[ |/]?([\d|.]*)'
+  family_replacement: 'QQ'
+  brand_replacement: 'QQ'
+
+##########
 # QQMusic
 ##########
 - regex: '(qqmusic)/(\d+)\.(\d+)(\.(\d+))?'
@@ -38,6 +45,14 @@
 ##########
 - regex: '(qqnews)/(\d+)\.(\d+)(\.(\d+))?'
 - regex: '(qqnews)'
+
+############
+# QingtingFM
+############
+- regex: '(qingtingfm)'
+  family_replacement: 'QingtingFM'
+  brand_replacement: 'QingtingFM'
+
 
 
 ##########

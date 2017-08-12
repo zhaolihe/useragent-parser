@@ -80,6 +80,12 @@
   is_mobile_replacement: 'true'
   device_type_replacement: 'mobile'
 
+- regex: '(ADNetClient)'
+  brand_replacement: 'AD .NET'
+  device_replacement: '.NET Spider'
+  is_mobile_replacement: 'false'
+  device_type_replacement: 'Spider'
+
 ##########################################################################
 # First Brand Match
 ##########################################################################
@@ -210,6 +216,18 @@
   brand_replacement: 'Huawei'
   device_replacement: 'Honor'
 
+- regex: '(FRD-DL00)'
+  brand_replacement: 'Huawei'
+  device_replacement: 'Honor 8'
+
+- regex: '(VTR-AL00)'
+  brand_replacement: 'Huawei'
+  device_replacement: 'P10'
+
+- regex: '(VKY-AL00)'
+  brand_replacement: 'Huawei'
+  device_replacement: 'P10 Plus'
+
 - regex: '(HUAWEI); (\w+\d+-\w+\d+)'
   brand_replacement: 'Huawei'
 - regex: '(HW)-(\w\d+(\w+)?)/'
@@ -238,6 +256,8 @@
 # Lenovo
 ##########
 - regex: '(Lenovo)[\W_]?(\w+)'
+  brand_replacement: 'Lenovo'
+- regex: '(lenovo)[\W_]?(\w+)'
   brand_replacement: 'Lenovo'
 - regex: '(LENOVO)[\W_]?(\w+)'
   brand_replacement: 'Lenovo'

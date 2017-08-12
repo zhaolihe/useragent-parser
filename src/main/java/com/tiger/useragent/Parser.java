@@ -23,6 +23,7 @@ public class Parser {
     private DeviceParser deviceParser;
     private DeviceMap deviceMap;
     private Pattern pattern = Pattern.compile("\\.net( clr | client )?(?<ver>\\d(\\.\\d)?)(\\.\\d+)*[ce;$) ]", Pattern.CASE_INSENSITIVE);
+    private Pattern netTypePattern = Pattern.compile("nettype[ |/]?(\\w*)", Pattern.CASE_INSENSITIVE);
     public static Map<String, Map<String, String>> mobileParser;
 
     public Parser() throws IOException {
@@ -74,22 +75,22 @@ public class Parser {
 
         Device device = parseDevice(agentString);
         if (device.deviceType.equals(DeviceType.Spider)) {
-            return buildUserAgentInfo(Os.DEFAULT_OS, Browser.DEFAULT_BROWSER, device, "-");
+            return buildUserAgentInfo(Os.DEFAULT_OS, Browser.DEFAULT_BROWSER, device, "-","-");
         }
         Os os = parseOS(agentString);
         Browser browser = parseBrowser(agentString);
         String dotNet = parseDotNet(agentString);
-        if(os==null){
+        String netType = parseNetType(agentString);
+        if (os == null) {
             os = Os.DEFAULT_OS;
 
-        }
-        else if (os.isTv) {
+        } else if (os.isTv) {
             device = Device.DEFAULT_TV;
         } else if (os.isMobile && !device.isMobile && !(device.deviceType == DeviceType.TV)) {
             device = Device.DEFAULT_PHONE_SCREEN;
         }
 
-        return buildUserAgentInfo(os, browser, device, dotNet);
+        return buildUserAgentInfo(os, browser, device, dotNet, netType);
     }
 
     public String parseDotNet(String agentString) {
@@ -102,6 +103,11 @@ public class Parser {
             }
         }
         return maxVersion.equals("") ? "-" : maxVersion;
+    }
+
+    public String parseNetType(String agentString) {
+        Matcher matcher = netTypePattern.matcher(agentString);
+        return matcher.find() ? matcher.group(1).toUpperCase() : "-";
     }
 
     public Device parseDevice(String agentString) {
@@ -117,7 +123,7 @@ public class Parser {
         return osParser.parse(agentString);
     }
 
-    private UserAgentInfo buildUserAgentInfo(Os os, Browser browser, Device device, String version) {
+    private UserAgentInfo buildUserAgentInfo(Os os, Browser browser, Device device, String version, String netType) {
         UserAgentInfo userAgentInfo = new UserAgentInfo();
         String detail;
 
@@ -152,6 +158,7 @@ public class Parser {
         userAgentInfo.setDeviceType(device.deviceType.toString());
         userAgentInfo.setIsMobile(device.isMobile);
 
+        userAgentInfo.setNetType(netType);
         userAgentInfo.setDotnetVersion(version);
         userAgentInfo.setScreenSize(device.screenSize);
         return userAgentInfo;
