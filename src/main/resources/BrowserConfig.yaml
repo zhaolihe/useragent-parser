@@ -30,7 +30,7 @@
 ##########
 # QQ
 #########
-- regex: '(qq)[ |/]?([\d|.]*)'
+- regex: '(qq)[ /]([\d.]*)'
   family_replacement: 'QQ'
   brand_replacement: 'QQ'
 

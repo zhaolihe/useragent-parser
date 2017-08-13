@@ -23,7 +23,7 @@ public class Parser {
     private DeviceParser deviceParser;
     private DeviceMap deviceMap;
     private Pattern pattern = Pattern.compile("\\.net( clr | client )?(?<ver>\\d(\\.\\d)?)(\\.\\d+)*[ce;$) ]", Pattern.CASE_INSENSITIVE);
-    private Pattern netTypePattern = Pattern.compile("nettype[ |/]?(\\w*)", Pattern.CASE_INSENSITIVE);
+    private Pattern netTypePattern = Pattern.compile("nettype[ /](\\w*)", Pattern.CASE_INSENSITIVE);
     public static Map<String, Map<String, String>> mobileParser;
 
     public Parser() throws IOException {
