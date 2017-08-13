@@ -1,5 +1,6 @@
 package com.tiger.useragent;
 
+import com.google.common.base.Strings;
 import org.apache.commons.lang3.StringUtils;
 import org.yaml.snakeyaml.Yaml;
 import org.yaml.snakeyaml.constructor.SafeConstructor;
@@ -23,7 +24,8 @@ public class Parser {
     private DeviceParser deviceParser;
     private DeviceMap deviceMap;
     private Pattern pattern = Pattern.compile("\\.net( clr | client )?(?<ver>\\d(\\.\\d)?)(\\.\\d+)*[ce;$) ]", Pattern.CASE_INSENSITIVE);
-    private Pattern netTypePattern = Pattern.compile("nettype[ /](\\w*)", Pattern.CASE_INSENSITIVE);
+    private Pattern netTypePattern =Pattern.compile("\\W(WIFI|5G|4G|3G|2G|Wifi|wifi|5g|4g|3g|2g)\\W",Pattern.CASE_INSENSITIVE);
+    private Pattern screenSizePattern = Pattern.compile("\\W(\\d{3,4}x\\d{3,4})\\W",Pattern.CASE_INSENSITIVE);
     public static Map<String, Map<String, String>> mobileParser;
 
     public Parser() throws IOException {
@@ -81,6 +83,7 @@ public class Parser {
         Browser browser = parseBrowser(agentString);
         String dotNet = parseDotNet(agentString);
         String netType = parseNetType(agentString);
+        String screenSize = parseScreenSize(agentString);
         if (os == null) {
             os = Os.DEFAULT_OS;
 
@@ -107,12 +110,21 @@ public class Parser {
 
     public String parseNetType(String agentString) {
         Matcher matcher = netTypePattern.matcher(agentString);
-        return matcher.find() ? matcher.group(1).toUpperCase() : "-";
+        String result="";
+        if(matcher.find()){
+            result = matcher.group(1);
+        }
+        return Strings.isNullOrEmpty(result)? "-":result;
     }
 
     public Device parseDevice(String agentString) {
         Device device = deviceParser.parse(agentString);
         return deviceMap.parseDevice(device);
+    }
+
+    public String parseScreenSize(String agentString){
+        Matcher matcher = screenSizePattern.matcher(agentString);
+        return matcher.find() ? matcher.group(1) : "-";
     }
 
     public Browser parseBrowser(String agentString) {

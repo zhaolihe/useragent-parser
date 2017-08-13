@@ -34,6 +34,60 @@
   family_replacement: 'QQ'
   brand_replacement: 'QQ'
 
+
+#########
+# ImgoTV
+#########
+- regex: '(imgotv)[- ]'
+  family_replacement: 'ImgoTV'
+  brand_replacement: 'ImgoTV'
+
+########
+#Weibo
+#######
+- regex: '(weibo)[\( _\-\w]*_([\d.]*)_'
+  family_replacement: 'Weibo'
+  brand_replacement: 'Weibo'
+
+########
+#4399GameCenter
+########
+- regex: '(4399gamecenter)[ /]([\d.]*)'
+  family_replacement: '4399GameCenter'
+  brand_replacement: '4399GameCenter'
+
+- regex: '(4399.gamehelper)[. ]\w*/([\d.]*)'
+  family_replacement: '4399GameCenter'
+  brand_replacement: '4399GameCenter'
+
+#######
+#中国联通
+#######
+- regex: '(unicom)[\{:\w]*@([\d.]*)[,\w]*'
+  family_replacement: 'Unicom'
+  brand_replacement: 'Unicom'
+
+#######
+#汽车之家
+######
+- regex: '(autohome)\w*[ /]([\d.]*)'
+  family_replacement: 'Autohome'
+  brand_replacement: 'Autohome'
+
+#######
+# 国美在线
+#######
+- regex: '[ /](gome)[ /]'
+  family_replacement: 'Gome'
+  brand_replacement: 'Gome'
+
+#########
+#返利
+#########
+- regex: '(fanli)[ /]([\d.]*)'
+  family_replacement: 'Fanli'
+  brand_replacement: 'Fanli'
+
 ##########
 # QQMusic
 ##########

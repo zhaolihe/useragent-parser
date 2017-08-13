@@ -124,4 +124,11 @@ public class BrowserParserTest {
         Browser browser = parse(ua);
         assertThat(browser.brand,is("Funshion"));
     }
+
+    @Test
+    public void testImgoTV(){
+        String ua="ImgoTV-ipad/4.3.0 (iPad; iOS 8.3; Scale/2.00)";
+        Browser browser = parse(ua);
+        assertThat(browser.brand,is("ImgoTV"));
+    }
 }
