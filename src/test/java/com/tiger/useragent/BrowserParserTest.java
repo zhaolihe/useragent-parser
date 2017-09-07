@@ -93,6 +93,25 @@ public class BrowserParserTest {
     }
 
     @Test
+    public void testQQ(){
+        String ua="Mozilla/5.0 (Linux; Android 5.1; OPPO A59s Build/LMY47I; wv) AppleWebKit/537.36 (KHTML, like Gecko) Version/4.0 Chrome/43.0.2357.121 Mobile Safari/537.36 Youku/6.7.1 (Android 5.1; Bridge_SDK; GUID 0bb61e7bf6aa7407dbe522639f1ba6e2; UTDID VoVRAiABneUDAPM9QqSQmvl0;)".toLowerCase();
+        String regex = "(qq)[ /]([\\d.]*)";
+        Pattern pattern = Pattern.compile(regex);
+        Matcher matcher = pattern.matcher(ua);
+        if (matcher.find()) {
+            String group =matcher.group(0);
+            assertThat(group,is("QQ"));
+        }
+        ua = "Mozilla/5.0 (Linux; U; Android 2.3.5; zh-cn; D510 Build/MocorDroid2.3.5) AppleWebKit/533.1 (KHTML, like Gecko) Version/4.0 Mobile Safari/533.1 V1_AND_SQ_4.6.1_9_YYB_D QQ/5.3.1.660 NetType/WIFI 10000507".toLowerCase();
+        Pattern p1 = Pattern.compile(regex);
+        Matcher matcher1 = p1.matcher(ua);
+        if(matcher1.find()){
+            String group = matcher1.group(1);
+            assertThat(group,is("qq"));
+        }
+    }
+
+    @Test
     public void testChrome(){
         String ua = "Mozilla/5.0 (Linux; Android 5.1.1; vivo X9 Build/HQU06P; wv) AppleWebKit/537.36 (KHTML, like Gecko) Version/4.0 Chrome";
         Browser browser = parse(ua);
@@ -104,5 +123,12 @@ public class BrowserParserTest {
         String ua="Funshion/2.7.1.4 (Android/4.2.2; aphone; T200-C)";
         Browser browser = parse(ua);
         assertThat(browser.brand,is("Funshion"));
+    }
+
+    @Test
+    public void testImgoTV(){
+        String ua="ImgoTV-ipad/4.3.0 (iPad; iOS 8.3; Scale/2.00)";
+        Browser browser = parse(ua);
+        assertThat(browser.brand,is("ImgoTV"));
     }
 }

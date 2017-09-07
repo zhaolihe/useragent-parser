@@ -92,6 +92,9 @@
   is_mobile_replacement: 'true'
   v1_replacement: '3'
 
+- regex: '([Aa]ndroid)\W'
+  is_mobile_replacement: 'true'
+
 ##########
 # Kindle Android
 ##########

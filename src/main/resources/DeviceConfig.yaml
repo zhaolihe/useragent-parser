@@ -220,6 +220,10 @@
   brand_replacement: 'Huawei'
   device_replacement: 'Honor 8'
 
+- regex: '(PLK-CL00)'
+  brand_replacement: 'Huawei'
+  device_replacement: 'Honor 7'
+
 - regex: '(VTR-AL00)'
   brand_replacement: 'Huawei'
   device_replacement: 'P10'
@@ -280,6 +284,7 @@
 - regex: '(R\d\d\d[T7S]) Build'
   brand_replacement: 'OPPO'
   device_replacement: '$1'
+
 ##########
 # incomplete!
 # HTC
@@ -336,6 +341,12 @@
 ##########
 - regex: '(K\-TOUCH|K\-[Tt]ouch|TIANYU|Tianyu)[\W_]?(\w+)'
   brand_replacement: 'Tianyu'
+
+#########
+# NOASIN
+#########
+- regex: '(NOAIN)[\W_]?(\w+)'
+  brand_replacement: 'NOASIN'
 
 ##########
 # SonyEricsson - must come before nokia since they also use symbian
@@ -737,6 +748,10 @@
 - regex: '\b(E[6])(\d+)'
   brand_replacement: 'Sony'
   device_replacement: '$1$2'
+- regex: '\W(SO-01J)\W'
+  brand_replacement: 'Sony'
+  device_replacement: '$1'
+
 
 # e.g. ME525, MB525, XT910
 - regex: '\b(XT|MB|ME)(\d{3})\b'

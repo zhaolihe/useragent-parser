@@ -191,4 +191,54 @@ public class UserAgentParserTest {
         assertNotNull(info);
         assertThat(info.getBrowserName().toString(),is("QingtingFM"));
     }
+
+    @Test
+    public void testFanli(){
+        String ua = "Fanli/5.6.0.23 (HUAWEI HUAWEI NXT-AL10; Android 6.0; zh_CN; ID:2-32500458-61897855445999-12-11)";
+        UserAgentInfo info = parser.getUserAgentInfo(ua);
+        assertNotNull(info);
+        assertThat(info.getBrowserName().toString(),is("Fanli"));
+    }
+
+    @Test
+    public void testUnicom(){
+        String ua = "Mozilla/5.0 (Linux; Android 6.0.1; vivo X9 Build/MMB29M; wv) AppleWebKit/537.36 (KHTML, like Gecko) Version/4.0 Chrome/51.0.2704.81 Mobile Safari/537.36; unicom{version:android@5.31,desmobile:15517273037}";
+        UserAgentInfo info = parser.getUserAgentInfo(ua);
+        assertNotNull(info);
+        assertThat(info.getBrowserName().toString(),is("Unicom"));
+    }
+
+    @Test
+    public void testWeibo(){
+        String ua = "Mozilla/5.0 (Linux; Android 4.4.4; vivo Y13iL Build/KTU84P) AppleWebKit/537.36 (KHTML, like Gecko) Version/4.0 Chrome/33.0.0.0 Mobile Safari/537.36 Weibo (vivo-vivo Y13iL__weibo__6.6.0__android__android4.4.4)";
+        UserAgentInfo info = parser.getUserAgentInfo(ua);
+        assertNotNull(info);
+        assertThat(info.getBrowserName().toString(),is("Weibo"));
+    }
+
+    @Test
+    public void testAutohome(){
+        String ua = "Mozilla/5.0 (iPhone; CPU iPhone OS 10_3_3 like Mac OS X) AppleWebKit/603.3.8 (KHTML, like Gecko) Mobile/14G60 auto_iphone/8.3.1 nettype/wifi autohomeapp/1.0 (auto_iphone;8.3.1;tFE3RQtL8w5EuK70bs_KIMRI0sBGRKL-814yPJJI5PAwxsATibJ_SsOlR-6Zwg5qCzsa_51Qz82vIQj8xhS9s4O5XlqezRvQmGueStpiYR6f4cSH7oZmnA;10.3.3;iPhone)";
+        UserAgentInfo info = parser.getUserAgentInfo(ua);
+        assertNotNull(info);
+        assertThat(info.getBrowserName().toString(),is("Autohome"));
+    }
+
+    @Test
+    public void testNoasin(){
+        String uaExpr="Mozilla/5.0 (Linux; Android 5.1; NOAIN X9V Build/LMY47D) AppleWebKit/537.36 (KHTML, like Gecko) Version/4.0 Chrome/39.0.0.0 Mobile Safari/537.36 wkbrowser 4.1.82 3102";
+        UserAgentInfo info = parser.getUserAgentInfo(uaExpr);
+        assertNotNull(info);
+        assertThat(info.getDeviceBrand().toString(),is("NOASIN"));
+    }
+
+    @Test
+    public void testHonor7(){
+        String uaExpr = "Mozilla/5.0 (Linux; Android 5.1;PLK-CL00 Build/LMY47D) AppleWebKit/537.36 (KHTML, like Gecko) Version/4.0 Chrome/39.0.0.0 Mobile Safari/537.36 SogouSearch Android1.0 version3.0 AppVersion/4961";
+        UserAgentInfo info = parser.getUserAgentInfo(uaExpr);
+        assertNotNull(info);
+        assertThat(info.getDeviceBrand().toString(), is("Huawei"));
+        assertThat(info.getDeviceName().toString(), is("Huawei Honor 7"));
+    }
+
 }

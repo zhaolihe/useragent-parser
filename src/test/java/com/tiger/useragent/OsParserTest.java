@@ -90,8 +90,8 @@ public class OsParserTest {
     @Test
     public void testNetType(){
         String uaExpr="Mozilla/5.0 (Linux; U; Android 2.3.5; zh-cn; D510 Build/MocorDroid2.3.5) AppleWebKit/533.1 (KHTML, like Gecko) Version/4.0 Mobile Safari/533.1 V1_AND_SQ_4.6.1_9_YYB_D QQ/5.3.1.660 NetType/WIFI 10000507";
-        Pattern netTypePattern=Pattern.compile("nettype[ |/]?(\\w*)",Pattern.CASE_INSENSITIVE);
-        Matcher matcher = netTypePattern.matcher(uaExpr.toLowerCase());
+        Pattern netTypePattern=Pattern.compile("nettype[ /](\\w*)",Pattern.CASE_INSENSITIVE);
+        Matcher matcher = netTypePattern.matcher(uaExpr);
         if(matcher.find()){
             String netType=matcher.group(1);
             assertThat(netType,is("WIFI"));

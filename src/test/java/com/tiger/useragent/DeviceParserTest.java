@@ -38,4 +38,5 @@ public class DeviceParserTest {
             System.out.println(key + "&&" + value);
         }
     }
+
 }
