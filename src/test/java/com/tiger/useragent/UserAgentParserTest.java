@@ -224,4 +224,21 @@ public class UserAgentParserTest {
         assertThat(info.getBrowserName().toString(),is("Autohome"));
     }
 
+    @Test
+    public void testNoasin(){
+        String uaExpr="Mozilla/5.0 (Linux; Android 5.1; NOAIN X9V Build/LMY47D) AppleWebKit/537.36 (KHTML, like Gecko) Version/4.0 Chrome/39.0.0.0 Mobile Safari/537.36 wkbrowser 4.1.82 3102";
+        UserAgentInfo info = parser.getUserAgentInfo(uaExpr);
+        assertNotNull(info);
+        assertThat(info.getDeviceBrand().toString(),is("NOASIN"));
+    }
+
+    @Test
+    public void testHonor7(){
+        String uaExpr = "Mozilla/5.0 (Linux; Android 5.1;PLK-CL00 Build/LMY47D) AppleWebKit/537.36 (KHTML, like Gecko) Version/4.0 Chrome/39.0.0.0 Mobile Safari/537.36 SogouSearch Android1.0 version3.0 AppVersion/4961";
+        UserAgentInfo info = parser.getUserAgentInfo(uaExpr);
+        assertNotNull(info);
+        assertThat(info.getDeviceBrand().toString(), is("Huawei"));
+        assertThat(info.getDeviceName().toString(), is("Huawei Honor 7"));
+    }
+
 }
