@@ -7,6 +7,8 @@ import org.junit.Test;
 import java.io.IOException;
 import java.util.Arrays;
 import java.util.List;
+import java.util.regex.Matcher;
+import java.util.regex.Pattern;
 
 import static org.hamcrest.CoreMatchers.is;
 import static org.junit.Assert.*;
@@ -228,6 +230,7 @@ public class UserAgentParserTest {
     public void testNoasin(){
         String uaExpr="Mozilla/5.0 (Linux; Android 5.1; NOAIN X9V Build/LMY47D) AppleWebKit/537.36 (KHTML, like Gecko) Version/4.0 Chrome/39.0.0.0 Mobile Safari/537.36 wkbrowser 4.1.82 3102";
         UserAgentInfo info = parser.getUserAgentInfo(uaExpr);
+
         assertNotNull(info);
         assertThat(info.getDeviceBrand().toString(),is("NOASIN"));
     }
@@ -241,4 +244,76 @@ public class UserAgentParserTest {
         assertThat(info.getDeviceName().toString(), is("Huawei Honor 7"));
     }
 
+    @Test
+    public void testDouban(){
+        String uaExpr = "Mozilla/5.0 (Linux; Android 7.0; MHA-AL00 Build/HUAWEIMHA-AL00; wv) AppleWebKit/537.36 (KHTML, like Gecko) Version/4.0 Chrome/55.0.2883.91 Mobile Safari/537.36 udid/8a7b587adcd34ee50a74dbd86dd3b548536cd7d2 com.douban.frodo/4.11.4(90) DoubanApp";
+        UserAgentInfo info = parser.getUserAgentInfo(uaExpr);
+        assertNotNull(info);
+        assertThat(info.getBrowserName().toString(),is("Douban"));
+    }
+
+    @Test
+    public void testIdentityByUdid(){
+        String uaExpr="Mozilla/5.0 (Linux; Android 7.0; MHA-AL00 Build/HUAWEIMHA-AL00; wv) AppleWebKit/537.36 (KHTML, like Gecko) Version/4.0 Chrome/55.0.2883.91 Mobile Safari/537.36 udid/8a7b587adcd34ee50a74dbd86dd3b548536cd7d2 com.douban.frodo/4.11.4(90) DoubanApp";
+        Pattern identityPattern = Pattern.compile("\\W(deviceid|deviceId|DEVICE|device|sdk_guid|GUID|guid|Id|ID|id|udid|UDID)[\" /:=]+([\\w-]+)",Pattern.CASE_INSENSITIVE);
+        Matcher matcher = identityPattern.matcher(uaExpr);
+        if(matcher.find()){
+            String key = matcher.group(1);
+            String value = matcher.group(2);
+            assertThat(key,is("udid"));
+            assertThat(value,is("8a7b587adcd34ee50a74dbd86dd3b548536cd7d2"));
+
+        }
+        uaExpr = "Mozilla/5.0 (Linux; Android 6.0.1;MI NOTE LTE Build/HUAWEIRIO-UL00; wv) AppleWebKit/537.36 (KHTML, like Gecko) Version/4.0 Chrome/55.0.2883.91 Mobile Safari/537.36source=appmall&ua=jsapp&platform=android&netmode=cmnet&ch=02&time=20170525091654&loginmobile=18761113037&version=6.2.0.1&poi=%E5%AE%89%E5%BE%BD%E7%9C%81%E6%BB%81%E5%B7%9E%E5%B8%82%E6%98%8E%E5%85%89%E5%B8%82&deviceid=76CEA3B5DCF655503FB8412D7E73A3A9&lat=32.7689&channel=sd&lng=118.0291&sign=D3276DA6BBDF03A4755E1AEFD5C59675";
+        matcher = identityPattern.matcher(uaExpr);
+        if(matcher.find()){
+            String key = matcher.group(1);
+            String value = matcher.group(2);
+            assertThat(key, is("deviceid"));
+            assertThat(value,is("76CEA3B5DCF655503FB8412D7E73A3A9"));
+        }
+
+        uaExpr = "Qing/0.9.54;Android 7.0;HONOR;KNT-AL20;deviceId:2624f5de-3e37-46d2-8348-64f53194b9da;deviceName:HONOR KNT-AL20;clientId:10201;;os:Android 7.0;brand:HONOR;model:KNT-AL20;Mozilla/5.0 (Linux; Android 7.0; KNT-AL20 Build/HUAWEIKNT-AL20; wv) AppleWebKit/537.36 (KHTML, like Gecko) Version/4.0 Chrome/53.0.2785.49 Mobile MQQBrowser/6.2 TBS/043508 Safari/537.36";
+        matcher = identityPattern.matcher(uaExpr);
+        if (matcher.find()) {
+            String key = matcher.group(1);
+            String value = matcher.group(2);
+            assertThat(key, is("deviceId"));
+            assertThat(value,is("2624f5de-3e37-46d2-8348-64f53194b9da"));
+        }
+
+        uaExpr = "Mozilla/5.0 (Linux; Android 5.1.1; vivo X6S A Build/LMY47V) AppleWebKit/537.36 (KHTML, like Gecko) Version/4.0 Chrome/39.0.0.0 Mobile Safari/537.36 MagicKitchen/3.7.4 NetType/WIFI DEVICE/6e8c5f4fd87dee088d7b95b1174f137f";
+        matcher = identityPattern.matcher(uaExpr);
+        if (matcher.find()) {
+            String key = matcher.group(1);
+            String value = matcher.group(2);
+            assertThat(key,is("DEVICE"));
+            assertThat(value,is("6e8c5f4fd87dee088d7b95b1174f137f"));
+        }
+
+        uaExpr = "Mozilla/5.0 (Linux; Android 4.4.4; SM-G5308W Build/KTU84P) AppleWebKit/537.36 (KHTML, like Gecko) Version/4.0 Chrome/33.0.0.0 Mobile Safari/537.36 Youku/6.8.1 (Android 4.4.4; Bridge_SDK; GUID 2465b4825dd462925908351442a8586e; UTDID VQ05e8RsBOoDAIvT7gsd8l2";
+        matcher = identityPattern.matcher(uaExpr);
+        if (matcher.find()) {
+            String key = matcher.group(1);
+            String value = matcher.group(2);
+            assertThat(key, is("GUID"));
+            assertThat(value,is("2465b4825dd462925908351442a8586e"));
+        }
+        uaExpr = "Mozilla/5.0 (Linux; Android 6.0.1;Redmi Note 2 Build/MMB29M; wv) AppleWebKit/537.36 (KHTML, like Gecko) Version/4.0 Chrome/46.0.2490.76 Mobile Safari/537.36 fanwe_app_sdk sdk_type/android sdk_version_name/2.4.1 sdk_version/2017072102 sdk_guid/864337031189138 screen_width/1080 screen_height/1920";
+        matcher = identityPattern.matcher(uaExpr);
+        if (matcher.find()) {
+            String key = matcher.group(1);
+            String value = matcher.group(2);
+            assertThat(key, is("sdk_guid"));
+            assertThat(value,is("864337031189138"));
+        }
+        uaExpr = "Mozilla/5.0 (compatible; MSIE 10.0; Windows NT 6.1; WOW64; Trident/6.0) (iTools{\"a\":\"x86\",\"c\":1,\"guid\":\"C55CF0B846C066D57F3AD528810E53BD\",\"i\":\"C55CF0B846C066D57F3AD528810E53BD\",\"l\":1,\"p\":21,\"v\":3410}slooTi)";
+        matcher = identityPattern.matcher(uaExpr);
+        if (matcher.find()) {
+            String key = matcher.group(1);
+            String value = matcher.group(2);
+            assertThat(key, is("guid"));
+            assertThat(value,is("C55CF0B846C066D57F3AD528810E53BD"));
+        }
+    }
 }

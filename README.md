@@ -23,6 +23,8 @@ now, this libary has be using, if having any question in using, please let me kn
 * 常见移动设备
 * 网络类型
 * 设备类型，PC/Phone/Pad/TV
+* 设备唯一标识
+* ~~.net版本信息~~
 
 
 ### 增加的设备

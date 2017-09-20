@@ -10,8 +10,8 @@ import org.apache.avro.specific.SpecificData;
 @SuppressWarnings("all")
 @org.apache.avro.specific.AvroGenerated
 public class UserAgentInfo extends org.apache.avro.specific.SpecificRecordBase implements org.apache.avro.specific.SpecificRecord {
-  private static final long serialVersionUID = 2705379524761283103L;
-  public static final org.apache.avro.Schema SCHEMA$ = new org.apache.avro.Schema.Parser().parse("{\"type\":\"record\",\"name\":\"UserAgentInfo\",\"namespace\":\"com.tiger.useragent\",\"fields\":[{\"name\":\"os_name\",\"type\":\"string\",\"default\":\"-\"},{\"name\":\"os_detail\",\"type\":\"string\",\"default\":\"-\"},{\"name\":\"browser_name\",\"type\":\"string\",\"default\":\"-\"},{\"name\":\"browser_detail\",\"type\":\"string\",\"default\":\"-\"},{\"name\":\"device_brand\",\"type\":\"string\",\"default\":\"-\"},{\"name\":\"device_name\",\"type\":\"string\",\"default\":\"-\"},{\"name\":\"device_type\",\"type\":\"string\",\"default\":\"-\"},{\"name\":\"is_mobile\",\"type\":\"boolean\",\"default\":false},{\"name\":\"dotnet_version\",\"type\":\"string\",\"default\":\"-\"},{\"name\":\"net_type\",\"type\":\"string\",\"default\":\"-\"},{\"name\":\"screen_size\",\"type\":\"float\",\"default\":0}]}");
+  private static final long serialVersionUID = -5306765963239194312L;
+  public static final org.apache.avro.Schema SCHEMA$ = new org.apache.avro.Schema.Parser().parse("{\"type\":\"record\",\"name\":\"UserAgentInfo\",\"namespace\":\"com.tiger.useragent\",\"fields\":[{\"name\":\"os_name\",\"type\":\"string\",\"default\":\"-\"},{\"name\":\"os_detail\",\"type\":\"string\",\"default\":\"-\"},{\"name\":\"browser_name\",\"type\":\"string\",\"default\":\"-\"},{\"name\":\"browser_detail\",\"type\":\"string\",\"default\":\"-\"},{\"name\":\"device_brand\",\"type\":\"string\",\"default\":\"-\"},{\"name\":\"device_name\",\"type\":\"string\",\"default\":\"-\"},{\"name\":\"device_type\",\"type\":\"string\",\"default\":\"-\"},{\"name\":\"is_mobile\",\"type\":\"boolean\",\"default\":false},{\"name\":\"net_type\",\"type\":\"string\",\"default\":\"-\"},{\"name\":\"device_id\",\"type\":\"string\",\"default\":\"-\"},{\"name\":\"screen_size\",\"type\":\"float\",\"default\":0}]}");
   public static org.apache.avro.Schema getClassSchema() { return SCHEMA$; }
   @Deprecated public java.lang.CharSequence os_name;
   @Deprecated public java.lang.CharSequence os_detail;
@@ -21,8 +21,8 @@ public class UserAgentInfo extends org.apache.avro.specific.SpecificRecordBase i
   @Deprecated public java.lang.CharSequence device_name;
   @Deprecated public java.lang.CharSequence device_type;
   @Deprecated public boolean is_mobile;
-  @Deprecated public java.lang.CharSequence dotnet_version;
   @Deprecated public java.lang.CharSequence net_type;
+  @Deprecated public java.lang.CharSequence device_id;
   @Deprecated public float screen_size;
 
   /**
@@ -42,11 +42,11 @@ public class UserAgentInfo extends org.apache.avro.specific.SpecificRecordBase i
    * @param device_name The new value for device_name
    * @param device_type The new value for device_type
    * @param is_mobile The new value for is_mobile
-   * @param dotnet_version The new value for dotnet_version
    * @param net_type The new value for net_type
+   * @param device_id The new value for device_id
    * @param screen_size The new value for screen_size
    */
-  public UserAgentInfo(java.lang.CharSequence os_name, java.lang.CharSequence os_detail, java.lang.CharSequence browser_name, java.lang.CharSequence browser_detail, java.lang.CharSequence device_brand, java.lang.CharSequence device_name, java.lang.CharSequence device_type, java.lang.Boolean is_mobile, java.lang.CharSequence dotnet_version, java.lang.CharSequence net_type, java.lang.Float screen_size) {
+  public UserAgentInfo(java.lang.CharSequence os_name, java.lang.CharSequence os_detail, java.lang.CharSequence browser_name, java.lang.CharSequence browser_detail, java.lang.CharSequence device_brand, java.lang.CharSequence device_name, java.lang.CharSequence device_type, java.lang.Boolean is_mobile, java.lang.CharSequence net_type, java.lang.CharSequence device_id, java.lang.Float screen_size) {
     this.os_name = os_name;
     this.os_detail = os_detail;
     this.browser_name = browser_name;
@@ -55,8 +55,8 @@ public class UserAgentInfo extends org.apache.avro.specific.SpecificRecordBase i
     this.device_name = device_name;
     this.device_type = device_type;
     this.is_mobile = is_mobile;
-    this.dotnet_version = dotnet_version;
     this.net_type = net_type;
+    this.device_id = device_id;
     this.screen_size = screen_size;
   }
 
@@ -72,8 +72,8 @@ public class UserAgentInfo extends org.apache.avro.specific.SpecificRecordBase i
     case 5: return device_name;
     case 6: return device_type;
     case 7: return is_mobile;
-    case 8: return dotnet_version;
-    case 9: return net_type;
+    case 8: return net_type;
+    case 9: return device_id;
     case 10: return screen_size;
     default: throw new org.apache.avro.AvroRuntimeException("Bad index");
     }
@@ -91,8 +91,8 @@ public class UserAgentInfo extends org.apache.avro.specific.SpecificRecordBase i
     case 5: device_name = (java.lang.CharSequence)value$; break;
     case 6: device_type = (java.lang.CharSequence)value$; break;
     case 7: is_mobile = (java.lang.Boolean)value$; break;
-    case 8: dotnet_version = (java.lang.CharSequence)value$; break;
-    case 9: net_type = (java.lang.CharSequence)value$; break;
+    case 8: net_type = (java.lang.CharSequence)value$; break;
+    case 9: device_id = (java.lang.CharSequence)value$; break;
     case 10: screen_size = (java.lang.Float)value$; break;
     default: throw new org.apache.avro.AvroRuntimeException("Bad index");
     }
@@ -227,22 +227,6 @@ public class UserAgentInfo extends org.apache.avro.specific.SpecificRecordBase i
   }
 
   /**
-   * Gets the value of the 'dotnet_version' field.
-   * @return The value of the 'dotnet_version' field.
-   */
-  public java.lang.CharSequence getDotnetVersion() {
-    return dotnet_version;
-  }
-
-  /**
-   * Sets the value of the 'dotnet_version' field.
-   * @param value the value to set.
-   */
-  public void setDotnetVersion(java.lang.CharSequence value) {
-    this.dotnet_version = value;
-  }
-
-  /**
    * Gets the value of the 'net_type' field.
    * @return The value of the 'net_type' field.
    */
@@ -256,6 +240,22 @@ public class UserAgentInfo extends org.apache.avro.specific.SpecificRecordBase i
    */
   public void setNetType(java.lang.CharSequence value) {
     this.net_type = value;
+  }
+
+  /**
+   * Gets the value of the 'device_id' field.
+   * @return The value of the 'device_id' field.
+   */
+  public java.lang.CharSequence getDeviceId() {
+    return device_id;
+  }
+
+  /**
+   * Sets the value of the 'device_id' field.
+   * @param value the value to set.
+   */
+  public void setDeviceId(java.lang.CharSequence value) {
+    this.device_id = value;
   }
 
   /**
@@ -314,8 +314,8 @@ public class UserAgentInfo extends org.apache.avro.specific.SpecificRecordBase i
     private java.lang.CharSequence device_name;
     private java.lang.CharSequence device_type;
     private boolean is_mobile;
-    private java.lang.CharSequence dotnet_version;
     private java.lang.CharSequence net_type;
+    private java.lang.CharSequence device_id;
     private float screen_size;
 
     /** Creates a new Builder */
@@ -361,12 +361,12 @@ public class UserAgentInfo extends org.apache.avro.specific.SpecificRecordBase i
         this.is_mobile = data().deepCopy(fields()[7].schema(), other.is_mobile);
         fieldSetFlags()[7] = true;
       }
-      if (isValidValue(fields()[8], other.dotnet_version)) {
-        this.dotnet_version = data().deepCopy(fields()[8].schema(), other.dotnet_version);
+      if (isValidValue(fields()[8], other.net_type)) {
+        this.net_type = data().deepCopy(fields()[8].schema(), other.net_type);
         fieldSetFlags()[8] = true;
       }
-      if (isValidValue(fields()[9], other.net_type)) {
-        this.net_type = data().deepCopy(fields()[9].schema(), other.net_type);
+      if (isValidValue(fields()[9], other.device_id)) {
+        this.device_id = data().deepCopy(fields()[9].schema(), other.device_id);
         fieldSetFlags()[9] = true;
       }
       if (isValidValue(fields()[10], other.screen_size)) {
@@ -413,12 +413,12 @@ public class UserAgentInfo extends org.apache.avro.specific.SpecificRecordBase i
         this.is_mobile = data().deepCopy(fields()[7].schema(), other.is_mobile);
         fieldSetFlags()[7] = true;
       }
-      if (isValidValue(fields()[8], other.dotnet_version)) {
-        this.dotnet_version = data().deepCopy(fields()[8].schema(), other.dotnet_version);
+      if (isValidValue(fields()[8], other.net_type)) {
+        this.net_type = data().deepCopy(fields()[8].schema(), other.net_type);
         fieldSetFlags()[8] = true;
       }
-      if (isValidValue(fields()[9], other.net_type)) {
-        this.net_type = data().deepCopy(fields()[9].schema(), other.net_type);
+      if (isValidValue(fields()[9], other.device_id)) {
+        this.device_id = data().deepCopy(fields()[9].schema(), other.device_id);
         fieldSetFlags()[9] = true;
       }
       if (isValidValue(fields()[10], other.screen_size)) {
@@ -739,45 +739,6 @@ public class UserAgentInfo extends org.apache.avro.specific.SpecificRecordBase i
     }
 
     /**
-      * Gets the value of the 'dotnet_version' field.
-      * @return The value.
-      */
-    public java.lang.CharSequence getDotnetVersion() {
-      return dotnet_version;
-    }
-
-    /**
-      * Sets the value of the 'dotnet_version' field.
-      * @param value The value of 'dotnet_version'.
-      * @return This builder.
-      */
-    public com.tiger.useragent.UserAgentInfo.Builder setDotnetVersion(java.lang.CharSequence value) {
-      validate(fields()[8], value);
-      this.dotnet_version = value;
-      fieldSetFlags()[8] = true;
-      return this;
-    }
-
-    /**
-      * Checks whether the 'dotnet_version' field has been set.
-      * @return True if the 'dotnet_version' field has been set, false otherwise.
-      */
-    public boolean hasDotnetVersion() {
-      return fieldSetFlags()[8];
-    }
-
-
-    /**
-      * Clears the value of the 'dotnet_version' field.
-      * @return This builder.
-      */
-    public com.tiger.useragent.UserAgentInfo.Builder clearDotnetVersion() {
-      dotnet_version = null;
-      fieldSetFlags()[8] = false;
-      return this;
-    }
-
-    /**
       * Gets the value of the 'net_type' field.
       * @return The value.
       */
@@ -791,9 +752,9 @@ public class UserAgentInfo extends org.apache.avro.specific.SpecificRecordBase i
       * @return This builder.
       */
     public com.tiger.useragent.UserAgentInfo.Builder setNetType(java.lang.CharSequence value) {
-      validate(fields()[9], value);
+      validate(fields()[8], value);
       this.net_type = value;
-      fieldSetFlags()[9] = true;
+      fieldSetFlags()[8] = true;
       return this;
     }
 
@@ -802,7 +763,7 @@ public class UserAgentInfo extends org.apache.avro.specific.SpecificRecordBase i
       * @return True if the 'net_type' field has been set, false otherwise.
       */
     public boolean hasNetType() {
-      return fieldSetFlags()[9];
+      return fieldSetFlags()[8];
     }
 
 
@@ -812,6 +773,45 @@ public class UserAgentInfo extends org.apache.avro.specific.SpecificRecordBase i
       */
     public com.tiger.useragent.UserAgentInfo.Builder clearNetType() {
       net_type = null;
+      fieldSetFlags()[8] = false;
+      return this;
+    }
+
+    /**
+      * Gets the value of the 'device_id' field.
+      * @return The value.
+      */
+    public java.lang.CharSequence getDeviceId() {
+      return device_id;
+    }
+
+    /**
+      * Sets the value of the 'device_id' field.
+      * @param value The value of 'device_id'.
+      * @return This builder.
+      */
+    public com.tiger.useragent.UserAgentInfo.Builder setDeviceId(java.lang.CharSequence value) {
+      validate(fields()[9], value);
+      this.device_id = value;
+      fieldSetFlags()[9] = true;
+      return this;
+    }
+
+    /**
+      * Checks whether the 'device_id' field has been set.
+      * @return True if the 'device_id' field has been set, false otherwise.
+      */
+    public boolean hasDeviceId() {
+      return fieldSetFlags()[9];
+    }
+
+
+    /**
+      * Clears the value of the 'device_id' field.
+      * @return This builder.
+      */
+    public com.tiger.useragent.UserAgentInfo.Builder clearDeviceId() {
+      device_id = null;
       fieldSetFlags()[9] = false;
       return this;
     }
@@ -866,8 +866,8 @@ public class UserAgentInfo extends org.apache.avro.specific.SpecificRecordBase i
         record.device_name = fieldSetFlags()[5] ? this.device_name : (java.lang.CharSequence) defaultValue(fields()[5]);
         record.device_type = fieldSetFlags()[6] ? this.device_type : (java.lang.CharSequence) defaultValue(fields()[6]);
         record.is_mobile = fieldSetFlags()[7] ? this.is_mobile : (java.lang.Boolean) defaultValue(fields()[7]);
-        record.dotnet_version = fieldSetFlags()[8] ? this.dotnet_version : (java.lang.CharSequence) defaultValue(fields()[8]);
-        record.net_type = fieldSetFlags()[9] ? this.net_type : (java.lang.CharSequence) defaultValue(fields()[9]);
+        record.net_type = fieldSetFlags()[8] ? this.net_type : (java.lang.CharSequence) defaultValue(fields()[8]);
+        record.device_id = fieldSetFlags()[9] ? this.device_id : (java.lang.CharSequence) defaultValue(fields()[9]);
         record.screen_size = fieldSetFlags()[10] ? this.screen_size : (java.lang.Float) defaultValue(fields()[10]);
         return record;
       } catch (Exception e) {
