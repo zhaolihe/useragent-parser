@@ -27,6 +27,13 @@
   family_replacement: 'Funshion'
   brand_replacement: 'Funshion'
 
+########
+# 豆瓣
+########
+- regex: '(doubanapp)'
+  family_replacement: 'Douban'
+  brand_replacement: 'Douban'
+
 ##########
 # QQ
 #########
@@ -107,6 +114,13 @@
   family_replacement: 'QingtingFM'
   brand_replacement: 'QingtingFM'
 
+
+##########
+# stackoverflow
+##########
+- regex: '(chinasoclient)'
+  family_replacement: 'Stack Overflow'
+  brand_replacement: 'Stack Overflow'
 
 
 ##########

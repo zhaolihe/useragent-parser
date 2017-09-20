@@ -228,6 +228,7 @@ public class UserAgentParserTest {
     public void testNoasin(){
         String uaExpr="Mozilla/5.0 (Linux; Android 5.1; NOAIN X9V Build/LMY47D) AppleWebKit/537.36 (KHTML, like Gecko) Version/4.0 Chrome/39.0.0.0 Mobile Safari/537.36 wkbrowser 4.1.82 3102";
         UserAgentInfo info = parser.getUserAgentInfo(uaExpr);
+
         assertNotNull(info);
         assertThat(info.getDeviceBrand().toString(),is("NOASIN"));
     }
@@ -241,4 +242,11 @@ public class UserAgentParserTest {
         assertThat(info.getDeviceName().toString(), is("Huawei Honor 7"));
     }
 
+    @Test
+    public void testDouban(){
+        String uaExpr = "Mozilla/5.0 (Linux; Android 7.0; MHA-AL00 Build/HUAWEIMHA-AL00; wv) AppleWebKit/537.36 (KHTML, like Gecko) Version/4.0 Chrome/55.0.2883.91 Mobile Safari/537.36 udid/8a7b587adcd34ee50a74dbd86dd3b548536cd7d2 com.douban.frodo/4.11.4(90) DoubanApp";
+        UserAgentInfo info = parser.getUserAgentInfo(uaExpr);
+        assertNotNull(info);
+        assertThat(info.getBrowserName().toString(),is("Douban"));
+    }
 }
