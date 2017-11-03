@@ -4,7 +4,7 @@
 
     <groupId>com.tiger.useragent</groupId>
     <artifactId>useragent-parser</artifactId>
-    <version>1.0-SNAPSHOT</version>
+    <version>1.0.4</version>
     <packaging>jar</packaging>
 
     <name>useragent-parser</name>
@@ -17,7 +17,7 @@
         <dependency>
             <groupId>org.apache.avro</groupId>
             <artifactId>avro</artifactId>
-            <version>1.8.1</version>
+            <version>1.7.6-cdh5.8.2</version>
         </dependency>
         <dependency>
             <groupId>org.yaml</groupId>
@@ -46,7 +46,7 @@
             <plugin>
                 <groupId>org.apache.avro</groupId>
                 <artifactId>avro-maven-plugin</artifactId>
-                <version>1.8.1</version>
+                <version>1.7.6-cdh5.8.2</version>
                 <executions>
                     <execution>
                         <phase>generate-sources</phase>

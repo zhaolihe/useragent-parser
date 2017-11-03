@@ -1,6 +1,7 @@
 package com.tiger.useragent;
 
-import avro.shaded.com.google.common.collect.Maps;
+
+import com.google.common.collect.Maps;
 
 import java.io.BufferedReader;
 import java.io.IOException;
