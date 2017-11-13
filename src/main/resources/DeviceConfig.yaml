@@ -80,12 +80,6 @@
   is_mobile_replacement: 'true'
   device_type_replacement: 'mobile'
 
-- regex: '(ADNetClient)'
-  brand_replacement: 'AD .NET'
-  device_replacement: '.NET Spider'
-  is_mobile_replacement: 'false'
-  device_type_replacement: 'Spider'
-
 ##########################################################################
 # First Brand Match
 ##########################################################################
