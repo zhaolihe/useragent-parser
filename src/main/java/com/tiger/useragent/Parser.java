@@ -27,7 +27,7 @@ public class Parser {
     private final static Pattern pattern = Pattern.compile("\\.net( clr | client )?(?<ver>\\d(\\.\\d)?)(\\.\\d+)*[ce;$) ]", Pattern.CASE_INSENSITIVE);
     private final static Pattern netTypePattern =Pattern.compile("\\W(WIFI|5G|4G|3G|2G)\\W",Pattern.CASE_INSENSITIVE);
     private final static Pattern screenSizePattern = Pattern.compile("\\W(\\d{3,4}x\\d{3,4})\\W",Pattern.CASE_INSENSITIVE);
-    private final static Pattern deviceIdPattern = Pattern.compile("\\W(deviceid|deviceId|DEVICE|device|sdk_guid|GUID|guid|Id|ID|id|udid|UDID)[\" /:=]+([\\w-]+)",Pattern.CASE_INSENSITIVE);
+    private final static Pattern deviceIdPattern = Pattern.compile("[\\s&;\"](deviceid|deviceId|DEVICE|device|sdk_guid|GUID|guid|Id|ID|id|udid|UDID)[\" /:=]+([\\w-]+)",Pattern.CASE_INSENSITIVE);
     public static Map<String, Map<String, String>> mobileParser;
 
     public Parser() throws IOException {
@@ -127,7 +127,7 @@ public class Parser {
         if(matcher.find()){
             result=matcher.group(2);
         }
-        return Strings.isNullOrEmpty(result) ? DEFAULT_VALUE : result;
+        return Strings.isNullOrEmpty(result) || result.length()<32 ? DEFAULT_VALUE : result;
     }
 
     public Device parseDevice(String agentString) {

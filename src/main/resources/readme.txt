@@ -1,5 +1,6 @@
 设备号规则
 DEVICE/32位 MagicKitchen
+Device/设备厂商  QQ
 GUID 32位   Youku
 Id/32位  金立手机
 udid:16位 ChinasoClient(stackoverflow客户端)
