@@ -253,6 +253,15 @@ public class UserAgentParserTest {
     }
 
     @Test
+    public void testDevice(){
+//        String uaExpr = "Mozilla/5.0 (iPhone; CPU iPhone OS 11_1_2 like Mac OS X) AppleWebKit/604.3.5 (KHTML, like Gecko) Mobile/15B202 QQ/7.2.8.478 V1_IPH_SQ_7.2.8_1_APP_A Pixel/640 Core/UIWebView Device/Apple(Unknown iOS device) NetType/WIFI QBWebViewType/1";
+        String uaExpr = "Mozilla/5.0 (Linux; Android 5.1; M651CY Build/LMY47D) AppleWebKit/537.36 (KHTML, like Gecko) Version/4.0 Chrome/39.0.0.0 Mobile Safari/537.36 X-Tingyun-Id/p35OnrDoP8k;c=2;r=1392755971; hebao/7.0.109 NetType/wifi";
+        UserAgentInfo info = parser.getUserAgentInfo(uaExpr);
+        assertNotNull(info);
+        assertThat(info.getDeviceId().toString(), is("-"));
+    }
+
+    @Test
     public void testIdentityByUdid() {
         String uaExpr = "Mozilla/5.0 (Linux; Android 7.0; MHA-AL00 Build/HUAWEIMHA-AL00; wv) AppleWebKit/537.36 (KHTML, like Gecko) Version/4.0 Chrome/55.0.2883.91 Mobile Safari/537.36 udid/8a7b587adcd34ee50a74dbd86dd3b548536cd7d2 com.douban.frodo/4.11.4(90) DoubanApp";
         Pattern identityPattern = Pattern.compile("[\\s&;\"](deviceid|deviceId|DEVICE|device|sdk_guid|GUID|guid|\\sId|\\sID|\\sid|udid|UDID)[\" /:=]+([\\w-]+)", Pattern.CASE_INSENSITIVE);
@@ -335,5 +344,25 @@ public class UserAgentParserTest {
         uaExpr = "Mozilla/5.0 (Linux; Android 7.0; HUAWEI CAZ-AL10 Build/HUAWEICAZ-AL10; wv) AppleWebKit/537.36 (KHTML, like Gecko) Version/4.0 Chrome/55.0.2883.91 Mobile Safari/537.36 X-Tingyun-Id/null;c=2;r=1468719239;";
         matcher = identityPattern.matcher(uaExpr);
         assertFalse(matcher.find());
+
+
+        uaExpr = "Mozilla/5.0 (Linux; Android 5.1.1; vivo Y31A Build/LMY47V) AppleWebKit/537.36 (KHTML, like Gecko) Version/4.0 Chrome/39.0.0.0 Mobile Safari/537.36 Xiaodupi/4.10 nettype/wifi device/vivo Y31A channel/yingyongbao deviceId/15df255a4c9df724 uid/1137883930";
+        matcher = identityPattern.matcher(uaExpr);
+        assertTrue(matcher.find());
+        {
+            String key = matcher.group(1);
+            System.out.println(key);
+        }
+    }
+
+    @Test
+    public void testRegex(){
+        Pattern netTypePattern =Pattern.compile("\\W(WIFI|5G|4G|3G|2G)\\W*",Pattern.CASE_INSENSITIVE);
+        String expr = "Mozilla/5.0 (Linux; Android 5.1; M651CY Build/LMY47D) AppleWebKit/537.36 (KHTML, like Gecko) Version/4.0 Chrome/39.0.0.0 Mobile Safari/537.36 X-Tingyun-Id/p35OnrDoP8k;c=2;r=1392755971; hebao/7.0.109 NetType/wifi";
+        Matcher matcher = netTypePattern.matcher(expr);
+        if (matcher.find()) {
+          String value = matcher.group(1);
+            System.out.println(value);
+        }
     }
 }
