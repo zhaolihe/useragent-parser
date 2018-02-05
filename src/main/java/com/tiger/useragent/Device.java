@@ -1,5 +1,7 @@
 package com.tiger.useragent;
 
+import static com.tiger.useragent.Constant.DEFAULT_VALUE;
+
 /**
  * com.tiger.useragent
  * author : zhaolihe
@@ -7,26 +9,26 @@ package com.tiger.useragent;
  * date : 2017/5/9
  */
 class Device {
-    public static final Device DEFAULT_PC_SCREEN = new Device("PC", "-", DeviceType.PC, false, 0);
-    public static final Device DEFAULT_PHONE_SCREEN = new Device("-", "-", DeviceType.Phone, true, 0);
-    public static final Device DEFAULT_TV = new Device("-", "-", DeviceType.TV, false, 0);
+    public static final Device DEFAULT_PC_SCREEN = new Device("PC", DEFAULT_VALUE, DeviceType.PC, false, DEFAULT_VALUE);
+    public static final Device DEFAULT_PHONE_SCREEN = new Device(DEFAULT_VALUE, DEFAULT_VALUE, DeviceType.Phone, true, DEFAULT_VALUE);
+    public static final Device DEFAULT_TV = new Device(DEFAULT_VALUE, DEFAULT_VALUE, DeviceType.TV, false, DEFAULT_VALUE);
 
     public final String brand;
     public final String family;
     public final DeviceType deviceType;
     public final boolean isMobile;
 
-    public final float screenSize;
+    public final String screenSize;
 
     Device(String brand, String family, DeviceType deviceType, boolean isMobile) {
         this.brand = brand;
         this.family = family;
         this.deviceType = deviceType;
         this.isMobile = isMobile;
-        this.screenSize = 0;
+        this.screenSize = "";
     }
 
-    Device(String brand, String family, DeviceType deviceType, boolean isMobile, float screenSize) {
+    Device(String brand, String family, DeviceType deviceType, boolean isMobile, String screenSize) {
         this.brand = brand;
         this.family = family;
         this.deviceType = deviceType;

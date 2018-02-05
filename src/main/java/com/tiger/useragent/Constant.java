@@ -21,4 +21,6 @@ public class Constant {
 
     public final static String DEVICE = "device_replacement";
     public final static String DEVICE_TYPE = "device_type_replacement";
+
+    public final static String DEFAULT_VALUE = "-";
 }

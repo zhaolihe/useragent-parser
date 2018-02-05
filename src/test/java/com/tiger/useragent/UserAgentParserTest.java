@@ -253,6 +253,13 @@ public class UserAgentParserTest {
     }
 
     @Test
+    public void testScreen(){
+        String uaExpr = "\tMozilla/5.0 (Linux; Android 6.0; DIG-TL10 Build/HUAWEIDIG-TL10; wv) AppleWebKit/537.36 (KHTML, like Gecko) Version/4.0 Chrome/55.0.2883.91 Mobile Safari/537.36 Fanli/6.5.0.57 (ID:2-56124686-63269809102938-12-3; WVC:WV; SCR:720*1208-2.0)";
+        UserAgentInfo info = parser.getUserAgentInfo(uaExpr);
+        assertNotNull(info);
+    }
+
+    @Test
     public void testIdentityByUdid(){
         String uaExpr="Mozilla/5.0 (Linux; Android 7.0; MHA-AL00 Build/HUAWEIMHA-AL00; wv) AppleWebKit/537.36 (KHTML, like Gecko) Version/4.0 Chrome/55.0.2883.91 Mobile Safari/537.36 udid/8a7b587adcd34ee50a74dbd86dd3b548536cd7d2 com.douban.frodo/4.11.4(90) DoubanApp";
         Pattern identityPattern = Pattern.compile("\\W(deviceid|deviceId|DEVICE|device|sdk_guid|GUID|guid|Id|ID|id|udid|UDID)[\" /:=]+([\\w-]+)",Pattern.CASE_INSENSITIVE);

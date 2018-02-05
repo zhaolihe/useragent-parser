@@ -12,6 +12,8 @@ import java.util.Map;
 import java.util.regex.Matcher;
 import java.util.regex.Pattern;
 
+import static com.tiger.useragent.Constant.DEFAULT_VALUE;
+
 /**
  * com.tiger.useragent
  * author : zhaolihe
@@ -23,10 +25,10 @@ public class Parser {
     private BrowserParser browserParser;
     private DeviceParser deviceParser;
     private DeviceMap deviceMap;
-    private final static String DEFAULT_VALUE = "-";
+
     private final static Pattern pattern = Pattern.compile("\\.net( clr | client )?(?<ver>\\d(\\.\\d)?)(\\.\\d+)*[ce;$) ]", Pattern.CASE_INSENSITIVE);
     private final static Pattern netTypePattern =Pattern.compile("\\W(WIFI|5G|4G|3G|2G)\\W",Pattern.CASE_INSENSITIVE);
-    private final static Pattern screenSizePattern = Pattern.compile("\\W(\\d{3,4}x\\d{3,4})\\W",Pattern.CASE_INSENSITIVE);
+
     private final static Pattern deviceIdPattern = Pattern.compile("\\W(deviceid|deviceId|DEVICE|device|sdk_guid|GUID|guid|Id|ID|id|udid|UDID)[\" /:=]+([\\w-]+)",Pattern.CASE_INSENSITIVE);
     public static Map<String, Map<String, String>> mobileParser;
 
@@ -85,7 +87,6 @@ public class Parser {
         Browser browser = parseBrowser(agentString);
 //        String dotNet = parseDotNet(agentString);
         String netType = parseNetType(agentString);
-        String screenSize = parseScreenSize(agentString);
         String deviceId = parseDeviceId(agentString);
         if (os == null) {
             os = Os.DEFAULT_OS;
@@ -135,11 +136,6 @@ public class Parser {
         return deviceMap.parseDevice(device);
     }
 
-    public String parseScreenSize(String agentString){
-        Matcher matcher = screenSizePattern.matcher(agentString);
-        return matcher.find() ? matcher.group(1) : DEFAULT_VALUE;
-    }
-
     public Browser parseBrowser(String agentString) {
         return browserParser.parse(agentString);
     }
@@ -184,7 +180,6 @@ public class Parser {
         userAgentInfo.setIsMobile(device.isMobile);
 
         userAgentInfo.setNetType(netType);
-        userAgentInfo.setScreenSize(device.screenSize);
         userAgentInfo.setDeviceId(deviceId);
         return userAgentInfo;
     }
