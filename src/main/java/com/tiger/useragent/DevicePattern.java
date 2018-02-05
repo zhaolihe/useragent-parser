@@ -103,12 +103,19 @@ public class DevicePattern {
         }
         String family1 = family;
         if (family1 == null) {
-            family1 = "-";
+            family1 = DEFAULT_VALUE;
         }
-        float screenSize = brand == null ? 0 : MobileParser.getScreenSize(brand, family1);
+        String screenSize = parseScreenSize(agentString);
         if (null == family) {
             family = "";
         }
         return brand == null ? null : new Device(brand, family, deviceType, isMobile, screenSize);
     }
+
+    private String parseScreenSize(String agentString){
+        Matcher matcher = screenSizePattern.matcher(agentString);
+        return matcher.find() ? matcher.group(1) : DEFAULT_VALUE;
+    }
+
+    private final static Pattern screenSizePattern = Pattern.compile("\\W(\\d{3,4}[x\\*]\\d{3,4})\\W",Pattern.CASE_INSENSITIVE);
 }

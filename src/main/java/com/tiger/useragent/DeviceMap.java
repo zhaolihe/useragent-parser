@@ -9,6 +9,8 @@ import java.io.InputStreamReader;
 import java.util.HashMap;
 import java.util.Map;
 
+import static com.tiger.useragent.Constant.DEFAULT_VALUE;
+
 /**
  * com.tiger.useragent
  * author : zhaolihe
@@ -43,7 +45,7 @@ public class DeviceMap {
                         if (items[DEVICE_TYPE].equalsIgnoreCase("Pad")) {
                             deviceType = DeviceType.Pad;
                         }
-                        map.put(key, new Device(items[DEVICE_BRAND], items[RE_DEVICE_FAMILY], deviceType, true, Float.parseFloat(items[DEVICE_SCREEN_SIZE])));
+                        map.put(key, new Device(items[DEVICE_BRAND], items[RE_DEVICE_FAMILY], deviceType, true, items[DEVICE_SCREEN_SIZE]));
                     }
                 }
             }
@@ -71,14 +73,14 @@ public class DeviceMap {
         String replaceFamily = StringUtils.trimToEmpty(StringUtils.replaceEach(device.family, new String[]{"\u3000"}, new String[]{""}));
 
         if ("".equals(replaceFamily)) {
-            return new Device(device.brand, "-", device.deviceType, device.isMobile, 0f);
+            return new Device(device.brand, DEFAULT_VALUE, device.deviceType, device.isMobile, DEFAULT_VALUE);
         }
 
         if ("".equals(replaceFamily.replaceAll("/", ""))) {
             return device;
         }
         String family = device.family.split("/")[0].replace('_', ' ');
-        if (device.brand.equals("-") && !family.equals("-")) {
+        if (device.brand.equals(DEFAULT_VALUE) && !family.equals(DEFAULT_VALUE)) {
             Device mapDevice = map.get(family);
             if (mapDevice != null) {
                 return mapDevice;

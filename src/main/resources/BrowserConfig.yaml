@@ -107,6 +107,12 @@
 - regex: '(qqnews)/(\d+)\.(\d+)(\.(\d+))?'
 - regex: '(qqnews)'
 
+#########
+# qqlive
+########
+- regex: '(qqlive)/(\d+)\.(\d+)(\.(\d+))?'
+- regex: '(qqlive)'
+
 ############
 # QingtingFM
 ############
