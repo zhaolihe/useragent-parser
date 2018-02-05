@@ -117,5 +117,5 @@ public class DevicePattern {
         return matcher.find() ? matcher.group(1) : DEFAULT_VALUE;
     }
 
-    private final static Pattern screenSizePattern = Pattern.compile("\\W(\\d{3,4}[x\\*]\\d{3,4})\\W",Pattern.CASE_INSENSITIVE);
+    private final static Pattern screenSizePattern = Pattern.compile("\\W(\\d{3,4}[x\\*]\\d{3,4})\\W*",Pattern.CASE_INSENSITIVE);
 }
