@@ -78,6 +78,6 @@ class BrowserPattern {
             minor = matcher.group(3);
         }
 
-        return family == null ? null : new Browser(brand, family, major, minor);
+        return Strings.isNullOrEmpty(family) ? null : new Browser(brand, family, major, minor);
     }
 }

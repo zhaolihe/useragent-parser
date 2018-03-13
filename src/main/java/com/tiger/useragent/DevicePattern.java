@@ -62,12 +62,8 @@ public class DevicePattern {
             isMobile = false;
         }
         String deviceTypeString = configMap.get(DEVICE_TYPE);
-        DeviceType type;
-        if (!ArrayUtils.contains(deviceType, deviceTypeString)) {
-            type = DeviceType.Phone;
-        } else {
-            type = DeviceType.valueOf(deviceTypeString);
-        }
+        DeviceType type = DeviceType.parseOf(deviceTypeString);
+        ArrayUtils.contains(deviceType, deviceTypeString);
         return new DevicePattern(Pattern.compile(regex), brand, family, type, isMobile);
     }
 

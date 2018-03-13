@@ -17,7 +17,6 @@ class Device {
     public final String family;
     public final DeviceType deviceType;
     public final boolean isMobile;
-
     public final String screenSize;
 
     Device(String brand, String family, DeviceType deviceType, boolean isMobile) {

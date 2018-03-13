@@ -1,5 +1,6 @@
 package com.tiger.useragent;
 
+import com.google.common.base.Strings;
 import org.apache.commons.lang3.StringUtils;
 
 import java.io.BufferedReader;
@@ -41,10 +42,7 @@ public class DeviceMap {
                     String[] items = line.split(",,");
                     if (items.length == DEVICE_TYPE_LENGTH) {
                         String key = items[DEVICE_FAMILY];
-                        DeviceType deviceType = DeviceType.Phone;
-                        if (items[DEVICE_TYPE].equalsIgnoreCase("Pad")) {
-                            deviceType = DeviceType.Pad;
-                        }
+                        DeviceType deviceType = DeviceType.parseOf(items[DEVICE_TYPE]);
                         map.put(key, new Device(items[DEVICE_BRAND], items[RE_DEVICE_FAMILY], deviceType, true, items[DEVICE_SCREEN_SIZE]));
                     }
                 }
@@ -59,7 +57,7 @@ public class DeviceMap {
      * @return
      */
     private static boolean isCommentOrBlank(String line) {
-        return line.startsWith("#") || StringUtils.isBlank(line);
+        return line.startsWith("#") || StringUtils.isBlank(line) || Strings.isNullOrEmpty(line);
     }
 
     public Device parseDevice(Device device) {
@@ -81,8 +79,8 @@ public class DeviceMap {
         }
         String family = device.family.split("/")[0].replace('_', ' ');
         if (device.brand.equals(DEFAULT_VALUE) && !family.equals(DEFAULT_VALUE)) {
-            Device mapDevice = map.get(family);
-            if (mapDevice != null) {
+            Device mapDevice ;
+            if ((mapDevice= map.get(family)) != null) {
                 return mapDevice;
             }
             return Device.DEFAULT_PHONE_SCREEN;
