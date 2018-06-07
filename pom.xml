@@ -70,7 +70,7 @@
                     <target>1.7</target>
                     <encoding>UTF-8</encoding>
                     <!-- skip compile class of unit test -->
-                    <skip>true</skip>
+                    <skip>false</skip>
                 </configuration>
             </plugin>
             <plugin>
@@ -93,10 +93,6 @@
                 <configuration>
                     <useFile>false</useFile>
                     <disableXmlReport>true</disableXmlReport>
-                    <!-- skip compile class of unit test-->
-                    <skip>false</skip>
-                    <!--does not exception to show if no unit test to run-->
-                    <failIfNoTests>false</failIfNoTests>
                     <!-- skip unit test-->
                     <skipTests>false</skipTests>
                     <!-- If you have classpath issue like NoDefClassError,... -->
