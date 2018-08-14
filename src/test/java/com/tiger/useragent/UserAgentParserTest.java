@@ -388,7 +388,7 @@ public class UserAgentParserTest {
     public void testHuaweiVideo(){
         String uaExpr = "HwVPlayer;2.2.0.306;Android;6.0;PLK-TL00";
         UserAgentInfo info = parser.getUserAgentInfo(uaExpr);
-        assertThat(info.getBrowserName().toString(), is("Huawei Video"));
+        assertThat(info.getBrowserName().toString(), is("华为视频"));
     }
 
     @Test
