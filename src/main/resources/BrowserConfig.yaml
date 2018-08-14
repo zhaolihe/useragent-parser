@@ -16,7 +16,7 @@
 ########
 # APP
 #######
-- regex: '([A-Za-z\-_\u4e00-\u9fa5]+)/(\d+)[\.\d]* (?:cfnetwork/)'
+- regex: '([A-Za-z\d\!\-_\u4e00-\u9fa5]+)/(\d+)[\.\d]* (?:cfnetwork/)'
 
 ##########
 # App WeChat

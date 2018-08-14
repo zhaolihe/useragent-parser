@@ -379,9 +379,21 @@ public class UserAgentParserTest {
 
     @Test
     public void testAppWithCFNetwork(){
-        String uaExpr = "爱阅书香/49 CFNetwork/902.2 Darwin/17.7.0";
+        String uaExpr = "PopStar!/5.1.18 CFNetwork/889.9 Darwin/17.2.0";
         UserAgentInfo info = parser.getUserAgentInfo(uaExpr);
-        assertThat(info.getBrowserName().toString(), is("爱阅书香"));
+        assertThat(info.getBrowserName().toString(), is("popstar!"));
+
+        uaExpr = "图片搜索/1.2.201704281739 CFNetwork/894 Darwin/17.4.0";
+        info = parser.getUserAgentInfo(uaExpr);
+        assertThat(info.getBrowserName().toString(), is("图片搜索"));
+
+        uaExpr = "com.bozhong.Crazy/2018040403 CFNetwork/897.15 Darwin/17.5.0";
+        info = parser.getUserAgentInfo(uaExpr);
+        assertThat(info.getBrowserName().toString(), is("crazy"));
+
+        uaExpr = "s545_lajitong-mobile/1.69 CFNetwork/897.15 Darwin/17.5.0";
+        info = parser.getUserAgentInfo(uaExpr);
+        assertThat(info.getBrowserName().toString(), is("s545_lajitong-mobile"));
     }
 
     @Test
