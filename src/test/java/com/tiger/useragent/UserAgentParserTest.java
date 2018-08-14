@@ -371,6 +371,27 @@ public class UserAgentParserTest {
     }
 
     @Test
+    public void testOppoBrowser(){
+        String uaExpr = "Mozilla/5.0 (Linux; U; Android 5.1.1; zh-cn; A51 Build/LMY47V) AppleWebKit/537.36 (KHTML, like Gecko) Version/4.0 OppoBrowser/3.6.0 Mobile Safari/537.36";
+        UserAgentInfo info = parser.getUserAgentInfo(uaExpr);
+        assertThat(info.getBrowserName().toString(), is("OppoBrowser"));
+    }
+
+    @Test
+    public void testAppWithCFNetwork(){
+        String uaExpr = "爱阅书香/49 CFNetwork/902.2 Darwin/17.7.0";
+        UserAgentInfo info = parser.getUserAgentInfo(uaExpr);
+        assertThat(info.getBrowserName().toString(), is("爱阅书香"));
+    }
+
+    @Test
+    public void testHuaweiVideo(){
+        String uaExpr = "HwVPlayer;2.2.0.306;Android;6.0;PLK-TL00";
+        UserAgentInfo info = parser.getUserAgentInfo(uaExpr);
+        assertThat(info.getBrowserName().toString(), is("Huawei Video"));
+    }
+
+    @Test
     public void testRegex() {
         Pattern netTypePattern = Pattern.compile("\\W(WIFI|5G|4G|3G|2G)\\W*", Pattern.CASE_INSENSITIVE);
         String expr = "Mozilla/5.0 (Linux; Android 5.1; M651CY Build/LMY47D) AppleWebKit/537.36 (KHTML, like Gecko) Version/4.0 Chrome/39.0.0.0 Mobile Safari/537.36 X-Tingyun-Id/p35OnrDoP8k;c=2;r=1392755971; hebao/7.0.109 NetType/wifi";

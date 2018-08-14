@@ -150,4 +150,23 @@ public class BrowserParserTest {
             assertThat(group,is("DoubanApp"));
         }
     }
+
+    @Test
+    public void testApp(){
+        String ua = "墨迹天气/5007050402 CFNetwork/711.3.18 Darwin/14.0.0";
+        Browser browser = parse(ua);
+
+        String regex = "([A-Za-z\\-_\\u4e00-\\u9fa5]+)[/| ]+[\\d|.| |\\w]*(?:CFNetwork/)";
+        Matcher matcher = Pattern.compile(regex).matcher(ua);
+        if (matcher.find()) {
+            System.out.println(matcher.group(1));
+        }
+
+
+        ua = "Mozilla/5.0 (Linux; U; Android 5.1.1; zh-cn; A51 Build/LMY47V) AppleWebKit/537.36 (KHTML, like Gecko) Version/4.0 OppoBrowser/3.6.0 Mobile Safari/537.36";
+        browser = parse(ua);
+
+
+
+    }
 }
