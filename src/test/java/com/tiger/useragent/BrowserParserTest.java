@@ -14,6 +14,7 @@ import java.util.regex.Pattern;
 
 import static org.hamcrest.core.Is.is;
 import static org.junit.Assert.assertThat;
+import static org.junit.Assert.assertTrue;
 
 /**
  * com.yanhe.useragent
@@ -155,18 +156,22 @@ public class BrowserParserTest {
     public void testApp(){
         String ua = "墨迹天气/5007050402 CFNetwork/711.3.18 Darwin/14.0.0";
         Browser browser = parse(ua);
-
+        String expect = "墨迹天气";
+        assertThat(browser.brand, is(expect));
         String regex = "([A-Za-z\\-_\\u4e00-\\u9fa5]+)[/| ]+[\\d|.| |\\w]*(?:CFNetwork/)";
         Matcher matcher = Pattern.compile(regex).matcher(ua);
-        if (matcher.find()) {
-            System.out.println(matcher.group(1));
-        }
+        assertTrue(matcher.find());
+        String actual = matcher.group(1);
+        assertThat(actual,is(expect));
+    }
 
-
-        ua = "Mozilla/5.0 (Linux; U; Android 5.1.1; zh-cn; A51 Build/LMY47V) AppleWebKit/537.36 (KHTML, like Gecko) Version/4.0 OppoBrowser/3.6.0 Mobile Safari/537.36";
-        browser = parse(ua);
-
-
-
+    @Test
+    public void testApp2(){
+        String ua = "live4iphone 5.8.6 rv:20828 (iPhone; iOS 11.4; zh-Hans_AL)";
+        String regex ="(([A-Za-z\\d\\!\\-_\u4e00-\u9fa5]+)) (\\d+)[\\.\\d]* (?:rv\\:\\d+)";
+        Matcher matcher = Pattern.compile(regex).matcher(ua);
+        assertTrue(matcher.find());
+        String actual = matcher.group(1);
+        assertThat(actual,is("live4iphone"));
     }
 }
