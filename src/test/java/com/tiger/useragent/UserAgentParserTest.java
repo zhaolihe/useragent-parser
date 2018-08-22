@@ -1,6 +1,7 @@
 package com.tiger.useragent;
 
 import com.google.common.base.Function;
+import com.google.common.base.Strings;
 import org.junit.BeforeClass;
 import org.junit.Test;
 
@@ -253,25 +254,29 @@ public class UserAgentParserTest {
     }
 
     @Test
-    public void testDevice(){
+    public void testDevice() {
 //        String uaExpr = "Mozilla/5.0 (iPhone; CPU iPhone OS 11_1_2 like Mac OS X) AppleWebKit/604.3.5 (KHTML, like Gecko) Mobile/15B202 QQ/7.2.8.478 V1_IPH_SQ_7.2.8_1_APP_A Pixel/640 Core/UIWebView Device/Apple(Unknown iOS device) NetType/WIFI QBWebViewType/1";
         String uaExpr = "Mozilla/5.0 (Linux; Android 5.1; M651CY Build/LMY47D) AppleWebKit/537.36 (KHTML, like Gecko) Version/4.0 Chrome/39.0.0.0 Mobile Safari/537.36 X-Tingyun-Id/p35OnrDoP8k;c=2;r=1392755971; hebao/7.0.109 NetType/wifi";
         UserAgentInfo info = parser.getUserAgentInfo(uaExpr);
         assertNotNull(info);
         assertThat(info.getDeviceId().toString(), is("-"));
+
+        uaExpr = "qqlive 5.9.0 rv:5264 (iPad; iOS 10.3.2; zh-Hans_US)";
+        UserAgentInfo info1 = parser.getUserAgentInfo(uaExpr);
+        assertNotNull(info1);
     }
 
     @Test
-    public void testScreen(){
+    public void testScreen() {
         String uaExpr = "\tMozilla/5.0 (Linux; Android 6.0; DIG-TL10 Build/HUAWEIDIG-TL10; wv) AppleWebKit/537.36 (KHTML, like Gecko) Version/4.0 Chrome/55.0.2883.91 Mobile Safari/537.36 Fanli/6.5.0.57 (ID:2-56124686-63269809102938-12-3; WVC:WV; SCR:720*1208-2.0)";
         UserAgentInfo info = parser.getUserAgentInfo(uaExpr);
         assertNotNull(info);
     }
 
     @Test
-    public void testIdentityByUdid(){
-        String uaExpr="Mozilla/5.0 (Linux; Android 7.0; MHA-AL00 Build/HUAWEIMHA-AL00; wv) AppleWebKit/537.36 (KHTML, like Gecko) Version/4.0 Chrome/55.0.2883.91 Mobile Safari/537.36 udid/8a7b587adcd34ee50a74dbd86dd3b548536cd7d2 com.douban.frodo/4.11.4(90) DoubanApp";
-        Pattern identityPattern = Pattern.compile("\\W(deviceid|deviceId|DEVICE|device|sdk_guid|GUID|guid|Id|ID|id|udid|UDID)[\" /:=]+([\\w-]+)",Pattern.CASE_INSENSITIVE);
+    public void testIdentityByUdid() {
+        String uaExpr = "Mozilla/5.0 (Linux; Android 7.0; MHA-AL00 Build/HUAWEIMHA-AL00; wv) AppleWebKit/537.36 (KHTML, like Gecko) Version/4.0 Chrome/55.0.2883.91 Mobile Safari/537.36 udid/8a7b587adcd34ee50a74dbd86dd3b548536cd7d2 com.douban.frodo/4.11.4(90) DoubanApp";
+        Pattern identityPattern = Pattern.compile("\\W(deviceid|deviceId|sdk_guid|GUID|guid|Id|ID|id|udid|UDID)[\" /:=]+([\\w-]+)", Pattern.CASE_INSENSITIVE);
         Matcher matcher = identityPattern.matcher(uaExpr);
         assertTrue(matcher.find());
         {
@@ -303,8 +308,8 @@ public class UserAgentParserTest {
 
         uaExpr = "Mozilla/5.0 (Linux; Android 5.1.1; vivo X6S A Build/LMY47V) AppleWebKit/537.36 (KHTML, like Gecko) Version/4.0 Chrome/39.0.0.0 Mobile Safari/537.36 MagicKitchen/3.7.4 NetType/WIFI DEVICE/6e8c5f4fd87dee088d7b95b1174f137f";
         matcher = identityPattern.matcher(uaExpr);
-        assertTrue(matcher.find());
-         {
+        assertFalse(matcher.find());
+        if (matcher.find(0)) {
             String key = matcher.group(1);
             String value = matcher.group(2);
             assertThat(key, is("DEVICE"));
@@ -341,16 +346,17 @@ public class UserAgentParserTest {
 
         uaExpr = "Mozilla/5.0 (iPhone; CPU iPhone OS 10_3_2 like Mac OS X) AppleWebKit/603.2.4 (KHTML, like Gecko) Mobile/14F89 QQ/6.5.5.0 TIM/2.0.5.404 V1_IPH_SQ_6.5.5_1_TIM_D Pixel/1080 Core/UIWebView Device/Apple(iPhone 6sPlus) NetType/WIFI QBWebViewType/1";
         matcher = identityPattern.matcher(uaExpr);
-        assertTrue(matcher.find());
-        {
-            String key = matcher.group(1);
-            String value = matcher.group(2);
-            assertThat(key.toLowerCase(), is("device"));
-        }
+        assertFalse(matcher.find());
 
         uaExpr = "Mozilla/5.0 (Linux; Android 7.0; HUAWEI CAZ-AL10 Build/HUAWEICAZ-AL10; wv) AppleWebKit/537.36 (KHTML, like Gecko) Version/4.0 Chrome/55.0.2883.91 Mobile Safari/537.36 X-Tingyun-Id/null;c=2;r=1468719239;";
         matcher = identityPattern.matcher(uaExpr);
-        assertFalse(matcher.find());
+        assertTrue(matcher.find());
+        if(matcher.find(0)){
+            String key = matcher.group(1);
+            String value = matcher.group(2);
+            assertThat(key.toLowerCase(), is("id"));
+            assertThat(value.toLowerCase(), is("null"));
+        }
 
 
         uaExpr = "Mozilla/5.0 (Linux; Android 5.1.1; vivo Y31A Build/LMY47V) AppleWebKit/537.36 (KHTML, like Gecko) Version/4.0 Chrome/39.0.0.0 Mobile Safari/537.36 Xiaodupi/4.10 nettype/wifi device/vivo Y31A channel/yingyongbao deviceId/15df255a4c9df724 uid/1137883930";
@@ -358,17 +364,52 @@ public class UserAgentParserTest {
         assertTrue(matcher.find());
         {
             String key = matcher.group(1);
-            System.out.println(key);
+            String value = matcher.group(2);
+            assertThat(key.toLowerCase(), is("deviceid"));
+            assertThat(value.toLowerCase(), is("15df255a4c9df724"));
         }
     }
 
     @Test
-    public void testRegex(){
-        Pattern netTypePattern =Pattern.compile("\\W(WIFI|5G|4G|3G|2G)\\W*",Pattern.CASE_INSENSITIVE);
+    public void testOppoBrowser(){
+        String uaExpr = "Mozilla/5.0 (Linux; U; Android 5.1.1; zh-cn; A51 Build/LMY47V) AppleWebKit/537.36 (KHTML, like Gecko) Version/4.0 OppoBrowser/3.6.0 Mobile Safari/537.36";
+        UserAgentInfo info = parser.getUserAgentInfo(uaExpr);
+        assertThat(info.getBrowserName().toString(), is("OppoBrowser"));
+    }
+
+    @Test
+    public void testAppWithCFNetwork(){
+        String uaExpr = "PopStar!/5.1.18 CFNetwork/889.9 Darwin/17.2.0";
+        UserAgentInfo info = parser.getUserAgentInfo(uaExpr);
+        assertThat(info.getBrowserName().toString(), is("popstar!"));
+
+        uaExpr = "图片搜索/1.2.201704281739 CFNetwork/894 Darwin/17.4.0";
+        info = parser.getUserAgentInfo(uaExpr);
+        assertThat(info.getBrowserName().toString(), is("图片搜索"));
+
+        uaExpr = "com.bozhong.Crazy/2018040403 CFNetwork/897.15 Darwin/17.5.0";
+        info = parser.getUserAgentInfo(uaExpr);
+        assertThat(info.getBrowserName().toString(), is("crazy"));
+
+        uaExpr = "s545_lajitong-mobile/1.69 CFNetwork/897.15 Darwin/17.5.0";
+        info = parser.getUserAgentInfo(uaExpr);
+        assertThat(info.getBrowserName().toString(), is("s545_lajitong-mobile"));
+    }
+
+    @Test
+    public void testHuaweiVideo(){
+        String uaExpr = "HwVPlayer;2.2.0.306;Android;6.0;PLK-TL00";
+        UserAgentInfo info = parser.getUserAgentInfo(uaExpr);
+        assertThat(info.getBrowserName().toString(), is("华为视频"));
+    }
+
+    @Test
+    public void testRegex() {
+        Pattern netTypePattern = Pattern.compile("\\W(WIFI|5G|4G|3G|2G)\\W*", Pattern.CASE_INSENSITIVE);
         String expr = "Mozilla/5.0 (Linux; Android 5.1; M651CY Build/LMY47D) AppleWebKit/537.36 (KHTML, like Gecko) Version/4.0 Chrome/39.0.0.0 Mobile Safari/537.36 X-Tingyun-Id/p35OnrDoP8k;c=2;r=1392755971; hebao/7.0.109 NetType/wifi";
         Matcher matcher = netTypePattern.matcher(expr);
         if (matcher.find()) {
-          String value = matcher.group(1);
+            String value = matcher.group(1);
             System.out.println(value);
         }
     }
