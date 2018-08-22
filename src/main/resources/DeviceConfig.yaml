@@ -238,16 +238,16 @@
 #  brand_replacement: 'Huawei'
 
 ##########
-# BuBuGao
+# vivo
 ##########
 - regex: '\b(BBK|bbk)[\W_]?(\w+)'
-  brand_replacement: 'BuBuGao'
+  brand_replacement: 'vivo'
 - regex: '(vivo|VIVO)[\W_]?(\w+)'
-  brand_replacement: 'BuBuGao'
+  brand_replacement: 'vivo'
   device_replacement: 'vivo $2'
 
 - regex: 'X9 [\W_]?(\w+)'
-  brand_replacement: 'BuBuGao'
+  brand_replacement: 'vivo'
   device_replacement: 'vivo X9'
 
 ##########
