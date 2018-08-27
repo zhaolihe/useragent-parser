@@ -218,6 +218,10 @@
   brand_replacement: 'Huawei'
   device_replacement: 'Honor 7'
 
+- regex: '(ATH-AL00)'
+  brand_replacement: 'Huawei'
+  device_replacement: 'Honor 7i'
+
 - regex: '(VTR-AL00)'
   brand_replacement: 'Huawei'
   device_replacement: 'P10'
@@ -232,6 +236,9 @@
   brand_replacement: 'Huawei'
 - regex: '(HW)-(\w+\d+)-\w+'
   brand_replacement: 'Huawei'
+- regex: '(eva-[a|t|d]l\d+)'
+  brand_replacement: 'Huawei'
+  device_replacement: '$1'
 
 # is below correct?
 #- regex: '(vodafone)(w+)'
@@ -469,12 +476,16 @@
 #########
 # smartisan
 ########
-- regex: '(SM\d+) Build/SANFRANCISCO'
-  brand_replacement: 'smartisan'
+- regex: '(SM\d+) Build/'
+  brand_replacement: 'Smartisan'
   device_replacement: '$1'
 
-- regex: '(YQ601)\s\w+'
-  brand_replacement: 'smartisan'
+- regex: '(YQ\d+) Build/'
+  brand_replacement: 'Smartisan'
+  device_replacement: '$1'
+
+- regex: '(OS\d+) Build/'
+  brand_replacement: 'Smartisan'
   device_replacement: '$1'
 
 #########

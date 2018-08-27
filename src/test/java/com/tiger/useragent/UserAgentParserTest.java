@@ -401,6 +401,22 @@ public class UserAgentParserTest {
         String uaExpr = "HwVPlayer;2.2.0.306;Android;6.0;PLK-TL00";
         UserAgentInfo info = parser.getUserAgentInfo(uaExpr);
         assertThat(info.getBrowserName().toString(), is("华为视频"));
+
+        uaExpr = "Mozilla/5.0 (Linux; Android 4.2.2; ATH-AL00 Build/ATH-AL00) AppleWebKit/537.36 (KHTML, like Gecko) Version/4.0 Chrome/47.0.2526.100 Mobile Safari/537.36";
+        info = parser.getUserAgentInfo(uaExpr);
+        assertThat(info.getDeviceBrand().toString(),is("Huawei"));
+        assertThat(info.getDeviceName().toString(),is("Huawei Honor 7i"));
+    }
+
+    @Test
+    public void testSmartisan(){
+        String uaExpr = "Mozilla/5.0 (Linux; U; Android 7.1.1; zh-CN; OS103 Build/NGI77B) AppleWebKit/537.36 (KHTML, like Gecko) Version/4.0 Chrome/57.0.2987.108 Quark/2.4.3.987 Mobile Safari/537.36";
+        UserAgentInfo info = parser.getUserAgentInfo(uaExpr);
+        System.out.println(info.getDeviceBrand());
+        uaExpr = "Mozilla/5.0 (Linux; Android 5.1.1; eva-tl10 Build/LMY47I) AppleWebKit/537.36 (KHTML, like Gecko) Version/4.0 Chrome/39.0.0.0 Safari/537.36";
+        info = parser.getUserAgentInfo(uaExpr);
+        System.out.println(info.getDeviceBrand());
+
     }
 
     @Test
