@@ -446,9 +446,6 @@ C9,,DOOV,,C9,,Phone,,5.0
 X6 ,,vivo,,X6,,Phone,,5.2
 X5,,vivo,,X5,,Phone,,5.0
 
-# MLLED
-MLLED R9,,MLLED,,R9,,Phone,,5.5
-
 # YaChuang
 CY8310,,CY,,CY8310,,Phone,,4.0
 CY8318,,CY,,CY8318,,Phone,,4.92

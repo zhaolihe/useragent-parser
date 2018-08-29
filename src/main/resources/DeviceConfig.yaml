@@ -370,7 +370,26 @@
   brand_replacement: 'Motorola'
   device_replacement: 'Xoom'
   device_type_replacement: 'Pad'
-#尺寸10.1
+- regex: '([;| ])(XT\d+) Build/'
+  brand_replacement: 'Motorola'
+
+#######
+# MLLED
+#######
+- regex: '(MLLED)[ |_](\w+\d+)'
+  brand_replacement: 'MLLED'
+
+#######
+# Green Orange
+#######
+- regex: '(GO)[ |_](\w+\d+)'
+  brand_replacement: 'GreenOrange'
+
+######
+# 360手机
+######
+- regex: '([ |;])(\d+-[a|A]01) Build/'
+  brand_replacement: '360'
 
 ##########
 # OWWO
@@ -568,6 +587,11 @@
 #Lephone
 ########
 - regex: '(Lephone)_(\w+\d+)_\w+'
+  brand_replacement: 'Letv'
+
+- regex: '(le) (\w+\d+) Build/'
+  brand_replacement: 'Letv'
+  device: '$1'
 
 ########
 #Mastone
