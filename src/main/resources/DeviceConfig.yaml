@@ -186,9 +186,13 @@
 - regex: '\b(Xiaomi)'
   brand_replacement: 'Xiaomi'
 
-- regex: 'XiaoMi (\w+([\s,-]\w+)?) Build'
+- regex: '(XiaoMi) (\w+([\s,-]\w+)?) Build/'
   brand_replacement: 'Xiaomi'
-  device_replacement: '$1'
+  device_replacement: '$2'
+
+- regex: '(XIAOMI) (\w+\d+) Build/'
+  brand_replacement: 'Xiaomi'
+  device_replacement: '$2'
 
 ##########
 # Huawei
@@ -602,7 +606,11 @@
 
 - regex: '(le) (\w+\d+) Build/'
   brand_replacement: 'Letv'
-  device: '$1'
+  device_replacement: '$1'
+
+- regex: '(Letv|letv)[_| ](\w+\d+) Build/'
+  brand_replacement: 'Letv'
+  device_replacement: '$2'
 
 ########
 #Mastone
