@@ -196,10 +196,10 @@
 - regex: '(HUAWEI|Huawei)[\s]?(\w+) Build'
   brand_replacement: 'Huawei'
 
-- regex: '(HUAWEI|Huawei)[\s]?(\w+[ -]\w+)'
+- regex: '(HUAWEI|Huawei|huawei)[\s]?(\w+[ -]\w+)'
   brand_replacement: 'Huawei'
 
-- regex: '(HUAWEI|Huawei)[\W_]?(\w+)'
+- regex: '(HUAWEI|Huawei|huawei)[\W_]?(\w+)'
   brand_replacement: 'Huawei'
 
 - regex: '(HONOR|Honor)(\w+-\w+)'
@@ -210,21 +210,21 @@
   brand_replacement: 'Huawei'
   device_replacement: 'Honor'
 
-- regex: '(FRD-DL00)'
+- regex: '(\w{3}-DL[1|0]0)'
   brand_replacement: 'Huawei'
-  device_replacement: 'Honor 8'
+  device_replacement: '$1'
 
-- regex: '(PLK-CL00)'
+- regex: '(\w{3}-CL[1|0]0)'
   brand_replacement: 'Huawei'
-  device_replacement: 'Honor 7'
+  device_replacement: '$1'
 
-- regex: '(VTR-AL00)'
+- regex: '(\w{3}-AL[1|0]0)'
   brand_replacement: 'Huawei'
-  device_replacement: 'P10'
+  device_replacement: '$1'
 
-- regex: '(VKY-AL00)'
+- regex: '(\w{3}-TL[1|0]0)'
   brand_replacement: 'Huawei'
-  device_replacement: 'P10 Plus'
+  device_replacement: '$1'
 
 - regex: '(HUAWEI); (\w+\d+-\w+\d+)'
   brand_replacement: 'Huawei'
@@ -232,6 +232,9 @@
   brand_replacement: 'Huawei'
 - regex: '(HW)-(\w+\d+)-\w+'
   brand_replacement: 'Huawei'
+- regex: '(eva-[a|t|d]l\d+)'
+  brand_replacement: 'Huawei'
+  device_replacement: '$1'
 
 # is below correct?
 #- regex: '(vodafone)(w+)'
@@ -268,6 +271,10 @@
   device_replacement: 'LePad $2'
   device_type_replacement: 'Pad'
 
+- regex: '(A798T)'
+  brand_replacement: 'Lenovo'
+  device_replacement: '$1'
+
 ##########
 # OPPO
 # http://www.oppo.com/?q=service/uaprof
@@ -276,6 +283,9 @@
   brand_replacement: 'OPPO'
 
 - regex: '(R\d\d\d[T7S]) Build'
+  brand_replacement: 'OPPO'
+  device_replacement: '$1'
+- regex: '(PADM00)'
   brand_replacement: 'OPPO'
   device_replacement: '$1'
 
@@ -363,7 +373,26 @@
   brand_replacement: 'Motorola'
   device_replacement: 'Xoom'
   device_type_replacement: 'Pad'
-#尺寸10.1
+- regex: '([;| ])(XT\d+) Build/'
+  brand_replacement: 'Motorola'
+
+#######
+# MLLED
+#######
+- regex: '(MLLED)[ |_](\w+\d+)'
+  brand_replacement: 'MLLED'
+
+#######
+# Green Orange
+#######
+- regex: '(GO)[ |_](\w+\d+)'
+  brand_replacement: 'GreenOrange'
+
+######
+# 360手机
+######
+- regex: '([ |;])(\d+-[a|A]01) Build/'
+  brand_replacement: '360'
 
 ##########
 # OWWO
@@ -438,6 +467,14 @@
 - regex: '(Gionee|GIONEE|GiONEE)[\W_]?(\w+)'
   brand_replacement: 'Gionee'
 
+- regex: '\b(GN\d{3}\w?)\b'
+  brand_replacement: 'Gionee'
+  device_replacement: '$1'
+
+- regex: '(F100L) Build/'
+  brand_replacement: 'Gionee'
+  device_replacement: '$1'
+
 ##########
 # Haier
 ##########
@@ -469,12 +506,16 @@
 #########
 # smartisan
 ########
-- regex: '(SM\d+) Build/SANFRANCISCO'
-  brand_replacement: 'smartisan'
+- regex: '(SM\d+) Build/'
+  brand_replacement: 'Smartisan'
   device_replacement: '$1'
 
-- regex: '(YQ601)\s\w+'
-  brand_replacement: 'smartisan'
+- regex: '(YQ\d+) Build/'
+  brand_replacement: 'Smartisan'
+  device_replacement: '$1'
+
+- regex: '(OS\d+) Build/'
+  brand_replacement: 'Smartisan'
   device_replacement: '$1'
 
 #########
@@ -557,6 +598,11 @@
 #Lephone
 ########
 - regex: '(Lephone)_(\w+\d+)_\w+'
+  brand_replacement: 'Letv'
+
+- regex: '(le) (\w+\d+) Build/'
+  brand_replacement: 'Letv'
+  device: '$1'
 
 ########
 #Mastone
@@ -752,10 +798,7 @@
   brand_replacement: 'Motorola'
   device_replacement: '$1$2'
 
-# e.g. GN700W, GN305
-- regex: '\b(GN\d{3}\w?)\b'
-  brand_replacement: 'Gionee'
-  device_replacement: '$1'
+
 
 ##########################################################################
 # General Match
