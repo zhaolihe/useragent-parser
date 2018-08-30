@@ -196,10 +196,10 @@
 - regex: '(HUAWEI|Huawei)[\s]?(\w+) Build'
   brand_replacement: 'Huawei'
 
-- regex: '(HUAWEI|Huawei)[\s]?(\w+[ -]\w+)'
+- regex: '(HUAWEI|Huawei|huawei)[\s]?(\w+[ -]\w+)'
   brand_replacement: 'Huawei'
 
-- regex: '(HUAWEI|Huawei)[\W_]?(\w+)'
+- regex: '(HUAWEI|Huawei|huawei)[\W_]?(\w+)'
   brand_replacement: 'Huawei'
 
 - regex: '(HONOR|Honor)(\w+-\w+)'
@@ -210,25 +210,21 @@
   brand_replacement: 'Huawei'
   device_replacement: 'Honor'
 
-- regex: '(FRD-DL00)'
+- regex: '(\w{3}-DL[1|0]0)'
   brand_replacement: 'Huawei'
-  device_replacement: 'Honor 8'
+  device_replacement: '$1'
 
-- regex: '(PLK-CL00)'
+- regex: '(\w{3}-CL[1|0]0)'
   brand_replacement: 'Huawei'
-  device_replacement: 'Honor 7'
+  device_replacement: '$1'
 
-- regex: '(ATH-AL00)'
+- regex: '(\w{3}-AL[1|0]0)'
   brand_replacement: 'Huawei'
-  device_replacement: 'Honor 7i'
+  device_replacement: '$1'
 
-- regex: '(VTR-AL00)'
+- regex: '(\w{3}-TL[1|0]0)'
   brand_replacement: 'Huawei'
-  device_replacement: 'P10'
-
-- regex: '(VKY-AL00)'
-  brand_replacement: 'Huawei'
-  device_replacement: 'P10 Plus'
+  device_replacement: '$1'
 
 - regex: '(HUAWEI); (\w+\d+-\w+\d+)'
   brand_replacement: 'Huawei'
@@ -275,6 +271,10 @@
   device_replacement: 'LePad $2'
   device_type_replacement: 'Pad'
 
+- regex: '(A798T)'
+  brand_replacement: 'Lenovo'
+  device_replacement: '$1'
+
 ##########
 # OPPO
 # http://www.oppo.com/?q=service/uaprof
@@ -283,6 +283,9 @@
   brand_replacement: 'OPPO'
 
 - regex: '(R\d\d\d[T7S]) Build'
+  brand_replacement: 'OPPO'
+  device_replacement: '$1'
+- regex: '(PADM00)'
   brand_replacement: 'OPPO'
   device_replacement: '$1'
 
@@ -463,6 +466,14 @@
 ##########
 - regex: '(Gionee|GIONEE|GiONEE)[\W_]?(\w+)'
   brand_replacement: 'Gionee'
+
+- regex: '\b(GN\d{3}\w?)\b'
+  brand_replacement: 'Gionee'
+  device_replacement: '$1'
+
+- regex: '(F100L) Build/'
+  brand_replacement: 'Gionee'
+  device_replacement: '$1'
 
 ##########
 # Haier
@@ -787,10 +798,7 @@
   brand_replacement: 'Motorola'
   device_replacement: '$1$2'
 
-# e.g. GN700W, GN305
-- regex: '\b(GN\d{3}\w?)\b'
-  brand_replacement: 'Gionee'
-  device_replacement: '$1'
+
 
 ##########################################################################
 # General Match
