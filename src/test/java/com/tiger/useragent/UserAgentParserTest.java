@@ -172,10 +172,10 @@ public class UserAgentParserTest {
         String uaExpr = "Mozilla/5.0(Linux;Android7.0;zh-cn;FRD-DL00Build/FRD-DL00)AppleWebKit/534.30(KHTML,likeGecko)Version/4.0MobileSafari/534.30)";
         UserAgentInfo info = parser.getUserAgentInfo(uaExpr);
         assertNotNull(info);
-        assertThat(info.getDeviceName().toString(), is("Huawei Honor 8"));
+        assertThat(info.getDeviceName().toString(), is("Huawei FRD-DL00"));
         uaExpr = "UCWEB/2.0 (MIDP-2.0; U; zh-CN; VKY-AL00) U2/1.0.0 UCBrowser/10.7.2.940  U2/1.0.0 Mobile";
         info = parser.getUserAgentInfo(uaExpr);
-        assertThat(info.getDeviceName().toString(), is("Huawei P10 Plus"));
+        assertThat(info.getDeviceName().toString(), is("Huawei VKY-AL00"));
     }
 
     @Test
@@ -242,7 +242,7 @@ public class UserAgentParserTest {
         UserAgentInfo info = parser.getUserAgentInfo(uaExpr);
         assertNotNull(info);
         assertThat(info.getDeviceBrand().toString(), is("Huawei"));
-        assertThat(info.getDeviceName().toString(), is("Huawei Honor 7"));
+        assertThat(info.getDeviceName().toString(), is("Huawei PLK-CL00"));
     }
 
     @Test
@@ -405,7 +405,7 @@ public class UserAgentParserTest {
         uaExpr = "Mozilla/5.0 (Linux; Android 4.2.2; ATH-AL00 Build/ATH-AL00) AppleWebKit/537.36 (KHTML, like Gecko) Version/4.0 Chrome/47.0.2526.100 Mobile Safari/537.36";
         info = parser.getUserAgentInfo(uaExpr);
         assertThat(info.getDeviceBrand().toString(),is("Huawei"));
-        assertThat(info.getDeviceName().toString(),is("Huawei Honor 7i"));
+        assertThat(info.getDeviceName().toString(),is("Huawei ATH-AL00"));
     }
 
     @Test
