@@ -34,6 +34,9 @@
 - regex: '(funshion)[ |/]?([\d|.]*)'
   family_replacement: 'Funshion'
   brand_replacement: 'Funshion'
+- regex: '(Fengxing)[ |/]?([\d|.]*)'
+  family_replacement: 'Funshion'
+  brand_replacement: 'Funshion'
 
 ########
 # 豆瓣

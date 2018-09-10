@@ -28,7 +28,7 @@ public class Parser {
 
     private final static Pattern pattern = Pattern.compile("\\.net( clr | client )?(?<ver>\\d(\\.\\d)?)(\\.\\d+)*[ce;$) ]", Pattern.CASE_INSENSITIVE);
     private final static Pattern netTypePattern =Pattern.compile("\\W(WIFI|5G|4G|3G|2G)\\W*",Pattern.CASE_INSENSITIVE);
-    private final static Pattern deviceIdPattern = Pattern.compile("[\\s&;\"](deviceid|deviceId|sdk_guid|GUID|guid|Id|ID|id|udid|UDID)[\" /:=]+([\\w-]+)",Pattern.CASE_INSENSITIVE);
+    private final static Pattern deviceIdPattern = Pattern.compile("[\\s&;\"](deviceid|deviceId|sdk_guid|UTDID|GUID|guid|Id|ID|id|udid|UDID|MZ)[\" /:=]+([\\w-]+)",Pattern.CASE_INSENSITIVE);
     public static Map<String, Map<String, String>> mobileParser;
 
     public Parser() throws IOException {

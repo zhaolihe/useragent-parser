@@ -276,7 +276,7 @@ public class UserAgentParserTest {
     @Test
     public void testIdentityByUdid() {
         String uaExpr = "Mozilla/5.0 (Linux; Android 7.0; MHA-AL00 Build/HUAWEIMHA-AL00; wv) AppleWebKit/537.36 (KHTML, like Gecko) Version/4.0 Chrome/55.0.2883.91 Mobile Safari/537.36 udid/8a7b587adcd34ee50a74dbd86dd3b548536cd7d2 com.douban.frodo/4.11.4(90) DoubanApp";
-        Pattern identityPattern = Pattern.compile("\\W(deviceid|deviceId|sdk_guid|GUID|guid|Id|ID|id|udid|UDID)[\" /:=]+([\\w-]+)", Pattern.CASE_INSENSITIVE);
+        Pattern identityPattern = Pattern.compile("\\W(deviceid|deviceId|sdk_guid|UTDID|GUID|guid|Id|ID|id|udid|UDID|MZ)[\" /:=]+([\\w-]+)", Pattern.CASE_INSENSITIVE);
         Matcher matcher = identityPattern.matcher(uaExpr);
         assertTrue(matcher.find());
         {
@@ -367,6 +367,16 @@ public class UserAgentParserTest {
             String value = matcher.group(2);
             assertThat(key.toLowerCase(), is("deviceid"));
             assertThat(value.toLowerCase(), is("15df255a4c9df724"));
+        }
+
+        uaExpr = "Mozilla/4.0 (compatible; MSIE 6.0; Windows NT 5.1; SV1) Fengxing/3.0.6.30 MZ/4F0575225EDC39879698EDAFDDD4995A HTTP/1.1";
+        matcher = identityPattern.matcher(uaExpr);
+        assertTrue(matcher.find());
+        {
+            String key = matcher.group(1);
+            String value = matcher.group(2);
+            assertThat(key.toUpperCase(), is("MZ"));
+            assertThat(value.toUpperCase(),is("4F0575225EDC39879698EDAFDDD4995A"));
         }
     }
 
