@@ -243,6 +243,13 @@ public class UserAgentParserTest {
         assertNotNull(info);
         assertThat(info.getDeviceBrand().toString(), is("Huawei"));
         assertThat(info.getDeviceName().toString(), is("Huawei PLK-CL00"));
+        uaExpr = "Mozilla/5.0 (Linux; Android 6.0.1; HUAWEI RIO-AL00 Build/HuaweiRIO-AL00; wv) AppleWebKit/537.36 (KHTML, like Gecko) Version/4.0 Chrome/61.0.3163.98 Mobile Safari/537.36";
+        info = parser.getUserAgentInfo(uaExpr);
+
+        uaExpr = "Mozilla/5.0 (Linux; U; Android 8.1.0; zh-cn; PADT00 Build/O11019) AppleWebKit/537.36 (KHTML, like Gecko) Version/4.0 Chrome/62.0.3202.84 Mobile Safari/537.36 MQQBrowser/6.2 TBS/044405";
+        info = parser.getUserAgentInfo(uaExpr);
+        System.out.println(info.getDeviceName());
+
     }
 
     @Test
