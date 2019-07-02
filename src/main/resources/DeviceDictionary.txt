@@ -196,47 +196,54 @@ lenovo A820e,,Lenovo,,A820e,,Phone,,4.5
 ##########
 # Huawei
 ##########
-MHA-AL00,,Huawei,,Meta9,,Phone,,5.9
-EML-AL00,,Huawei,,P20,,Phone,,5.8
-ALP-AL00,,Huawei,,Meta10,,Phone,,5.9
-COL-AL10,,Huawei,,Honor10,,Phone,,5.8
-BKL-AL20,,Huawei,,HonorV10,,Phone,,5.9
-VTR-AL00,,Huawei,,P10,,Phone,,5.1
-NXT-AL10,,Huawei,,Meta8,,Phone,,6
-PAR-AL00,,Huawei,,nova3,,Phone,,6.3
-HWI-AL00,,Huawei,,nova2s,,Phone,,6.3
-BLA-AL00,,Huawei,,Meta10 Pro,,Phone,,6
-DUK-AL20,,Huawei,,HonorV9,,Phone,,5.7
-STF-AL10,,Huawei,,Honor9,,Phone,,5.2
-BND-AL10,,Huawei,,Play7X,,Phone,,5.9
-FRD-AL10,,Huawei,,Honor8,,Phone,,5.2
 CLT-AL00,,Huawei,,P20 Pro,,Phone,,6.1
-MLA-AL10,,Huawei,,M5,,Phone,,5.5
+EML-AL00,,Huawei,,P20,,Phone,,5.8
+VTR-AL00,,Huawei,,P10,,Phone,,5.1
 VKY-AL00,,Huawei,,P10 Plus,,Phone,,5.5
 EVA-AL10,,Huawei,,P9,,Phone,,5.2
-BLN-AL10,,Huawei,,Play6X,,Phone,,6.3
-INE-AL00,,Huawei,,nova 3i,,Phone,,6.3
-STF-AL00,,Huawei,,Honor9,,Phone,,5.2
-ANE-AL00,,Huawei,,nova 3e,,Phone,,5.8
-JSN-AL00,,Huawei,,Honor8X,,Phone,,5.8
-BAC-AL00,,Huawei,,nova Plus,,Phone,,5.5
+VIE-AL10,,Huawei,,P9 Plus,,Phone,,5.5
+
+BLA-AL00,,Huawei,,Meta10 Pro,,Phone,,6
+ALP-AL00,,Huawei,,Meta10,,Phone,,5.9
 LON-AL00,,Huawei,,Meta9 Pro,,Phone,,5.5
-JSN-AL00a,,Huawei,,Play8X,,Phone,,5.2
-WAS-AL00,,Huawei,,nova,,Phone,,5.2
+MHA-AL00,,Huawei,,Meta9,,Phone,,5.9
+NXT-AL10,,Huawei,,Meta8,,Phone,,6
+
+COL-AL10,,Huawei,,Honor10,,Phone,,5.8
+BKL-AL20,,Huawei,,HonorV10,,Phone,,5.9
+DUK-AL20,,Huawei,,HonorV9,,Phone,,5.7
+LLD-AL10,,Huawei,,Honor9,,Phone,,5.2
+JMM-AL10,,Huawei,,HonorV9,,Phone,,5.2
+STF-AL10,,Huawei,,Honor9,,Phone,,5.2
+STF-AL00,,Huawei,,Honor9,,Phone,,5.2
+FRD-AL10,,Huawei,,Honor8,,Phone,,5.2
+JSN-AL00,,Huawei,,Honor8X,,Phone,,5.8
 COR-AL10,,Huawei,,Honor,,Phone,,5.2
 PRA-AL00,,Huawei,,Honor8,,Phone,,5.2
 PRA-AL00X,,Huawei,,Honor8,,Phone,,5.2
 FRD-AL00,,Huawei,,Honor8,,Phone,,5.2
-RIO-AL00,,Huawei,,M4,,Phone,,5.5
+
 MAR-AL00,,Huawei,,nova4,,Phone,,6.15
+INE-AL00,,Huawei,,nova3i,,Phone,,6.3
+ANE-AL00,,Huawei,,nova3e,,Phone,,5.8
+PAR-AL00,,Huawei,,nova3,,Phone,,6.3
+HWI-AL00,,Huawei,,nova2s,,Phone,,6.3
+BAC-AL00,,Huawei,,nova Plus,,Phone,,5.5
+WAS-AL00,,Huawei,,nova,,Phone,,5.2
+CAZ-AL10,,Huawei,,nova,,Phone,,5
+
+JSN-AL00a,,Huawei,,Play8X,,Phone,,5.2
+BND-AL10,,Huawei,,Play7X,,Phone,,5.9
+BLN-AL10,,Huawei,,Play6X,,Phone,,6.3
+BLN-AL40,,Huawei,,Play6X,,Phone,,5.5
+
+RNE-AL00,,Huawei,,M6,,Phone,,5.9
+MLA-AL10,,Huawei,,M5,,Phone,,5.5
+RIO-AL00,,Huawei,,M4,,Phone,,5.5
+
 G616-L076,,Huawei,,G616,,Phone,,5
 VNS-AL00,,Huawei,,G9,,Phone,,5.2
-CAZ-AL10,,Huawei,,nova,,Phone,,5
-LLD-AL10,,Huawei,,Honor9,,Phone,,5.2
-JMM-AL10,,Huawei,,HonorV9,,Phone,,5.2
-RNE-AL00,,Huawei,,M6,,Phone,,5.9
-BLN-AL40,,Huawei,,Play6X,,Phone,,5.5
-VIE-AL10,,Huawei,,P9 Plus,,Phone,,5.5
+
 TRT-AL00A,,Huawei,,Share7 Plus,,Phone,,5.5
 
 ##########
