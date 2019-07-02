@@ -117,7 +117,7 @@ public class UserAgentParserTest {
         info = parser.getUserAgentInfo(uaExpr);
         assertNotNull(info);
         assertThat(info.getDeviceBrand().toString(), is("Xiaomi"));
-        assertThat(info.getDeviceName().toString(), is("Xiaomi Mi-4c"));
+        assertThat(info.getDeviceName().toString(), is("Xiaomi 4C"));
 
         uaExpr = "Dalvik/2.1.0 (Linux; U; Android 4.4.2; OnePlus OnePlus A3000 Build/S4CNPU";
         info = parser.getUserAgentInfo(uaExpr);
@@ -138,7 +138,7 @@ public class UserAgentParserTest {
         UserAgentInfo info = parser.getUserAgentInfo(uaExpr);
         assertNotNull(info);
         assertThat(info.getDeviceBrand().toString(), is("Meizu"));
-        assertThat(info.getDeviceName().toString(), is("Meizu MX4 Pro"));
+        assertThat(info.getDeviceName().toString(), is("Meizu MX4"));
         uaExpr = "Mozilla/5.0 (Linux; U; Android 6.0; zh-cn; Build/MRA58K ) AppleWebKit/534.30 (KHTML,like Gecko) Version/6.0 Mobile Safari/534.30 GIONEE-F100S/F100SD RV/6.0.1 GNBR/5.1.1.bs Id/2A4541250E1500AFBE03BD6865A07C29";
         info = parser.getUserAgentInfo(uaExpr);
         assertNotNull(info);
@@ -175,7 +175,7 @@ public class UserAgentParserTest {
         assertThat(info.getDeviceName().toString(), is("Huawei FRD-DL00"));
         uaExpr = "UCWEB/2.0 (MIDP-2.0; U; zh-CN; VKY-AL00) U2/1.0.0 UCBrowser/10.7.2.940  U2/1.0.0 Mobile";
         info = parser.getUserAgentInfo(uaExpr);
-        assertThat(info.getDeviceName().toString(), is("Huawei VKY-AL00"));
+        assertThat(info.getDeviceName().toString(), is("Huawei P10 Plus"));
     }
 
     @Test
@@ -243,10 +243,10 @@ public class UserAgentParserTest {
         assertNotNull(info);
         assertThat(info.getDeviceBrand().toString(), is("Huawei"));
         assertThat(info.getDeviceName().toString(), is("Huawei PLK-CL00"));
-        uaExpr = "Mozilla/5.0 (Linux; Android 6.0.1; HUAWEI RIO-AL00 Build/HuaweiRIO-AL00; wv) AppleWebKit/537.36 (KHTML, like Gecko) Version/4.0 Chrome/61.0.3163.98 Mobile Safari/537.36";
+        uaExpr = "Mozilla/5.0 (Linux; U; Android 9; zh-cn; MHA-AL00 Build/HUAWEIMHA-AL00) AppleWebKit/537.36 (KHTML, like Gecko) Version/4.0 Chrome/71.0.3578.99 Mobile Safari/537.36 baiduboxapp/11.2.0.10 (Baidu; P1 8.1.0)";
         info = parser.getUserAgentInfo(uaExpr);
 
-        uaExpr = "Mozilla/5.0 (Linux; U; Android 8.1.0; zh-cn; PADT00 Build/O11019) AppleWebKit/537.36 (KHTML, like Gecko) Version/4.0 Chrome/62.0.3202.84 Mobile Safari/537.36 MQQBrowser/6.2 TBS/044405";
+        uaExpr = "Mozilla/5.0 (Linux; Android 8.0.0; EVA-TL00 Build/HUAWEIEVA-TL00; wv) AppleWebKit/537.36 (KHTML, like Gecko) Version/4.0 Chrome/43.0.2357.65 Mobile Safari/537.36";
         info = parser.getUserAgentInfo(uaExpr);
         System.out.println(info.getDeviceName());
 

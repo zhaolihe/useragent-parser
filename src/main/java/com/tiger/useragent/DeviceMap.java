@@ -78,12 +78,8 @@ public class DeviceMap {
             return device;
         }
         String family = device.family.split("/")[0].replace('_', ' ');
-        if (device.brand.equals(DEFAULT_VALUE) && !family.equals(DEFAULT_VALUE)) {
-            Device mapDevice ;
-            if ((mapDevice= map.get(family)) != null) {
-                return mapDevice;
-            }
-            return Device.DEFAULT_PHONE_SCREEN;
+        if (map.containsKey(family)) {
+            return map.get(family);
         }
         return device;
     }

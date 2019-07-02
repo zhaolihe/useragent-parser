@@ -197,100 +197,6 @@
 ##########
 # Huawei
 ##########
-- regex: '(RIO-AL00)'
-  brand_replacement: 'Huawei'
-  device_replacement: '麦芒4'
-- regex: '(DUK-AL20)'
-  brand_replacement: 'Huawei'
-  device_replacement: 'HonorV9'
-- regex: '(MAR-AL00)'
-  brand_replacement: 'Huawei'
-  device_replacement: 'nova4e'
-- regex: '(G616-L076)'
-  brand_replacement: 'Huawei'
-  device_replacement: 'G616'
-- regex: '(STF-AL00)'
-  brand_replacement: 'Huawei'
-  device_replacement: 'Honor9'
-- regex: '(LLD-AL10)'
-  brand_replacement: 'Huawei'
-  device_replacement: 'Honor9青春版'
-- regex: '(JMM-AL10)'
-  brand_replacement: 'Huawei'
-  device_replacement: 'HonorV9'
-
-- regex: '(BAH-AL00)'
-  brand_replacement: 'Huawei'
-  device_replacement: 'M3'
-- regex: '(INE-TL00)'
-  brand_replacement: 'Huawei'
-  device_replacement: 'nova3i'
-- regex: '(COR-AL10)'
-  brand_replacement: 'Huawei'
-  device_replacement: 'HonorPlay6'
-
-- regex: '(CLT-AL00)'
-  brand_replacement: 'Huawei'
-  device_replacement: 'P20 Pro'
-- regex: '(EML-AL00)'
-  brand_replacement: 'Huawei'
-  device_replacement: 'P20'
-- regex: '(EVA-AL10)'
-  brand_replacement: 'Huawei'
-  device_replacement: 'P9'
-
-- regex: '(LYA-AL10)'
-  brand_replacement: 'Huawei'
-  device_replacement: 'Mate20 Pro'
-- regex: '(HMA-AL00)'
-  brand_replacement: 'Huawei'
-  device_replacement: 'Mate20'
-- regex: '(LON-AL00)'
-  brand_replacement: 'Huawei'
-  device_replacement: 'Mate9 Pro'
-- regex: '(MHA-TL00)'
-  brand_replacement: 'Huawei'
-  device_replacement: 'Mate9'
-
-
-- regex: '(COL-AL10)'
-  brand_replacement: 'Huawei'
-  device_replacement: 'Honor10'
-
-
-
-- regex: '(G750-T20)'
-  brand_replacement: 'Huawei'
-  device_replacement: '3X Pro'
-
-- regex: '(JAT-AL00)'
-  brand_replacement: 'Huawei'
-  device_replacement: '畅玩8A'
-- regex: '(JSN-AL00)'
-  brand_replacement: 'Huawei'
-  device_replacement: '畅玩8X'
-- regex: '(BLN-TL10)'
-  brand_replacement: 'Huawei'
-  device_replacement: '畅玩6X'
-- regex: '(Che2-TL00)'
-  brand_replacement: 'Huawei'
-  device_replacement: '畅玩4X'
-
-- regex: '(POT-AL00a)'
-  brand_replacement: 'Huawei'
-  device_replacement: '畅享9S'
-- regex: '(LDN-AL00)'
-  brand_replacement: 'Huawei'
-  device_replacement: '畅享8'
-- regex: '(SLA-TL10)'
-  brand_replacement: 'Huawei'
-  device_replacement: '畅享7'
-- regex: '(NCE-AL00)'
-  brand_replacement: 'Huawei'
-  device_replacement: '畅享6'
-
-
-
 - regex: '(HUAWEI|Huawei)[\s]?(\w+) Build'
   brand_replacement: 'Huawei'
 
@@ -302,7 +208,7 @@
 
 - regex: '(HONOR|Honor)(\w+-\w+)'
   brand_replacement: 'Huawei'
-  device_replacement: 'Honor $2'
+  device_replacement: '$2'
 
 - regex: '(HONOR|Honor)[\W_]?(\w+)'
   brand_replacement: 'Huawei'
@@ -392,6 +298,7 @@
 - regex: '(PACM00)'
   brand_replacement: 'OPPO'
   device_replacement: 'R15'
+
 
 ##########
 # incomplete!

@@ -36,8 +36,8 @@ public class Parser {
     }
 
     private void readConfigs() throws IOException {
-
-        mobileParser = MobileParser.mapForFile(Parser.class.getResourceAsStream("/MobileDictionary.txt"));
+        // 解析屏幕大小
+//        mobileParser = MobileParser.mapForFile(Parser.class.getResourceAsStream("/MobileDictionary.txt"));
 
         Yaml yaml = new Yaml(new SafeConstructor());
         try (InputStream stream = Parser.class.getResourceAsStream("/OSConfig.yaml")) {
