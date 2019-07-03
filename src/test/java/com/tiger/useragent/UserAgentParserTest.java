@@ -117,7 +117,7 @@ public class UserAgentParserTest {
         info = parser.getUserAgentInfo(uaExpr);
         assertNotNull(info);
         assertThat(info.getDeviceBrand().toString(), is("Xiaomi"));
-        assertThat(info.getDeviceName().toString(), is("Mi-4c"));
+        assertThat(info.getDeviceName().toString(), is("4c"));
 
         uaExpr = "Dalvik/2.1.0 (Linux; U; Android 4.4.2; OnePlus OnePlus A3000 Build/S4CNPU";
         info = parser.getUserAgentInfo(uaExpr);
@@ -130,6 +130,12 @@ public class UserAgentParserTest {
         assertNotNull(info);
         assertThat(info.getDeviceBrand().toString(), is("Sony"));
         assertThat(info.getDeviceName().toString(), is("E6883"));
+
+        uaExpr = "Mozilla/5.0 (Linux; Android 5.1.1; Mi-4c Build/LMY47V; wv) AppleWebKit/537.36 (KHTML, like Gecko) Version/4.0 Chrome/55.0.2883.91 Mobile Safari/537.36 wkbrowser 4.1.93 3113";
+        info = parser.getUserAgentInfo(uaExpr);
+        assertNotNull(info);
+        assertThat(info.getDeviceBrand().toString(),is("Xiaomi"));
+        assertThat(info.getDeviceName().toString(),is("4c"));
     }
 
     @Test
@@ -271,6 +277,9 @@ public class UserAgentParserTest {
         uaExpr = "qqlive 5.9.0 rv:5264 (iPad; iOS 10.3.2; zh-Hans_US)";
         UserAgentInfo info1 = parser.getUserAgentInfo(uaExpr);
         assertNotNull(info1);
+        uaExpr = "Mozilla/5.0 (Linux; Android 7.1.1; dazen 6 Build/NMF26O; wv) AppleWebKit/537.36 (KHTML, like Gecko) Version/4.0 Chrome/52.0.2743.100 Mobile Safari/537.36";
+        info = parser.getUserAgentInfo(uaExpr);
+        System.out.println(info);
     }
 
     @Test

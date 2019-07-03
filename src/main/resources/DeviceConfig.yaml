@@ -156,32 +156,32 @@
 # Xiaomi
 # http://developer.xiaomi.com/doc/?p=254
 ##########
-- regex: '\b(MI)[_\- ](\w+)'
+- regex: '\b([M|m][I|i])[_\- ](\w+)'
   brand_replacement: 'Xiaomi'
 
 - regex: '\b(HM)[_\- ](\w+)'
   brand_replacement: 'Xiaomi'
-  device_replacement: 'Hongmi $2'
+  device_replacement: '红米 $2'
 
 - regex: '\b(HM)(\w+)'
   brand_replacement: 'Xiaomi'
-  device_replacement: 'Hongmi $2'
+  device_replacement: '红米 $2'
 
 - regex: '\b(HM)'
   brand_replacement: 'Xiaomi'
-  device_replacement: 'Hongmi'
+  device_replacement: '红米'
 
 - regex: '\b(HONGMIM)(\d+)?'
   brand_replacement: 'Xiaomi'
-  device_replacement: 'Hongmi $2'
+  device_replacement: '红米 $2'
 
-- regex: '(Redmi) (\w+([\s]\w+)?) Build'
-  brand_replacement: 'Xiaomi'
-  device_replacement: 'Hongmi $2'
+- regex: '([R|r]edmi) (\w+([\s]\w+)?) Build'
+  brand_replacement: '红米'
+  device_replacement: '红米 $2'
 
 - regex: '(Redmi) (\w+([\s]\w+)?) MIUI'
   brand_replacement: 'Xiaomi'
-  device_replacement: 'Hongmi $2'
+  device_replacement: '红米 $2'
 
 - regex: '\b(Xiaomi)'
   brand_replacement: 'Xiaomi'
@@ -281,8 +281,7 @@
 ##########
 - regex: '(OPPO|oppo)[\W_]?(\w+)'
   brand_replacement: 'OPPO'
-
-- regex: '(R\d\d\d[T7S]) Build'
+- regex: '(P\w{5})\W'
   brand_replacement: 'OPPO'
   device_replacement: '$1'
 
@@ -469,7 +468,7 @@
   brand_replacement: 'Gionee'
   device_replacement: '$1'
 
-- regex: '(F100L) Build/'
+- regex: '(F10\w+) Build/'
   brand_replacement: 'Gionee'
   device_replacement: '$1'
 
@@ -602,7 +601,7 @@
   brand_replacement: 'Letv'
   device_replacement: '$1'
 
-- regex: '(Letv|letv)[_| ](\w+\d+) Build/'
+- regex: '(Letv|letv)[_| ](\w+\d+-) Build/'
   brand_replacement: 'Letv'
   device_replacement: '$2'
 
@@ -620,6 +619,13 @@
 #T-smart
 #######
 - regex: '(T-smart)[_| ](\w\d+)_\w+'
+
+#######
+#dazen
+#######
+- regex: '(dazen) (\w+|\d+)'
+  brand_replacement: 'Dazen'
+  device_replacement: '$2'
 
 ########
 #OBEE
@@ -735,13 +741,13 @@
 # leshi
 #######
 - regex: '(Letv) (\w+) Build'
-  brand_replacement: 'Leshi'
+  brand_replacement: 'Letv'
   device_replacement: '$2'
 - regex: '(Le) (\w+) Build'
-  brand_replacement: 'Leshi'
+  brand_replacement: 'Letv'
   device_replacement: '$2'
 - regex: '(Letv) (\w+)/'
-  brand_replacement: 'Leshi'
+  brand_replacement: 'Letv'
   device_replacement: '$2'
 
 ##########
