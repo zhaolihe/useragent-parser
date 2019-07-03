@@ -111,25 +111,25 @@ public class UserAgentParserTest {
         UserAgentInfo info = parser.getUserAgentInfo(uaExpr);
         assertNotNull(info);
         assertThat(info.getDeviceBrand().toString(), is("Xiaomi"));
-        assertThat(info.getDeviceName().toString(), is("Xiaomi M5 Note"));
+        assertThat(info.getDeviceName().toString(), is("M5 Note"));
 
         uaExpr = "Mozilla/5.0 (Linux; Android 5.1.1; XiaoMi Mi-4c Build/RBL97Q; wv) AppleWebKit/537.36 (KHTML, like Gecko) Version/4.0 Chrome";
         info = parser.getUserAgentInfo(uaExpr);
         assertNotNull(info);
         assertThat(info.getDeviceBrand().toString(), is("Xiaomi"));
-        assertThat(info.getDeviceName().toString(), is("Xiaomi 4C"));
+        assertThat(info.getDeviceName().toString(), is("Mi-4c"));
 
         uaExpr = "Dalvik/2.1.0 (Linux; U; Android 4.4.2; OnePlus OnePlus A3000 Build/S4CNPU";
         info = parser.getUserAgentInfo(uaExpr);
         assertNotNull(info);
         assertThat(info.getDeviceBrand().toString(), is("OnePlus"));
-        assertThat(info.getDeviceName().toString(), is("OnePlus A3000"));
+        assertThat(info.getDeviceName().toString(), is("3T"));
 
         uaExpr = "Mozilla/5.0 (Linux; U; Android 4.0.3; zh-CN; E6883 Build/32.4.A.0.160) AppleWebKit/537.36 (KHTML,like Gecko) Version/4.0 Chrome/40.0.2214.89 UCBrowser/11.4.1.939 Mobile Safari/537.36";
         info = parser.getUserAgentInfo(uaExpr);
         assertNotNull(info);
         assertThat(info.getDeviceBrand().toString(), is("Sony"));
-        assertThat(info.getDeviceName().toString(), is("Sony E6883"));
+        assertThat(info.getDeviceName().toString(), is("E6883"));
     }
 
     @Test
@@ -138,7 +138,7 @@ public class UserAgentParserTest {
         UserAgentInfo info = parser.getUserAgentInfo(uaExpr);
         assertNotNull(info);
         assertThat(info.getDeviceBrand().toString(), is("Meizu"));
-        assertThat(info.getDeviceName().toString(), is("Meizu MX4"));
+        assertThat(info.getDeviceName().toString(), is("MX4 Pro"));
         uaExpr = "Mozilla/5.0 (Linux; U; Android 6.0; zh-cn; Build/MRA58K ) AppleWebKit/534.30 (KHTML,like Gecko) Version/6.0 Mobile Safari/534.30 GIONEE-F100S/F100SD RV/6.0.1 GNBR/5.1.1.bs Id/2A4541250E1500AFBE03BD6865A07C29";
         info = parser.getUserAgentInfo(uaExpr);
         assertNotNull(info);
@@ -172,10 +172,10 @@ public class UserAgentParserTest {
         String uaExpr = "Mozilla/5.0(Linux;Android7.0;zh-cn;FRD-DL00Build/FRD-DL00)AppleWebKit/534.30(KHTML,likeGecko)Version/4.0MobileSafari/534.30)";
         UserAgentInfo info = parser.getUserAgentInfo(uaExpr);
         assertNotNull(info);
-        assertThat(info.getDeviceName().toString(), is("Huawei FRD-DL00"));
+        assertThat(info.getDeviceName().toString(), is("荣耀 8"));
         uaExpr = "UCWEB/2.0 (MIDP-2.0; U; zh-CN; VKY-AL00) U2/1.0.0 UCBrowser/10.7.2.940  U2/1.0.0 Mobile";
         info = parser.getUserAgentInfo(uaExpr);
-        assertThat(info.getDeviceName().toString(), is("Huawei P10 Plus"));
+        assertThat(info.getDeviceName().toString(), is("P10 Plus"));
     }
 
     @Test
@@ -242,7 +242,7 @@ public class UserAgentParserTest {
         UserAgentInfo info = parser.getUserAgentInfo(uaExpr);
         assertNotNull(info);
         assertThat(info.getDeviceBrand().toString(), is("Huawei"));
-        assertThat(info.getDeviceName().toString(), is("Huawei PLK-CL00"));
+        assertThat(info.getDeviceName().toString(), is("荣耀 7"));
         uaExpr = "Mozilla/5.0 (Linux; U; Android 9; zh-cn; MHA-AL00 Build/HUAWEIMHA-AL00) AppleWebKit/537.36 (KHTML, like Gecko) Version/4.0 Chrome/71.0.3578.99 Mobile Safari/537.36 baiduboxapp/11.2.0.10 (Baidu; P1 8.1.0)";
         info = parser.getUserAgentInfo(uaExpr);
 
@@ -422,7 +422,7 @@ public class UserAgentParserTest {
         uaExpr = "Mozilla/5.0 (Linux; Android 4.2.2; ATH-AL00 Build/ATH-AL00) AppleWebKit/537.36 (KHTML, like Gecko) Version/4.0 Chrome/47.0.2526.100 Mobile Safari/537.36";
         info = parser.getUserAgentInfo(uaExpr);
         assertThat(info.getDeviceBrand().toString(),is("Huawei"));
-        assertThat(info.getDeviceName().toString(),is("Huawei ATH-AL00"));
+        assertThat(info.getDeviceName().toString(),is("荣耀 7i"));
     }
 
     @Test

@@ -275,10 +275,6 @@
   device_replacement: 'LePad $2'
   device_type_replacement: 'Pad'
 
-- regex: '(A798T)'
-  brand_replacement: 'Lenovo'
-  device_replacement: '$1'
-
 ##########
 # OPPO
 # http://www.oppo.com/?q=service/uaprof
@@ -289,15 +285,6 @@
 - regex: '(R\d\d\d[T7S]) Build'
   brand_replacement: 'OPPO'
   device_replacement: '$1'
-- regex: '(PBAM00)'
-  brand_replacement: 'OPPO'
-  device_replacement: 'A5'
-- regex: '(PADM00|PADT00)'
-  brand_replacement: 'OPPO'
-  device_replacement: 'A3'
-- regex: '(PACM00)'
-  brand_replacement: 'OPPO'
-  device_replacement: 'R15'
 
 
 ##########

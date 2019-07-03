@@ -35,7 +35,7 @@ public class DeviceMap {
 
     public static DeviceMap mapFromFile(InputStream stream) throws IOException {
         Map<String, Device> map = new HashMap<>();
-        try (BufferedReader reader = new BufferedReader(new InputStreamReader(stream))) {
+        try (BufferedReader reader = new BufferedReader(new InputStreamReader(stream, "utf-8"))) {
             String line;
             while ((line = reader.readLine()) != null) {
                 if (!isCommentOrBlank(line)) {
@@ -52,7 +52,8 @@ public class DeviceMap {
     }
 
     /**
-     *  verify input expression to invalid
+     * verify input expression to invalid
+     *
      * @param line
      * @return
      */
@@ -77,7 +78,7 @@ public class DeviceMap {
         if ("".equals(replaceFamily.replaceAll("/", ""))) {
             return device;
         }
-        String family = device.family.split("/")[0].replace('_', ' ');
+        String family = device.family.split("/")[0].replace('_', ' ').toUpperCase();
         if (map.containsKey(family)) {
             return map.get(family);
         }

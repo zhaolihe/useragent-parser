@@ -1,3 +1,4 @@
+https://github.com/KHwang9883/MobileModels  设备型号
 设备号规则
 DEVICE/32位 MagicKitchen
 Device/设备厂商  QQ
