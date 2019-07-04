@@ -30,7 +30,10 @@ MIX 2,,Xiaomi,,小米 Max 2,,Phone,,5.5
 MIX 2S,,Xiaomi,,小米 Max 2S,,Phone,,6.0
 XIAOMI,,Xiaomi,,小米,,Phone,,5.0
 SKR-A0,,Xiaomi,,黑鲨,,Phone,,6
-
+AWM-A0,,Xiaomi,,黑鲨,,Phone,,6
+SKW-A0,,Xiaomi,,黑鲨,,Phone,,6
+REDMI NOTE 7 PRO,,Xiaomi,,红米 Note 7 Pro,,Phone,,6.5
+MIX 3,,Xiaomi,,Mix3,,Phone,,6
 
 
 
@@ -42,35 +45,44 @@ D6503,,Sony,,Xperia Z2,,Phone,,5.2
 L50W,,Sony,,Xperia Z2,,Phone,,5.2
 C6802,,Sony,,Xperia Z,,Phone,,6.44
 G8342,,Sony,,Xperia XZ,,Phone,,5.2
+G8142,,Sony,,Xperia XZ,,Phone,,5.2
 
 
 ##########
 # Meizu
 ##########
-M1 NOTE,,Meizu,,魅族 M1 note,,Phone,,5.5
-M2 NOTE,,Meizu,,魅族 M2 note,,Phone,,5.5
-M3 NOTE,,Meizu,,魅族 M3 note,,Phone,,5.5
-M4 NOTE,,Meizu,,魅族 M4 note,,Phone,,5.5
-M6 NOTE,,Meizu,,魅族 M6 note,,Phone,,5.5
-M1,,Meizu,,魅族 M1,,Phone,,5.5
-M2,,Meizu,,魅族 M2,,Phone,,5.5
-M3,,Meizu,,魅族 M3,,Phone,,5.5
-M4,,Meizu,,魅族 M4,,Phone,,5.5
-M5,,Meizu,,魅族 M5,,Phone,,5.5
-M6,,Meizu,,魅族 M6,,Phone,,5.5
-M1 E,,Meizu,,魅族 M1e,,Phone,,5.5
-M2 E,,Meizu,,魅族 M2e,,Phone,,5.5
-M3 E,,Meizu,,魅族 M3e,,Phone,,5.5
-M4 E,,Meizu,,魅族 M4e,,Phone,,5.5
-M5 E,,Meizu,,魅族 M5e,,Phone,,5.5
-M6 E,,Meizu,,魅族 M6e,,Phone,,5.5
-MX1,,Meizu,,魅族 MX1,,Phone,,5.5
-MX2,,Meizu,,魅族 MX2,,Phone,,5.5
-MX3,,Meizu,,魅族 MX3,,Phone,,5.5
-MX4,,Meizu,,魅族 MX4,,Phone,,5.5
-MX5,,Meizu,,魅族 MX5,,Phone,,5.5
-MX6,,Meizu,,魅族 MX6,,Phone,,5.5
-
+M1 NOTE,,Meizu,,M1 note,,Phone,,5.5
+M2 NOTE,,Meizu,,M2 note,,Phone,,5.5
+M3 NOTE,,Meizu,,M3 note,,Phone,,5.5
+M4 NOTE,,Meizu,,M4 note,,Phone,,5.5
+M5 NOTE,,Meizu,,M5 note,,Phone,,5.5
+M6 NOTE,,Meizu,,M6 note,,Phone,,5.5
+M1,,Meizu,,M1,,Phone,,5.5
+M2,,Meizu,,M2,,Phone,,5.5
+M3,,Meizu,,M3,,Phone,,5.5
+M4,,Meizu,,M4,,Phone,,5.5
+M5,,Meizu,,M5,,Phone,,5.5
+M6,,Meizu,,M6,,Phone,,5.5
+M1 E,,Meizu,,M1e,,Phone,,5.5
+M2 E,,Meizu,,M2e,,Phone,,5.5
+M3 E,,Meizu,,M3e,,Phone,,5.5
+M4 E,,Meizu,,M4e,,Phone,,5.5
+M5 E,,Meizu,,M5e,,Phone,,5.5
+M6 E,,Meizu,,M6e,,Phone,,5.5
+MX1,,Meizu,,MX1,,Phone,,5.5
+MX2,,Meizu,,MX2,,Phone,,5.5
+MX3,,Meizu,,MX3,,Phone,,5.5
+MX4,,Meizu,,MX4,,Phone,,5.5
+MX5,,Meizu,,MX5,,Phone,,5.5
+MX6,,Meizu,,MX6,,Phone,,5.5
+M1 METAL,,Meizu,,metal,,Phone,,5.5
+16TH,,Meizu,,16,,Phone,,6.5
+16TH PLUS,,Meizu,,16 Plus,,Phone,,6.5
+PRO 6 Plus,,Meizu,,PRO 6 Plus,,Phone,,5.7
+PRO 7 Plus,,Meizu,,PRO 7 Plus,,Phone,,5.7
+PRO 5 Plus,,Meizu,,PRO 5 Plus,,Phone,,5.7
+M3 MAX,,Meizu,,M3 Max,,Phone,,5.5
+M1852,,Meizu,,X8,,Phone,,5.5
 
 ##########
 # OPPO
@@ -78,7 +90,35 @@ MX6,,Meizu,,魅族 MX6,,Phone,,5.5
 R7PLUSM,,OPPO,,R7 Plus,,Phone,,6.0
 R7PLUS,,OPPO,,R7,,Phone,,6.0
 CPH1729,,OPPO,,A83,,Phone,,5.7
+R8207,,OPPO,,R1,,Phone,,5
+A31,,OPPO,,A31,,Phone,,4.5
 
+##########
+# Huawei
+##########
+HONOR,,Huawei,,荣耀,,Phone,,5.0
+Y7,,Huawei,,Y7,,Phone,,5.5
+CHE1-CL20,,Huawei,,荣耀畅玩 4X,,Phone,,5.5
+
+
+##########
+# Meitu
+##########
+MP1602,,Meitu,,T8,,Phone,,5.2
+T8,,Meitu,,T8,,Phone,,5.2
+MEITU,,Meitu,,-,,Phone,,5
+MP1603,,Meitu,,M8,,Phone,,5.2
+
+
+##########
+# Gionee
+##########
+GIONEE,,Gionee,,金立,,Phone,,5
+
+##########
+# Samsung
+##########
+S9,,Samsung,,Galaxy S9,,Phone,,5.8
 
 ##########
 # TV
@@ -88,21 +128,27 @@ X3-50,,Letv,,X3,,TV,,50
 C42SD320,,CANTV,,TV,,60
 W40K,,whaley,,微鲸TV,,TV,,40
 
+
 ##########
 # Other
 ##########
-HONOR,,Huawei,,荣耀,,Phone,,5.0
 BF T26,,BIFER,,T26,,Phone,,5.0
 HLTE200T,,Hisense,,F26,,Phone,,6.0
 ZUK Z2121,,Lenovo,,Z2 Pro,,Phone,,5.2
-Y7,,Huawei,,Y7,,Phone,,5.5
+ZUK Z2131
 blade V6,,中兴,,Blade V6,,Phone,,5
 XT1943-1,,Motorola,,P30,,Phone,,6.2
-LEMOBILE,,Letv,,-,,Phone,,5
+XT1799-2
+LEMOBILE,,Letv,,Letv,,Phone,,5
+LEPHONE,,Letv,,Letv,,Phone,,5
 SUGAR S,,SUGAR,,SUGAR S,,Phone,,4.8
-MP1602,,Meitu,,T8,,Phone,,5.2
-T8,,Meitu,,T8,,Phone,,5.2
 1831-A0,,Coolpad,,酷玩7C,,Phone,,5.5
-GN5001S,,Gionee,,GN5001S,,Phone,,5
-GIONEE,,Gionee,,金立,,Phone,,5
+C106,,Coolpad,,Cool1,,Phone,,5.5
+C106-9,,Coolpad,,Cool1,,Phone,,5.5
+TA-1000,,Nokia,,NOKIA 6,,Phone,,5.5
+360,,360,,360,,Phone,,5
+1505-A02,,360,,N4S,,Phone,,5
+ONEPLUS,,OnePlus,,OnePlus,,Phone,,5
+WOW64,,PC,,Window,,PC,,5
+WIN64,,PC,,Window,,PC,,5
 

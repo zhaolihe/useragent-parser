@@ -110,8 +110,8 @@ public class UserAgentParserTest {
         String uaExpr = "Mozilla/5.0 (Linux; Android 5.0.2; XiaoMi M5 Note Build/RJV90N; wv) AppleWebKit/537.36 (KHTML, like Gecko) Version/4.0 Chrome";
         UserAgentInfo info = parser.getUserAgentInfo(uaExpr);
         assertNotNull(info);
-        assertThat(info.getDeviceBrand().toString(), is("Xiaomi"));
-        assertThat(info.getDeviceName().toString(), is("M5 Note"));
+        assertThat(info.getDeviceBrand().toString(), is("Meizu"));
+        assertThat(info.getDeviceName().toString(), is("M5 note"));
 
         uaExpr = "Mozilla/5.0 (Linux; Android 5.1.1; XiaoMi Mi-4c Build/RBL97Q; wv) AppleWebKit/537.36 (KHTML, like Gecko) Version/4.0 Chrome";
         info = parser.getUserAgentInfo(uaExpr);
@@ -145,7 +145,7 @@ public class UserAgentParserTest {
         assertNotNull(info);
         assertThat(info.getDeviceBrand().toString(), is("Meizu"));
         assertThat(info.getDeviceName().toString(), is("MX4 Pro"));
-        uaExpr = "Mozilla/5.0 (Linux; U; Android 6.0; zh-cn; Build/MRA58K ) AppleWebKit/534.30 (KHTML,like Gecko) Version/6.0 Mobile Safari/534.30 GIONEE-F100S/F100SD RV/6.0.1 GNBR/5.1.1.bs Id/2A4541250E1500AFBE03BD6865A07C29";
+        uaExpr = "OTTSDK;1.1.0.20;Android;4.0.4;ideatv A210";
         info = parser.getUserAgentInfo(uaExpr);
         assertNotNull(info);
     }

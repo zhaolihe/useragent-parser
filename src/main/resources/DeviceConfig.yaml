@@ -274,6 +274,10 @@
   brand_replacement: 'Lenovo'
   device_replacement: 'LePad $2'
   device_type_replacement: 'Pad'
+- regex: '(ZUK)[\W_ ]?(\w+)'
+  brand_replacement: 'Lenovo'
+  device_replacement: '$1'
+  device_type_replacement: 'Phone'
 
 ##########
 # OPPO
@@ -320,7 +324,7 @@
 ##########
 # MeiZu
 ##########
-- regex: '(MEIZU|meizu)[\W_]?(\w+)'
+- regex: '(MEIZU|meizu|Meizu)[\W_-]?(\w+)'
   brand_replacement: 'Meizu'
 
 - regex: '(M570)(C|Q|M)\s\w+'
@@ -336,6 +340,9 @@
 ##########
 - regex: '(Meitu)\s(\w+)? Build'
   brand_replacement: 'Meitu'
+- regex: '(MP\d{4}) Build'
+  brand_replacement: 'Meitu'
+  device_replacement: '$1'
 
 ##########
 # TianYu
@@ -390,6 +397,76 @@
 ######
 - regex: '([ |;])(\d+-[a|A]01) Build/'
   brand_replacement: '360'
+
+######
+# TV
+######
+- regex: 'OTTSDK(.*)(CVTM|CVTE)'
+  brand_replacement: 'Samsung'
+  device_replacement: '$2'
+  device_type_replacement: 'TV'
+
+
+- regex: 'OTTSDK(.*Letv)[ _-](\w+\d+[-|_]\d+)'
+  brand_replacement: 'Letv'
+  device_replacement: '$2'
+  device_type_replacement: 'TV'
+
+- regex: 'OTTSDK(.*MOOKA)(MOOKA|LE40A)'
+  brand_replacement: 'Haier'
+  device_replacement: '$2'
+  device_type_replacement: 'TV'
+
+- regex: 'OTTSDK(.*)(ChangHong|长虹智能电视)'
+  brand_replacement: 'ChangHong'
+  device_replacement: '$2'
+  device_type_replacement: 'TV'
+
+- regex: 'OTTSDK(.*)(BRAVIA)'
+  brand_replacement: 'Sony'
+  device_replacement: '$2'
+  device_type_replacement: 'TV'
+
+- regex: 'OTTSDK(.*)(MiTV|MiBOX)'
+  brand_replacement: 'Xiaomi'
+  device_replacement: '$2'
+  device_type_replacement: 'TV'
+
+- regex: 'OTTSDK(.*)(Skyworth|Coocaa|9R15_E710U|E900V21C)'
+  brand_replacement: 'Skyworth'
+  device_replacement: 'Skyworth'
+  device_type_replacement: 'TV'
+
+- regex: 'OTTSDK(.*)(KKTV_K32J|konka)'
+  brand_replacement: '康佳'
+  device_replacement: '康佳'
+  device_type_replacement: 'TV'
+
+- regex: 'OTTSDK(.*)(LED32K360J)'
+  brand_replacement: 'Hisense'
+  device_replacement: 'Hisense'
+  device_type_replacement: 'TV'
+
+- regex: 'OTTSDK(.*AQUOS)'
+  brand_replacement: 'AQUOS'
+  device_replacement: 'AQUOS'
+  device_type_replacement: 'TV'
+
+- regex: 'OTTSDK(.*)(ideatv|17TV)'
+  brand_replacement: 'Lenovo'
+  device_replacement: '$2'
+  device_type_replacement: 'TV'
+- regex: 'OTTSDK(.*)(SUBOR_\w+\d+)'
+  brand_replacement: '小霸王'
+  device_replacement: '$2'
+  device_type_replacement: 'TV'
+
+- regex: '(OTTSDK)'
+  brand_replacement: 'TV'
+  device_replacement: '$1'
+  device_type_replacement: 'TV'
+
+
 
 ##########
 # OWWO
@@ -464,7 +541,7 @@
 - regex: '(Gionee|GIONEE|GiONEE)[\W_]?(\w+)'
   brand_replacement: 'Gionee'
 
-- regex: '\b(GN\d{3}\w?)\b'
+- regex: '\b(GN\d{3}\d?\w?)\b'
   brand_replacement: 'Gionee'
   device_replacement: '$1'
 
@@ -597,7 +674,11 @@
 - regex: '(Lephone)_(\w+\d+)_\w+'
   brand_replacement: 'Letv'
 
-- regex: '(le) (\w+\d+) Build/'
+- regex: '(le \w+\d+) Build/'
+  brand_replacement: 'Letv'
+  device_replacement: '$1'
+
+- regex: '(LEX\d+) Build/'
   brand_replacement: 'Letv'
   device_replacement: '$1'
 
@@ -802,7 +883,7 @@
 
 
 # e.g. ME525, MB525, XT910
-- regex: '\b(XT|MB|ME)(\d{3})\b'
+- regex: '\b(XT|MB|ME)(\d{3}\d?)\b'
   brand_replacement: 'Motorola'
   device_replacement: '$1$2'
 
