@@ -142,9 +142,9 @@ XT1799-2
 LEMOBILE,,Letv,,Letv,,Phone,,5
 LEPHONE,,Letv,,Letv,,Phone,,5
 SUGAR S,,SUGAR,,SUGAR S,,Phone,,4.8
-1831-A0,,Coolpad,,酷玩7C,,Phone,,5.5
-C106,,Coolpad,,Cool1,,Phone,,5.5
-C106-9,,Coolpad,,Cool1,,Phone,,5.5
+1831-A0,,CoolPad,,酷玩7C,,Phone,,5.5
+C106,,CoolPad,,Cool1,,Phone,,5.5
+C106-9,,CoolPad,,Cool1,,Phone,,5.5
 TA-1000,,Nokia,,NOKIA 6,,Phone,,5.5
 360,,360,,360,,Phone,,5
 1505-A02,,360,,N4S,,Phone,,5

@@ -176,7 +176,7 @@
   device_replacement: '红米 $2'
 
 - regex: '([R|r]edmi) (\w+([\s]\w+)?) Build'
-  brand_replacement: '红米'
+  brand_replacement: 'Xiaomi'
   device_replacement: '红米 $2'
 
 - regex: '(Redmi) (\w+([\s]\w+)?) MIUI'
@@ -438,8 +438,8 @@
   device_type_replacement: 'TV'
 
 - regex: 'OTTSDK(.*)(KKTV_K32J|konka)'
-  brand_replacement: '康佳'
-  device_replacement: '康佳'
+  brand_replacement: 'KONKA'
+  device_replacement: 'KONKA'
   device_type_replacement: 'TV'
 
 - regex: 'OTTSDK(.*)(LED32K360J)'
@@ -448,7 +448,7 @@
   device_type_replacement: 'TV'
 
 - regex: 'OTTSDK(.*AQUOS)'
-  brand_replacement: 'AQUOS'
+  brand_replacement: 'Sharp'
   device_replacement: 'AQUOS'
   device_type_replacement: 'TV'
 
@@ -649,7 +649,7 @@
 # Konka
 ######
 - regex: '(Konka Android TV) (\d+)'
-  brand_replacement: 'Konka'
+  brand_replacement: 'KONKA'
   is_mobile_replacement: 'false'
   device_type_replacement: 'TV'
 - regex: '(Konka|KONKA)[\W_ ]?(\w+)_'
