@@ -285,7 +285,7 @@
 ##########
 - regex: '(OPPO|oppo)[\W_]?(\w+)'
   brand_replacement: 'OPPO'
-- regex: '(P\w{5})\W'
+- regex: '\W(P\w{5})\W'
   brand_replacement: 'OPPO'
   device_replacement: '$1'
 

@@ -134,8 +134,8 @@ public class UserAgentParserTest {
         uaExpr = "Mozilla/5.0 (Linux; Android 5.1.1; Mi-4c Build/LMY47V; wv) AppleWebKit/537.36 (KHTML, like Gecko) Version/4.0 Chrome/55.0.2883.91 Mobile Safari/537.36 wkbrowser 4.1.93 3113";
         info = parser.getUserAgentInfo(uaExpr);
         assertNotNull(info);
-        assertThat(info.getDeviceBrand().toString(),is("Xiaomi"));
-        assertThat(info.getDeviceName().toString(),is("4c"));
+        assertThat(info.getDeviceBrand().toString(), is("Xiaomi"));
+        assertThat(info.getDeviceName().toString(), is("4c"));
     }
 
     @Test
@@ -367,7 +367,7 @@ public class UserAgentParserTest {
         uaExpr = "Mozilla/5.0 (Linux; Android 7.0; HUAWEI CAZ-AL10 Build/HUAWEICAZ-AL10; wv) AppleWebKit/537.36 (KHTML, like Gecko) Version/4.0 Chrome/55.0.2883.91 Mobile Safari/537.36 X-Tingyun-Id/null;c=2;r=1468719239;";
         matcher = identityPattern.matcher(uaExpr);
         assertTrue(matcher.find());
-        if(matcher.find(0)){
+        if (matcher.find(0)) {
             String key = matcher.group(1);
             String value = matcher.group(2);
             assertThat(key.toLowerCase(), is("id"));
@@ -392,19 +392,22 @@ public class UserAgentParserTest {
             String key = matcher.group(1);
             String value = matcher.group(2);
             assertThat(key.toUpperCase(), is("MZ"));
-            assertThat(value.toUpperCase(),is("4F0575225EDC39879698EDAFDDD4995A"));
+            assertThat(value.toUpperCase(), is("4F0575225EDC39879698EDAFDDD4995A"));
         }
     }
 
     @Test
-    public void testOppoBrowser(){
+    public void testOppoBrowser() {
         String uaExpr = "Mozilla/5.0 (Linux; U; Android 5.1.1; zh-cn; A51 Build/LMY47V) AppleWebKit/537.36 (KHTML, like Gecko) Version/4.0 OppoBrowser/3.6.0 Mobile Safari/537.36";
         UserAgentInfo info = parser.getUserAgentInfo(uaExpr);
         assertThat(info.getBrowserName().toString(), is("OppoBrowser"));
+        uaExpr = "Mozilla/5.0 (Linux; Android 8.1.0; PBFM00 Build/OPM1.171019.026; wv) AppleWebKit/537.36 (KHTML, like Gecko) Version/4.0 Chrome/43.0.2357.65 Mobile Safari/537.36";
+        info = parser.getUserAgentInfo(uaExpr);
+        assertThat(info.getDeviceBrand().toString(),is("OPPO"));
     }
 
     @Test
-    public void testAppWithCFNetwork(){
+    public void testAppWithCFNetwork() {
         String uaExpr = "PopStar!/5.1.18 CFNetwork/889.9 Darwin/17.2.0";
         UserAgentInfo info = parser.getUserAgentInfo(uaExpr);
         assertThat(info.getBrowserName().toString(), is("popstar!"));
@@ -423,19 +426,19 @@ public class UserAgentParserTest {
     }
 
     @Test
-    public void testHuaweiVideo(){
+    public void testHuaweiVideo() {
         String uaExpr = "HwVPlayer;2.2.0.306;Android;6.0;PLK-TL00";
         UserAgentInfo info = parser.getUserAgentInfo(uaExpr);
         assertThat(info.getBrowserName().toString(), is("华为视频"));
 
         uaExpr = "Mozilla/5.0 (Linux; Android 4.2.2; ATH-AL00 Build/ATH-AL00) AppleWebKit/537.36 (KHTML, like Gecko) Version/4.0 Chrome/47.0.2526.100 Mobile Safari/537.36";
         info = parser.getUserAgentInfo(uaExpr);
-        assertThat(info.getDeviceBrand().toString(),is("Huawei"));
-        assertThat(info.getDeviceName().toString(),is("荣耀 7i"));
+        assertThat(info.getDeviceBrand().toString(), is("Huawei"));
+        assertThat(info.getDeviceName().toString(), is("荣耀 7i"));
     }
 
     @Test
-    public void testSmartisan(){
+    public void testSmartisan() {
         String uaExpr = "Mozilla/5.0 (Linux; U; Android 7.1.1; zh-CN; OS103 Build/NGI77B) AppleWebKit/537.36 (KHTML, like Gecko) Version/4.0 Chrome/57.0.2987.108 Quark/2.4.3.987 Mobile Safari/537.36";
         UserAgentInfo info = parser.getUserAgentInfo(uaExpr);
         System.out.println(info.getDeviceBrand());
