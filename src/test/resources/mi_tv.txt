@@ -1,0 +1,117 @@
+小米电视:
+L47M1-AA: 小米电视
+小米电视 2:
+L40M2-AA: 小米电视 2
+L49M2-AA: 小米电视 2
+L55M2-AA: 小米电视 2
+小米电视 2S:
+L48M3-AA: 小米电视 2S
+L48M3-AR: 小米电视 2S
+小米电视 3:
+L55M4-AA: 小米电视 3
+L55M4-AR: 小米电视 3
+L60M4-AA: 小米电视 3
+L60M4-AR: 小米电视 3
+L70M4-AA: 小米电视 3
+小米电视 3s:
+L43M3-AA: 小米电视 3s
+L43M3-AR: 小米电视 3s
+L48M3-AF: 小米电视 3s
+L55M5-AA: 小米电视 3s
+L60M5-AA: 小米电视 3s
+L65M5-AA: 小米电视 3s
+L65M4-AQ: 小米电视 3s
+小米电视 4A:
+L32M5-AZ: 小米电视 4A
+L32M5-AZ: 小米电视 4A
+L40M5-AD: 小米电视 4A
+L43M5-AZ: 小米电视 4A
+L43M5-AD: 小米电视 4A
+L43M5-5A: 小米电视 4A
+L43M5-5A: 小米电视 4A
+L49M5-AZ: 小米电视 4A
+L50M5-AD: 小米电视 4A
+L50M5-5A: 小米电视 4A
+L50M5-5A: 小米电视 4A
+L55M5-AZ: 小米电视 4A
+L55M5-AD: 小米电视 4A
+L55M5-5A: 小米电视 4A
+L58M5-4A: 小米电视 4A
+L65M5-AZ: 小米电视 4A
+L65M5-AD: 小米电视 4A
+L65M5-5A: 小米电视 4A
+小米电视 4:
+L49M5-AB: 小米电视 4
+L55M5-AB: 小米电视 4
+L65M5-AB: 小米电视 4
+L65M5-4: 小米电视 4
+L75M5-AB: 小米电视 4
+小米电视 4C:
+L32M5-AD: 小米电视 4C
+L40M5-4C: 小米电视 4C
+L40M5-4C: 小米电视 4C
+L43M5-AX: 小米电视 4C
+L50M5-AD: 小米电视 4C
+L55M5-AZ: 小米电视 4C
+L65M5-4C: 小米电视 4C
+小米电视 4S:
+L32M5-AD: 小米电视 4S
+L43M5-AU: 小米电视 4S
+L43M5-5S: 小米电视 4S
+L50M5-AD: 小米电视 4S
+L50M5-5S: 小米电视 4S
+L55M5-AD: 小米电视 4S
+L55M5-5S: 小米电视 4S
+L55M5-AQ: 小米电视 4S
+L58M5-4C: 小米电视 4S
+L65M5-AD: 小米电视 4S
+L65M5-5S: 小米电视 4S
+L65M5-AD: 小米电视 4S
+L75M5-4S: 小米电视 4S
+小米电视 4X:
+L43M5-4X: 小米电视 4X
+L55M5-AD: 小米电视 4X
+L65M5-4X: 小米电视 4X
+小米全面屏电视:
+L32M5-AD: 小米全面屏电视
+L43M5-FA: 小米全面屏电视
+L55M5-AZ: 小米全面屏电视
+L55M5-EC: 小米全面屏电视
+L65M5-EA: 小米全面屏电视
+L55M5-AB: 小米电视
+L65M5-4: 小米电视
+小米壁画电视:
+L65M5-BH: 小米壁画电视
+小米电视主机:
+MDZ-18-DA: 小米电视主机
+MDZ-19-DA: 小米家庭影院
+小米盒子:
+MDZ-05-AA: 小米盒子
+MDZ-06-AA: 小米盒子
+MDZ-06-AB: 小米盒子
+MDZ-09-AA: 小米盒子
+MDZ-09-AK: 小米盒子
+MDZ-15-AA: 小米盒子 mini
+MDZ-16-AA: 小米盒子 3
+MDZ-18-AA: 小米盒子 3
+MDZ-19-AA: 小米盒子 3s
+MDZ-21-AA: 小米盒子 4
+MDZ-20-AA: 小米盒子 4
+MDZ-23-AA: 小米盒子 4
+国际产品
+Mi LED Smart TV (印度):
+L32M5-AI: Mi LED Smart TV 4A
+L43M5-AI: Mi LED Smart TV 4A
+L55M5-AI: Mi LED Smart TV 4
+L32M5-AL: Mi LED Smart TV 4A Pro
+L32M5-AN: Mi LED Smart TV 4C Pro
+L43M5-AN: Mi LED Smart TV 4A Pro
+L49M5-AN: Mi LED Smart TV 4A Pro
+L55M5-AN: Mi LED Smart TV 4 Pro
+L55M4-4XINA: Mi LED Smart TV 4X Pro
+Mi TV (印度尼西亚):
+L32M5-AN: Mi TV 4A
+L43M5-AN: Mi TV 4A
+Mi Box (国际版):
+MDZ-16-AB: Mi Box
+MDZ-22-AB: Mi Box S

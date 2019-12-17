@@ -1,5 +1,6 @@
 package com.tiger.useragent;
 
+import com.google.common.base.Function;
 import com.google.common.base.Strings;
 import org.apache.commons.lang3.StringUtils;
 
@@ -9,6 +10,7 @@ import java.io.InputStream;
 import java.io.InputStreamReader;
 import java.util.HashMap;
 import java.util.Map;
+import java.util.stream.Stream;
 
 import static com.tiger.useragent.Constant.DEFAULT_VALUE;
 
@@ -29,13 +31,25 @@ public class DeviceMap {
     public static final int DEVICE_TYPE = 3;
     public static final int DEVICE_SCREEN_SIZE = 4;
 
+
     DeviceMap(Map<String, Device> map) {
         this.map = map;
     }
 
     public static DeviceMap mapFromFile(InputStream stream) throws IOException {
-        Map<String, Device> map = new HashMap<>();
-        try (BufferedReader reader = new BufferedReader(new InputStreamReader(stream))) {
+         Map<String, Device> map = new HashMap<>();
+
+        try (InputStream inputStream = Parser.class.getResourceAsStream("/DeviceDictionary_Auto.txt")){
+            fillMap(inputStream, map);
+        }
+
+        fillMap(stream, map);
+
+        return new DeviceMap(map);
+    }
+
+    private static void fillMap(InputStream stream, Map<String, Device> map) throws IOException {
+        try (BufferedReader reader = new BufferedReader(new InputStreamReader(stream, "utf-8"))) {
             String line;
             while ((line = reader.readLine()) != null) {
                 if (!isCommentOrBlank(line)) {
@@ -48,11 +62,11 @@ public class DeviceMap {
                 }
             }
         }
-        return new DeviceMap(map);
     }
 
     /**
-     *  verify input expression to invalid
+     * verify input expression to invalid
+     *
      * @param line
      * @return
      */
@@ -77,13 +91,9 @@ public class DeviceMap {
         if ("".equals(replaceFamily.replaceAll("/", ""))) {
             return device;
         }
-        String family = device.family.split("/")[0].replace('_', ' ');
-        if (device.brand.equals(DEFAULT_VALUE) && !family.equals(DEFAULT_VALUE)) {
-            Device mapDevice ;
-            if ((mapDevice= map.get(family)) != null) {
-                return mapDevice;
-            }
-            return Device.DEFAULT_PHONE_SCREEN;
+        String family = device.family.split("/")[0].replace('_', ' ').toUpperCase();
+        if (map.containsKey(family)) {
+            return map.get(family);
         }
         return device;
     }

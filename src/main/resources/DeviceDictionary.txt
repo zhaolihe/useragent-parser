@@ -24,496 +24,131 @@
 #########################################################################
 
 ##########
-# OPPO
+# Xiaomi
 ##########
-R8007,,OPPO,,R8007,,Phone,,5
-R7007,,OPPO,,R7007,,Phone,,5
-R6007,,OPPO,,R6007,,Phone,,4.7
-R2017,,OPPO,,R2017,,Phone,,4.7
-R809T,,OPPO,,R809T,,Phone,,4.7
-R811,,OPPO,,R811,,Phone,,3.5
-R813T,,OPPO,,R813T,,Phone,,4
-R815T,,OPPO,,R815T,,Phone,,4.3
-R819T,,OPPO,,R819T,,Phone,,4.7
-R821T,,OPPO,,R821T,,Phone,,4
-R823T,,OPPO,,R823T,,Phone,,4
-R827T,,OPPO,,R827T,,Phone,,4.7
-R829T,,OPPO,,R827T,,Phone,,5
-R831T,,OPPO,,R831T,,Phone,,4.5
-R833T,,OPPO,,R833T,,Phone,,4.3
-U750T,,OPPO,,Ulike2,,Phone,,4.5
-U707T,,OPPO,,U707T,,Phone,,5.5
-X907,,OPPO,,Finder,,Phone,,4.3
-X909,,OPPO,,Find5,,Phone,,5
-X9007,,OPPO,,X9007,,Phone,,5.5
-N5117,,OPPO,,N5117,,Phone,,5
-N1T,,OPPO,,N1T,,Phone,,5.9
-R7005,,OPPO,,R7005,,Phone,,5
-U705T,,OPPO,,U705T,,Phone,,4.5
-U701T,,OPPO,,U701T,,Phone,,4
-X9077,,OPPO,,X9077,,Phone,,5.5
-R830,,OPPO,,R830,,Phone,,4.5
-X909T,,OPPO,,X909T,,Phone,,5.5
-N5207,,OPPO,,N5207,,Phone,,5.5
-R7t,,OPPO,,R7t,,Phone,,5
-R7c,,OPPO,,R7c,,Phone,,5
-A31t,,OPPO,,A31t,,Phone,,4.5
-A31,,OPPO,,A31,,Phone,,4.5
-A31c,,OPPO,,A31c,,Phone,,4.5
-R7Plusm,,OPPO,,R7Plusm,,Phone,,6
-R7Plus,,OPPO,,R7Plus,,Phone,,6
-A51,,OPPO,,A51,,Phone,,5
-R8205,,OPPO,,R8205,,Phone,,5
-A11,,OPPO,,A11,,Phone,,4.5
-A33,,OPPO,,A33,,Phone,,5
-1107,,OPPO,,1107,,Phone,,4.5
-3007,,OPPO,,3007,,Phone,,4.7
-T703,,OPPO,,T703,,Phone,,3.2
-R801,,OPPO,,R801,,Phone,,3.5
-1105,,OPPO,,1105,,Phone,,4.5
-R805,,OPPO,,R805,,Phone,,3.5
-6607,,OPPO,,6607,,Phone,,5.9
-A31u,,OPPO,,A31u,,Phone,,4.5
-R807,,OPPO,,R807,,Phone,,4.0
-1100,,OPPO,,1100,,Phone,,4.5
-R2010,,OPPO,,R2010,,Phone,,4.7
+MIX 2,,Xiaomi,,小米 Max 2,,Phone,,5.5
+MIX 2S,,Xiaomi,,小米 Max 2S,,Phone,,6.0
+XIAOMI,,Xiaomi,,小米,,Phone,,5.0
+SKR-A0,,Xiaomi,,黑鲨,,Phone,,6
+AWM-A0,,Xiaomi,,黑鲨,,Phone,,6
+SKW-A0,,Xiaomi,,黑鲨,,Phone,,6
+REDMI NOTE 7 PRO,,Xiaomi,,红米 Note 7 Pro,,Phone,,6.5
+MIX 3,,Xiaomi,,Mix3,,Phone,,6
+
+
 
 ##########
 # Sony
 ##########
-L36h,,Sony,,L36h,,Phone,,5
-C6602,,Sony,,L36h,,Phone,,5
-C6603,,Sony,,L36h,,Phone,,5
-S39h,,Sony,,S39h,,Phone,,5
-X10i,,Sony,,X10i,,Phone,,0
-L39h,,Sony,,L39h,,Phone,,5
-L50t,,Sony,,L50t,,Phone,,5.2
-D6653,,Sony,,D6653,,Phone,,5.2
-E6853,,Sony,,Z5,,Phone,,5.5
-E6653,,Sony,,E6653,,Phone,,5.2
+M51W,,Sony,,Xperia Z1,,Phone,,4.3
+D6503,,Sony,,Xperia Z2,,Phone,,5.2
+L50W,,Sony,,Xperia Z2,,Phone,,5.2
+C6802,,Sony,,Xperia Z,,Phone,,6.44
+G8342,,Sony,,Xperia XZ,,Phone,,5.2
+G8142,,Sony,,Xperia XZ,,Phone,,5.2
 
-##########
-# Motorola
-##########
-DROID RAZR,,Motorola,,DROID RAZR,,Phone,,4.5
 
 ##########
 # Meizu
 ##########
-M040,,Meizu,,MX2,,Phone,,4.4
-M045,,Meizu,,MX2,,Phone,,4.4
-M9,,Meizu,,M9,,Phone,,3.5
-M032,,Meizu,,MX,,Phone,,4
-M031,,Meizu,,MX,,Phone,,4
-M030,,Meizu,,MX,,Phone,,4
-MX4,,Meizu,,MX4,,Phone,,5.36
-M355,,Meizu,,MX3,,Phone,,5.1
-M351,,Meizu,,MX3,,Phone,,5.1
-m1 note,,Meizu,,MX1,,Phone,,5.5
-MX4 Pro,,Meizu,,MX4,,Phone,,5.5
-M353,,Meizu,,MX3,,Phone,,5.1
-M356,,Meizu,,MX3,,Phone,,5.1
+M1 NOTE,,Meizu,,M1 note,,Phone,,5.5
+M2 NOTE,,Meizu,,M2 note,,Phone,,5.5
+M3 NOTE,,Meizu,,M3 note,,Phone,,5.5
+M4 NOTE,,Meizu,,M4 note,,Phone,,5.5
+M5 NOTE,,Meizu,,M5 note,,Phone,,5.5
+M6 NOTE,,Meizu,,M6 note,,Phone,,5.5
+M1,,Meizu,,M1,,Phone,,5.5
+M2,,Meizu,,M2,,Phone,,5.5
+M3,,Meizu,,M3,,Phone,,5.5
+M4,,Meizu,,M4,,Phone,,5.5
+M5,,Meizu,,M5,,Phone,,5.5
+M6,,Meizu,,M6,,Phone,,5.5
+M1 E,,Meizu,,M1e,,Phone,,5.5
+M2 E,,Meizu,,M2e,,Phone,,5.5
+M3 E,,Meizu,,M3e,,Phone,,5.5
+M4 E,,Meizu,,M4e,,Phone,,5.5
+M5 E,,Meizu,,M5e,,Phone,,5.5
+M6 E,,Meizu,,M6e,,Phone,,5.5
+MX1,,Meizu,,MX1,,Phone,,5.5
+MX2,,Meizu,,MX2,,Phone,,5.5
+MX3,,Meizu,,MX3,,Phone,,5.5
+MX4,,Meizu,,MX4,,Phone,,5.5
 MX5,,Meizu,,MX5,,Phone,,5.5
-MZ-MX5,,Meizu,,MX5,,Phone,,5.5
-m2 note,,Meizu,,MX2,,Phone,,4.4
-MZ-m2 note,,Meizu,,MX2,,Phone,,4.4
-M463C,,Meizu,,Meilan,,Phone,,5.5
-MZ-m2,,Meizu,,m2,,Phone,,4.4
-MZ-MX4 Pro,,Meizu,,MX4 Pro,,Phone,,5.5
-MZ-MX4,,Meizu,,MX4,,Phone,,5.36
-MZ-m1 note,,Meizu,,m1 note,,Phone,,5.5
-M571C,,Meizu,,M571C,,Phone,,5.5
-M578C,,Meizu,,M578C,,Phone,,5
-MZ-M578C,,Meizu,,M578C,,Phone,,5
-MZ-m1,,Meizu,,m1,,Phone,,5
-MZ-m1 metal,,Meizu,,m1 metal,,Phone,,5.5
-m1 metal,,Meizu,,m1 metal,,Phone,,5.5
-MZ-PRO 5,,Meizu,,MZ-PRO 5,,Phone,,5.7
-MZ-PRO 6,,Meizu,,MZ-PRO 6,,Phone,,5.2
-MZ-M571C,,Meizu,,M571,,Phone,,5.474
-MZ-m3 note,,Meizu,,m3 note,,Phone,,5.5
-m3 note,,Meizu,,m3 note,,Phone,,5.5
-MZ-m3,,Meizu,,MX3,,Phone,,5.1
-m2,,Meizu,,MX2,,Phone,,4.4
-M5,,Meizu,,MX5,,Phone,,5.5
-MZ-M3s,,Meizu,,M3s,,Phone,,5.0
-m3,,Meizu,,m3,,Phone,,5.0
-PRO 5,,Meizu,,PRO 5,,Phone,,5.7
-PRO 6,,Meizu,,PRO 6,,Phone,,5.2
-MZ-M578CA,,Meizu,,MZ-M578CA,,Phone,,5.0
-MZ-M1 E,,Meizu,,M1 E,,Phone,,5.5
-M1 E,,Meizu,,M1 E,,Phone,,5.5
-MZ-MX6,,Meizu,,MX6,,Phone,,5.5
-MZ-M681C,,Meizu,,MZ-M681C,,Phone,,5.5
-MZ-M57AC,,Meizu,,MZ-M57AC,,Phone,,5.5
-MZ-M688C,,Meizu,,MZ-M688C,,Phone,,5.0
-MZ-M463C,,Meizu,,MZ-M463C,,Phone,,5.5
 MX6,,Meizu,,MX6,,Phone,,5.5
-M578CA,,Meizu,,M578CA,,Phone,,5.0
-MZ-U20,,Meizu,,U20,,Phone,,5.5
-M681C,,Meizu,,M681C,,Phone,,5.5
-M688C,,Meizu,,M688C,,Phone,,5.0
+M1 METAL,,Meizu,,metal,,Phone,,5.5
+16TH,,Meizu,,16,,Phone,,6.5
+16TH PLUS,,Meizu,,16 Plus,,Phone,,6.5
+PRO 6 Plus,,Meizu,,PRO 6 Plus,,Phone,,5.7
+PRO 7 Plus,,Meizu,,PRO 7 Plus,,Phone,,5.7
+PRO 5 Plus,,Meizu,,PRO 5 Plus,,Phone,,5.7
+M3 MAX,,Meizu,,M3 Max,,Phone,,5.5
+M1852,,Meizu,,X8,,Phone,,5.5
 
 ##########
-# HTC
+# OPPO
 ##########
-Desire HD,,HTC,,Desire HD,,Phone,,4.3
-PC36100,,HTC,,PC36100,,Phone,,0
-Desire S,,HTC,,HTC Desire S,,Phone,,3.7
-M8,,HTC,,M8,,Phone,,5.0
-oneX,,HTC,,oneX,,Phone,,4.7
-
-##########
-# CoolPad
-##########
-8720,,CoolPad,,8720,,Phone,,0
-5860S,,CoolPad,,5860S,,Phone,,4.3
-8190,,CoolPad,,8190,,Phone,,4.5
-8150,,CoolPad,,8150,,Phone,,4
-8676-M01,,CoolPad,,8676-M01,,Phone,,5.5
-8085,,CoolPad,,8085,,Phone,,4.7
-SK3-02,,CoolPad,,SK3-02,,Phone,,4.7
-ivvi SS1-01,,CoolPad,,SS1-01,,Phone,,4.7
-SK3-01,,CoolPad,,SK3-01,,Phone,,4.7
-8676-A01,,CoolPad,,8676-A01,,Phone,,5.5
-SK1-02,,CoolPad,,SK1-02,,Phone,,4.7
-Y71-811,,CoolPad,,Y71-811,,Phone,,5.0
-K2-01,,CoolPad,,K2-01,,Phone,,4.7
-C106,,CoolPad,,C106,,Phone,,5.5
-K1,,CoolPad,,K1,,Phone,,5.0
-8190Q,,CoolPad,,8190Q,,Phone,,4.5
-8298-A01,,CoolPad,,8298-A01,,Phone,,5.0
-8681-A01,,CoolPad,,8681-A01,,Phone,,5.5
-8692-M02,,CoolPad,,8692-M02,,Phone,,6.0
-8692-A00,,CoolPad,,8692-A00,,Phone,,6.0
-
-##########
-# Lenovo
-##########
-A1 07,,Lenovo,,Lepad,,Pad,,0
-lenovo A820e,,Lenovo,,A820e,,Phone,,4.5
+R7PLUSM,,OPPO,,R7 Plus,,Phone,,6.0
+R7PLUS,,OPPO,,R7,,Phone,,6.0
+CPH1729,,OPPO,,A83,,Phone,,5.7
+R8207,,OPPO,,R1,,Phone,,5
+A31,,OPPO,,A31,,Phone,,4.5
 
 ##########
 # Huawei
 ##########
-C8650,,Huawei,,C8650,,Phone,,3.5
-H60-L01,,Huawei,,Honor,,Phone,,5.0
-H60-L02,,Huawei,,Honor,,Phone,,5.0
-T8951,,Huawei,,T8951,,Phone,,4.5
-Che1-CL20,,Huawei,,Honor,,Phone,,5.5
-G621-TL00,,Huawei,,Honor,,Phone,,5
-Che1-CL10,,Huawei,,Honor,,Phone,,5.5
-H60-L11,,Huawei,,Honor,,Phone,,5.0
-HW-Che1-CL10,,Huawei,,Honor,,Phone,,5.5
-H60-L03,,Huawei,,Honor,,Phone,,0
-CHM-CL00,,Huawei,,Honor,,Phone,,5
-H60-L12,,Huawei,,Honor,,Phone,,5.0
-HW-CHM-CL00,,Huawei,,Honor,,Phone,,5
-HW-H30-C00,,Huawei,,Honor,,Phone,,0
-G7-TL00,,Huawei,,G7-TL00,,Phone,,5.5
-Mate 7,,Huawei,,Mate 7,,Phone,,6
-HW-SCL-CL00,,Huawei,,Honor,,Phone,,5
-PE-UL00,,Huawei,,Honor,,Phone,,5.5
-HW-KIW-CL00,,Huawei,,Honor5X,,Phone,,5.5
-V8,,Huawei,,Honor,,Phone,,5.7
-FRD-AL00,,Huawei,,Honor,,Phone,,5.2
-P9,,Huawei,,P9,,Phone,,5.2
-Mate S,,Huawei,,Mate S,,Phone,,5.5
-H30-T10,,Huawei,,Honor,,Phone,,5.0
+HONOR,,Huawei,,荣耀,,Phone,,5.0
+Y7,,Huawei,,Y7,,Phone,,5.5
+CHE1-CL20,,Huawei,,荣耀畅玩 4X,,Phone,,5.5
+
 
 ##########
-# ZTE
+# Meitu
 ##########
-NX403A,,ZTE,,Nubia,,Phone,,4.7
-NX507J,,ZTE,,Nubia,,Phone,,5
-N9180,,ZTE,,Nubia,,Phone,,5
-X9180,,ZTE,,X9180,,Phone,,0
-N918St,,ZTE,,N918St,,Phone,,5
-NX505J,,ZTE,,NX505J,,Phone,,0
-E3T,,ZTE,,E3T,,Phone,,0
-NX529J,,ZTE,,Nubia NX529J,,Phone,,5.0
-NX511J,,ZTE,,Nubia NX511J,,Phone,,5.0
-NX531J,,ZTE,,Nubia NX531J,,Phone,,5.5
-N958St,,ZTE,,V5,,Phone,,5.5
-NX523J V1,,ZTE,,Nubia NX523J_V1,,Phone,,6.0
-NX512J,,ZTE,,Nubia NX512J,,Phone,,5.5
+MP1602,,Meitu,,T8,,Phone,,5.2
+T8,,Meitu,,T8,,Phone,,5.2
+MEITU,,Meitu,,-,,Phone,,5
+MP1603,,Meitu,,M8,,Phone,,5.2
 
-# Others
-PAD511,,Hair,,HaiPad PAD511,,Pad,,0
 
-# HRM1005HN unknown
+##########
+# Gionee
+##########
+GIONEE,,Gionee,,金立,,Phone,,5
 
-# Hisense
-Hisense E602M,,Hisense,,E602M,,Phone,,0
-Hisense E621T,,Hisense,,E621T,,Phone,,0
-HT-I717,,Hisense,,HT-I717,,Phone,,4
+##########
+# Samsung
+##########
+S9,,Samsung,,Galaxy S9,,Phone,,5.8
 
-# GN
-F301,,Gionee,,F301,,Phone,,4.7
-V182,,Gionee,,V182,,Phone,,4.5
-V188S,,Gionee,,V188S,,Phone,,5.0
-V183,,Gionee,,V183,,Phone,,4.5
-GN9000L,,Gionee,,GN9000L,,Phone,,5
-F103,,Gionee,,F103,,Phone,,5.0
-F303,,Gionee,,F303,,Phone,,4.7
-GN5001S,,Gionee,,GN5001S,,Phone,,5.0
-F100,,Gionee,,F100,,Phone,,5.0
-F105,,Gionee,,F105,,Phone,,5.0
-F100A,,Gionee,,F100A,,Phone,,5.0
-F103S,,Gionee,,F103S,,Phone,,5.0
-S3,,Gionee,,S3,,Phone,,5.2
-M5L,,Gionee,,M5L,,Phone,,5.5
-GN8002S,,Gionee,,GN8002S,,Phone,,6.0
+##########
+# TV
+##########
+CVTM628_PC821,,Samsung,,TV,,TV,,60
+X3-50,,Letv,,X3,,TV,,50
+C42SD320,,CANTV,,TV,,60
+W40K,,whaley,,微鲸TV,,TV,,40
 
-# CMCC
-M811,,CMCC,,M811,,Phone,,0
-M812C,,CMCC,,M812C,,Phone,,5.5
-M623C,,CMCC,,M623C,,Phone,,5
-M821,,CMCC,,M821,,Phone,,5
-M601,,CMCC,,M601,,Phone,,4.0
-M823,,CMCC,,M823,,Phone,,5.5
-M636,,CMCC,,M636,,Phone,,5.5
-N1,,CMCC,,N1,,Phone,,5.0
-M631,,CMCC,,M631,,Phone,,5.0
 
-# UOOGOU
-UOOGOU,,UOOGOU,,UOOGOU,,Phone,,0
-
-# gucci
-gucci,,gucci,,gucci,,Phone,,0
-
-# meitu
-Meitu2,,Meitu,,Meitu2,,Phone,,4.7
-M6,,Meitu,,M6,,Phone,,5
-MP1503,,Meitu,,MP1503,,Phone,,5.0
-M4S,,Meitu,,M4S,,Phone,,4.7
-
-# leshi
-X600,,Leshi,,X600,,Phone,,5.5
-x600,,Leshi,,X600,,Phone,,5.5
-X500,,Leshi,,X500,,Phone,,5.5
-X608,,Leshi,,X608,,Phone,,5.5
-X800,,Leshi,,X800,,Phone,,5.5
-X900,,Leshi,,X900,,Phone,,5.5
-LEX720,,Leshi,,LEX720,,Phone,,5.5
-
-# xiaomi
-Mi-4c,,Xiaomi,,4C,,Phone,,5
-m1,,Xiaomi,,m1,,Phone,,4
-M3,,Xiaomi,,M3,,Phone,,5
-2014813,,Xiaomi,,HM2,,Phone,,5
-2014812,,Xiaomi,,HM2,,Phone,,5
-2014811,,Xiaomi,,HM2,,Phone,,5
-2014821,,Xiaomi,,HM2,,Phone,,5
-2014501,,Xiaomi,,HM1S,,Phone,,4.7
-2014112,,Xiaomi,,HM2A,,Phone,,4.7
-MI2,,Xiaomi,,MI2,,Phone,,4.3
-
-# smartisan
-YQ601,,smartisan,,YQ601,,Phone,,5.5
-SM801,,smartisan,,SM801,,Phone,,4.95
-YQ603,,smartisan,,YQ603,,Phone,,5.5
-T1,,smartisan,,T1,,Phone,,4.95
-YQ607,,smartisan,,YQ607,,Phone,,5.5
-
-# TCL
-J326T,,TCL,,J326T,,Phone,,4.0
-J320T,,TCL,,J320T,,Phone,,4.0
-P318L,,TCL,,P318L,,Phone,,5.0
-
-# XBS
-XBS,,XBS,,XBS,,Phone,,0
-
-# SAMSUNG
-SC-06D,,SAMSUNG,,06D,,Phone,,4.8
-S6,,SAMSUNG,,S6,,Phone,,5.1
-S5,,SAMSUNG,,S5,,Phone,,5.1
-i9250-GN,,SAMSUNG,,i9250,,Phone,,4.65
-A5,,SAMSUNG,,A5,,Phone,,5.0
-
-# BASI
-JX8166,,BASI,,JX8166,,Phone,,4.46
-
-# 360
-1501 M02,,360,,F4,,Phine,,5.0
-1503-M02,,360,,N4,,Phone,,5.0
-1505-A01,,360,,N4S,,Phone,,5.5
-8681-M02,,360,,8681-M02,,Phone,,5.5
-1503-A01,,360,,N4,,Phone,,5.0
-1509-A00,,360,,Q4,,Phone,,6.0
-
-# ONEPLUS
-ONEPLUS A3000,,ONEPLUS,,A3000,,Phone,,5.5
-A0001,,ONEPLUS,,A0001,,Phone,,5.5
-ONE A2001,,ONEPLUS,,A2001,,Phone,,5.5
-
-# LG
-V10,,LG,,V10,,Phone,,5.7
-
-# TianYu
-T780,,TianYu,,T780,,Phone,,4.0
-
-# Konka
-T6100,,Konka,,T6100,,Phone,,0
-W990,,Konka,,W990,,Phone,,5.0
-
-# Sony
-SOV33,,Sony,,SOV33,,Phone,,5.0
-S55t,,Sony,,S55t,,Phone,,5.5
-
-# ZUK
-ZUK Z1,,ZUK,,Z1,,Phone,,5.5
-ZUK Z2131,,ZUK,,Z2,,Phone,,5.0
-
-# XYS
-MM1104,,XYS,,MM1104,,Phone,,4.5
-
-# CY
-CY8350,,CY,,CY8350,,Phone,,4.46
-
-# XiaoLaJiao
-LA2-S,,La,,LA2-S,,Phone,,5.0
-LA2-SN,,La,,LA2-SN,,Phone,,5.0
-S1,,La,,S1,,Phone,,5.0
-GM-T5,,La,,GM-T5,,Phone,,5.0
-GM-T1,,La,,GM-T1,,Phone,,5.0
-
-# XiaoYangShu
-MM1101,,XiaoYangShu,,MM1101,,Phone,,4.5
-MM1102,,XiaoYangShu,,MM1102,,Phone,,4.5
-
-# milang
-T005,,MiLang,,T005,,Phone,,4.7
-MIL-S9,,MiLang,,MIL-S9,,Phone,,4.7
-
-# kuke
-C10,,KuKe,,C10,,Phone,,4.5
-
-# tianhong
-H555-M1,,TianHong,,H555-M1,,Phone,,5.0
-H777-S1,,TianHong,,H777-S1,,Phone,,4.7
-
-# XiangMi
-X6666,,Xiangmi,,X6666,,Phone,,5.0
-X6088,,Xiangmi,,X6088,,Phone,,4.5
-
-# Toshiba
-T004,,Toshiba,,T004,,Phone,,3.4
-
-# BBK
-H8S,,BBK,,H8S,,Pad,,8.0
-
-# NOAIN
-NOAIN X9,,NOAIN,,X9,,Phone,,5.0
-NOAIN X7,,NOAIN,,X7,,Phone,,5.0
-
-#X2,,Lovme,,X2,,Phone,,5.5
-
-# SHOWN
-SHOWN P1,,SHOWN,,P1,,Phone,,5.0
-
-# epade
-epade A360S,,epade,,A360S,,Phone,,3.5
-
-# VMI
-V012G,,VMI,,V012G,,Phone,,4.5
-V003G,,VMI,,V003G,,Phone,,5.0
-
-# ETON
-ETON T701,,ETON,,T701,,Phone,,4.0
-ETON T890,,ETON,,T890,,Phone,,4.5
-
-# Baojiexun
-JX8155,,Baojiexun,,JX8155,,Phone,,4.0
-
-# lephone
-lephone W2,,Lephone,,W2,,Phone,,4.5
-lephone T6 V,,Lephone,,T6,,Phone,,5.0
-lephone T2,,Lephone,,T2,,Phone,,4.5
-lephone W9,,Lephone,,W9,,Phone,,5.5
-lephone T708V,,Lephone,,T708V,,Phone,,5.0
-lephone T2V,,Lephone,,T2,,Phone,,4.5
-lephone W7,,lephone,,W7,,Phone,,5.0
-
-# Feixun
-C630Lw,,Feixun,,C630Lw,,Phone,,5.0
-
-# DOOV
-V1,,DOOV,,V1,,Phone,,5.0
-C9,,DOOV,,C9,,Phone,,5.0
-
-# vivo
-X6 ,,vivo,,X6,,Phone,,5.2
-X5,,vivo,,X5,,Phone,,5.0
-
-# YaChuang
-CY8310,,CY,,CY8310,,Phone,,4.0
-CY8318,,CY,,CY8318,,Phone,,4.92
-
-# BIRD
-T9105,,BIRD,,T9105,,Phone,,3.5
-T9108,,BIRD,,T9108,,Phone,,3.5
-T9500,,BIRD,,T9500,,Phone,,4.0
-Doeasy E910,,BIRD,,Doeasy E910,,Phone,,4.5
-
-# ChangHong
-T02,,ChangHong,,T02,,Phone,,5.0
-
-#  BF
-BF A503,,BF,,A503,,Phone,,4.5
-BF T13,,BF,,T13,,Phone,,5.0
-T18,,BF,,T18,,Phone,,5.5
-BF T18,,BF,,T18,,Phone,,5.5
-BF T19,,BF,,T19,,Phone,,5.5
-
-#Smart
-S1S,,Smart,,S1S,,Pad,,7.0
-
-# CENXIN
-S16,,CENXIN,,S16,,Phone,,5.5
-
-# KOPO
-KOPO L6,,KOPO,,L6,,Phone,,5.0
-KOPO L8,,KOPO,,L8,,Phone,,5.0
-
-# KB
-KB8286,,KB,,KB8286,,Phone,,4.92
-
-# Readboy
-Readboy G90,,Readboy,,G90,,Pad,,10
-
-# Green Orange
-GO N3S,,Green Orange,,GO N3S,,Phone,,5.0
-
-# BOWAY
-BOWAY U7,,BOWAY,,U7,,Phone,,4.5
-BOWAY U11,,BOWA,,U11,,Phone,,5.5
-
-# CUBE
-T550,,CUBE,,T550,,Phone,,4.0
-S100,,CUBE,,S100,,Phone,,5.0
-
-# BL
-BL-T2C,,BL,,T2C,,Phone,,3.5
-
-# US
-U558S,,US,,U558S,,Phone,,4.5
-
-# OUKI
-OUKI OKA51,,OUKI,,OKA51,,Phone,,5.0
-OKA1,,OUKI,,OKA1,,Phone,,4.5
-
-# SOP
-SOP-M3,,SOP,,M3,,Phone,,5.0
-
+##########
 # Other
-FX03,,MiaoMi,,FX03,,Phone,,4.5
-M26,,LingMi,,M26,,Phone,,5.0
-T18-M1,,TianHong,,T18-M1,,Phone,,4.5
-H888,,TianHone,,H888,,Phone,,4.5
-M128-M52,,Mikee,,M128-M52,,Phone,,5.0
-T730,,YiTone,,T730,,Phone,,3.5
-D8,,DYTM,,D8,,Phone,,5.5
-HLA Note3,,HLA,,Note3,,Phone,,5.5
-KINGSUN-F,,KINGSUN,,KINGSUN-F,,Phone,,5.0
-BF T25,,BF,,T25,,Phone,,5.0
+##########
+BF T26,,BIFER,,T26,,Phone,,5.0
+HLTE200T,,Hisense,,F26,,Phone,,6.0
+ZUK Z2121,,Lenovo,,Z2 Pro,,Phone,,5.2
+ZUK Z2131
+blade V6,,中兴,,Blade V6,,Phone,,5
+XT1943-1,,Motorola,,P30,,Phone,,6.2
+XT1799-2
+LEMOBILE,,Letv,,Letv,,Phone,,5
+LEPHONE,,Letv,,Letv,,Phone,,5
+SUGAR S,,SUGAR,,SUGAR S,,Phone,,4.8
+1831-A0,,CoolPad,,酷玩7C,,Phone,,5.5
+C106,,CoolPad,,Cool1,,Phone,,5.5
+C106-9,,CoolPad,,Cool1,,Phone,,5.5
+TA-1000,,Nokia,,NOKIA 6,,Phone,,5.5
+360,,360,,360,,Phone,,5
+1505-A02,,360,,N4S,,Phone,,5
+ONEPLUS,,OnePlus,,OnePlus,,Phone,,5
+WOW64,,PC,,Window,,PC,,5
+WIN64,,PC,,Window,,PC,,5
+

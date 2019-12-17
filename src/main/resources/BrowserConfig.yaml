@@ -34,6 +34,9 @@
 - regex: '(funshion)[ |/]?([\d|.]*)'
   family_replacement: 'Funshion'
   brand_replacement: 'Funshion'
+- regex: '(Fengxing)[ |/]?([\d|.]*)'
+  family_replacement: 'Funshion'
+  brand_replacement: 'Funshion'
 
 ########
 # 豆瓣
@@ -375,10 +378,10 @@
   family_replacement: 'baiduboxapp'
 
 # OppoBrowser
-- regex: '(oppobrowser)/V(\d+)\.(\d+)(\.(\d+))?'
+- regex: '(oppobrowser)/V(\d+)\.(\d+)\.?(\d+)?'
   family_replacement: 'OppoBrowser'
 
-- regex: '(oppobrowser)/(\d+)\.(\d+)(\.(\d+))?'
+- regex: '(oppobrowser)/(\d+)\.(\d+)\.?(\d+)?'
   family_replacement: 'OppoBrowser'
 
 - regex: '(eui browser)/(\d+)\.(\d+)'
@@ -637,6 +640,8 @@
 ##########
 # Chrome
 ##########
+- regex: '(chromium|chrome)/(\d+)\.(\d+)\.(\d+)\.(\d+)'
+  brand_replacement: 'Chrome'
 - regex: '(chromium|chrome)/(\d+)\.(\d+)\.?(\d+)?'
   brand_replacement: 'Chrome'
 - regex: '(chrome)/(\d+)\.(\d+)\.?(\d+)?'

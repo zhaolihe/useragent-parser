@@ -36,11 +36,10 @@ public class MobileParser {
         }
     }
 
-    public static float getScreenSize(String brand, String family) {
+    public static float getScreenSize(String brand, String family, Map<String, Map<String, String>> mobileParser) {
         if (family.equalsIgnoreCase("iPhone")) {
             return 0;
         }
-        Map<String, Map<String, String>> mobileParser = Parser.mobileParser;
         if (mobileParser.containsKey(brand.toUpperCase())) {
             Map<String, String> stringStringMap = mobileParser.get(brand.toUpperCase());
             if (stringStringMap.containsKey(family.toUpperCase())) {

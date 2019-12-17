@@ -1,0 +1,42 @@
+ One (bacon):
+ONE A0001:  One 移动版
+ONE A1001:  One 联通版
+ 2 (2):
+ONE A2001:  2
+ONE A2003:  2 国际版
+ONE A2005:  2 北美版
+ X (onyx):
+ONE E1001:  X 移动/联通版
+ONE E1000:  X 全网通版
+ONE E1003:  X 国际版
+ONE E1005:  X 北美版
+ 3 (3):
+ A3000:  3
+ A3003:  3 国际版
+ 3T (3):
+ A3010:  3T
+ A3003:  3T 国际版
+ A3000:  3T 北美版
+ 5 (cheeseburger):
+ A5000:  5
+ 5T (dumpling):
+ A5010:  5T
+ 6 (enchilada):
+ A6000:  6
+ A6003:  6 国际版
+ 6T (fajita):
+ A6010:  6T
+ A6013:  6T 国际版
+ 7 (guacamoleb):
+GM1900:  7
+GM1901:  7 印度版
+GM1903:  7 欧洲版 
+GM1905:  7 国际版
+ 7 Pro (guacamole):
+GM1910:  7 Pro
+GM1911:  7 印度版
+GM1913:  7 Pro 欧洲版
+GM1915:  7 Pro 国际版
+GM1917:  7 Pro 北美版
+ 7 Pro 5G (guacamole):
+GM1920:  7 Pro 5G
