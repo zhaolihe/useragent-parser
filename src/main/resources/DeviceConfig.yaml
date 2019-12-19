@@ -214,19 +214,7 @@
   brand_replacement: 'Huawei'
   device_replacement: 'Honor'
 
-- regex: '(\w{3}-DL[1|0]0)'
-  brand_replacement: 'Huawei'
-  device_replacement: '$1'
-
-- regex: '(\w{3}-CL[1|0]0)'
-  brand_replacement: 'Huawei'
-  device_replacement: '$1'
-
-- regex: '(\w{3}-AL[1|0]0)'
-  brand_replacement: 'Huawei'
-  device_replacement: '$1'
-
-- regex: '(\w{3}-TL[1|0]0)'
+- regex: '(\b\w{3}-\w{2}\d{2}\b)'
   brand_replacement: 'Huawei'
   device_replacement: '$1'
 
@@ -397,6 +385,7 @@
 ######
 - regex: '([ |;])(\d+-[a|A]01) Build/'
   brand_replacement: '360'
+
 
 ######
 # TV

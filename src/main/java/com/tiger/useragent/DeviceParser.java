@@ -39,6 +39,12 @@ class DeviceParser {
                 return device;
             }
         }
+        String lower = agentString.toLowerCase();
+        if (lower.contains("ottsdk")){
+            return Device.DEFAULT_TV;
+        }else if(lower.contains("android") || lower.contains("phone") || lower.contains("mobile")){
+            return Device.DEFAULT_PHONE_SCREEN;
+        }
         return Device.DEFAULT_PC_SCREEN;
     }
 }
