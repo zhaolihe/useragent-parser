@@ -14,7 +14,7 @@ public class Browser {
     final String major;
     final String minor;
 
-    Browser(String brand, String family, String major, String minor) {
+    public Browser(String brand, String family, String major, String minor) {
         this.brand = brand;
         this.family = family;
         this.major = major;

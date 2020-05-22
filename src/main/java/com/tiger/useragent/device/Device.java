@@ -21,7 +21,7 @@ public class Device {
     final boolean isMobile;
     final String screenSize;
 
-    Device(String brand, String family, DeviceType deviceType, boolean isMobile) {
+    public Device(String brand, String family, DeviceType deviceType, boolean isMobile) {
         this.brand = brand;
         this.family = family;
         this.deviceType = deviceType;
@@ -29,7 +29,7 @@ public class Device {
         this.screenSize = "";
     }
 
-    Device(String brand, String family, DeviceType deviceType, boolean isMobile, String screenSize) {
+    public Device(String brand, String family, DeviceType deviceType, boolean isMobile, String screenSize) {
         this.brand = brand;
         this.family = family;
         this.deviceType = deviceType;

@@ -436,18 +436,6 @@ public class UserAgentParserTest {
     }
 
     @Test
-    public void testEnum() throws IOException {
-        UserAgentParser parser = UserAgentParser.getInstance();
-        String uaExpr = "Mozilla/4.0 (compatible; MSIE 8.0; Windows NT 4.0; WOW64; Trident/4.0; .NET4.0C; .NET4.0E; 360SE)";
-        UserAgentInfo info = parser.getUserAgentInfo(uaExpr);
-        System.out.println(info.getDeviceBrand());
-        DeviceType deviceType = parser.getDeviceType(info.getDeviceType().toString());
-        NetType netType = parser.getNetType(info.getNetType().toString());
-        OsType osType = parser.getOsType(info.getOsName().toString());
-        System.out.println(osType.getValue());
-    }
-
-    @Test
     public void testRegex() {
         Pattern netTypePattern = Pattern.compile("\\W(WIFI|5G|4G|3G|2G)\\W*", Pattern.CASE_INSENSITIVE);
         String expr = "Mozilla/5.0 (Linux; Android 5.1; M651CY Build/LMY47D) AppleWebKit/537.36 (KHTML, like Gecko) Version/4.0 Chrome/39.0.0.0 Mobile Safari/537.36 X-Tingyun-Id/p35OnrDoP8k;c=2;r=1392755971; hebao/7.0.109 NetType/wifi";

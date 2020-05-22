@@ -100,9 +100,7 @@ public class Parser {
         }
         Os os = parseOS(agentString);
         Browser browser = parseBrowser(agentString);
-//        String dotNet = parseDotNet(agentString);
         Pair<String, NetType> pair = parseNetType(agentString);
-        String deviceId = parseDeviceId(agentString);
         if (os == null) {
             os = Os.DEFAULT_OS;
 
@@ -112,20 +110,7 @@ public class Parser {
             device = Device.DEFAULT_PHONE_SCREEN;
         }
 
-        return buildUserAgentInfo(os, browser, device, pair, deviceId);
-    }
-
-    @Deprecated
-    public String parseDotNet(String agentString) {
-        String maxVersion = "", version;
-        Matcher matcher = pattern.matcher(agentString);
-        while (matcher.find()) {
-            version = matcher.group("ver");
-            if (version.compareTo(maxVersion) > 0) {
-                maxVersion = version;
-            }
-        }
-        return maxVersion.equals("") ? DEFAULT_VALUE : maxVersion;
+        return buildUserAgentInfo(os, browser, device, pair, DEFAULT_VALUE);
     }
 
     public Pair<String, NetType> parseNetType(String agentString) {
@@ -161,7 +146,7 @@ public class Parser {
         return osParser.parse(agentString);
     }
 
-    public DeviceType getDeviceType(String deviceType) {
+    private DeviceType getDeviceType(String deviceType) {
         if (Strings.isNullOrEmpty(deviceType)) {
             return DeviceType.Other;
         }
@@ -177,7 +162,7 @@ public class Parser {
         return dMap.get(key);
     }
 
-    public NetType getNetType(String netType) {
+    private NetType getNetType(String netType) {
         if (Strings.isNullOrEmpty(netType)) {
             return NetType.Other;
         }
@@ -193,7 +178,7 @@ public class Parser {
         return netMap.get(key);
     }
 
-    public OsType getOsType(String os) {
+    private OsType getOsType(String os) {
         if (Strings.isNullOrEmpty(os)) {
             return OsType.Other;
         }
