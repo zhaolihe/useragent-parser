@@ -141,16 +141,20 @@
 
 - regex: '\b(SM)\-([A-Z]\d+)'
   brand_replacement: 'Samsung'
+  device_type_replacement: 'phone'
 - regex: '\b(SCH|GT|SGH|SPH|SHV)[\-_ ](\w+)'
   brand_replacement: 'Samsung'
+  device_type_replacement: 'phone'
 - regex: '(SAMSUNG)\; (\w+)'
   brand_replacement: 'Samsung'
+  device_type_replacement: 'phone'
 - regex: '(SAMSUNG|Samsung|samsung)[\W_]?(\w+)?'
   brand_replacement: 'Samsung'
-
+  device_type_replacement: 'phone'
 - regex: 'Build/JRO03C'
   brand_replacement: 'Samsung'
   device_replacement: 'Galaxy'
+  device_type_replacement: 'phone'
 
 ##########
 # Xiaomi
@@ -158,37 +162,46 @@
 ##########
 - regex: '\b([M|m][I|i])[_\- ](\w+)'
   brand_replacement: 'Xiaomi'
+  device_type_replacement: 'phone'
 
 - regex: '\b(HM)[_\- ](\w+)'
   brand_replacement: 'Xiaomi'
   device_replacement: '红米 $2'
+  device_type_replacement: 'phone'
 
 - regex: '\b(HM)(\w+)'
   brand_replacement: 'Xiaomi'
   device_replacement: '红米 $2'
+  device_type_replacement: 'phone'
 
 - regex: '\b(HM)'
   brand_replacement: 'Xiaomi'
   device_replacement: '红米'
+  device_type_replacement: 'phone'
 
 - regex: '\b(HONGMIM)(\d+)?'
   brand_replacement: 'Xiaomi'
   device_replacement: '红米 $2'
+  device_type_replacement: 'phone'
 
 - regex: '([R|r]edmi) (\w+([\s]\w+)?) Build'
   brand_replacement: 'Xiaomi'
   device_replacement: '红米 $2'
+  device_type_replacement: 'phone'
 
 - regex: '(Redmi) (\w+([\s]\w+)?) MIUI'
   brand_replacement: 'Xiaomi'
   device_replacement: '红米 $2'
+  device_type_replacement: 'phone'
 
 - regex: '\b(Xiaomi)'
   brand_replacement: 'Xiaomi'
+  device_type_replacement: 'phone'
 
 - regex: '(XiaoMi) (\w+([\s,-]\w+)?) Build/'
   brand_replacement: 'Xiaomi'
   device_replacement: '$2'
+  device_type_replacement: 'phone'
 
 - regex: '(XIAOMI) (\w+\d+) Build/'
   brand_replacement: 'Xiaomi'
@@ -201,6 +214,7 @@
   brand_replacement: 'Huawei'
 
 - regex: '(HUAWEI|Huawei|huawei)[\s]?(\w+[ -]\w+)'
+  device_type_replacement: 'phone'
   brand_replacement: 'Huawei'
 
 - regex: '(HUAWEI|Huawei|huawei)[\W_]?(\w+)'
@@ -213,13 +227,17 @@
 - regex: '(HONOR|Honor)[\W_]?(\w+)'
   brand_replacement: 'Huawei'
   device_replacement: 'Honor'
+  device_type_replacement: 'phone'
 
 - regex: '(\b\w{3}-\w{2}\d{2}\b)'
   brand_replacement: 'Huawei'
+  device_type_replacement: 'phone'
   device_replacement: '$1'
 
 - regex: '(HUAWEI); (\w+\d+-\w+\d+)'
   brand_replacement: 'Huawei'
+  device_type_replacement: 'phone'
+
 - regex: '(HW)-(\w\d+(\w+)?)/'
   brand_replacement: 'Huawei'
 - regex: '(HW)-(\w+\d+)-\w+'

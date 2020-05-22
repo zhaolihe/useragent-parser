@@ -1,4 +1,4 @@
-package com.tiger.useragent;
+package com.tiger.useragent.browser;
 
 /**
  * com.tiger.useragent
@@ -7,8 +7,9 @@ package com.tiger.useragent;
  * date : 2017/5/5
  */
 public class Browser {
-    static final Browser DEFAULT_BROWSER = new Browser("-", "-", null, null);
-    final String brand; //品牌
+    public static final Browser DEFAULT_BROWSER = new Browser("-", "-", null, null);
+    //品牌
+    final String brand;
     final String family;
     final String major;
     final String minor;

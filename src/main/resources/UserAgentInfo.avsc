@@ -4,16 +4,18 @@
   "name": "UserAgentInfo",
   "fields":
   [
+     {"name": "os_type", "type": "int", "default": 0},
      {"name": "os_name", "type": "string", "default": "-"},
      {"name": "os_detail", "type": "string", "default": "-"},
+     {"name": "os_version", "type": "string", "default": "-"},
      {"name": "browser_name", "type": "string", "default": "-"},
      {"name": "browser_detail", "type": "string", "default": "-"},
      {"name": "device_brand", "type": "string", "default": "-"},
      {"name": "device_name", "type": "string", "default": "-"},
      {"name": "device_type", "type": "string", "default": "-"},
+     {"name": "int_device_type", "type": "int", "default": 0},
      {"name": "is_mobile", "type": "boolean", "default": false},
      {"name": "net_type", "type":"string", "default": "-"},
-     {"name": "device_id", "type":"string", "default": "-"},
-     {"name": "screen_size","type":"float","default":0}
+     {"name": "int_net_type", "type":"int", "default": 0}
   ]
 }

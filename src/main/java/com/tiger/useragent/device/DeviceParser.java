@@ -1,9 +1,8 @@
-package com.tiger.useragent;
+package com.tiger.useragent.device;
 
 import com.google.common.base.Strings;
 import com.google.common.collect.Lists;
 
-import java.util.ArrayList;
 import java.util.List;
 import java.util.Map;
 
@@ -13,10 +12,10 @@ import java.util.Map;
  * email : dayingzhaolihe@126.com
  * date : 2017/5/9
  */
-class DeviceParser {
+public class DeviceParser {
     private List<DevicePattern> patterns;
 
-    DeviceParser(List<DevicePattern> patterns) {
+    public DeviceParser(List<DevicePattern> patterns) {
         this.patterns = patterns;
     }
 

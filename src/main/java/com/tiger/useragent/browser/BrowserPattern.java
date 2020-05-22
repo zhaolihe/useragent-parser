@@ -1,4 +1,4 @@
-package com.tiger.useragent;
+package com.tiger.useragent.browser;
 
 import com.google.common.base.Strings;
 

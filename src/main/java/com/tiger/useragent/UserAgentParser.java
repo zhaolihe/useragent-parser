@@ -31,7 +31,6 @@ public class UserAgentParser extends Parser{
     private static final String CACHE_VERSION_KEY = "cache.version";
     private static final long CACHE_VERSION_VALUE = 01; // once config file changes, increase this number
     private static final Schema CACHE_SCHEMA;
-    private static final Object LOCK = new Object();
     private static UserAgentParser instance;
 
     static {
@@ -103,7 +102,10 @@ public class UserAgentParser extends Parser{
     public UserAgentInfo parseUserAgent(String agentString) {
         return parse(agentString);
     }
+    
 
+
+    // region cache method
     /**
      * Load default cache file in {@link UserAgentParser#CACHE_FILE}
      */
@@ -177,4 +179,5 @@ public class UserAgentParser extends Parser{
             }
         }
     }
+    // endregion
 }

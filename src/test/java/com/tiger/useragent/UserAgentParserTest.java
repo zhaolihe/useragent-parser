@@ -2,6 +2,9 @@ package com.tiger.useragent;
 
 import com.google.common.base.Function;
 import com.google.common.base.Strings;
+import com.tiger.useragent.enums.DeviceType;
+import com.tiger.useragent.enums.NetType;
+import com.tiger.useragent.enums.OsType;
 import org.junit.BeforeClass;
 import org.junit.Test;
 
@@ -267,22 +270,6 @@ public class UserAgentParserTest {
     }
 
     @Test
-    public void testDevice() {
-//        String uaExpr = "Mozilla/5.0 (iPhone; CPU iPhone OS 11_1_2 like Mac OS X) AppleWebKit/604.3.5 (KHTML, like Gecko) Mobile/15B202 QQ/7.2.8.478 V1_IPH_SQ_7.2.8_1_APP_A Pixel/640 Core/UIWebView Device/Apple(Unknown iOS device) NetType/WIFI QBWebViewType/1";
-        String uaExpr = "Mozilla/5.0 (Linux; Android 5.1; M651CY Build/LMY47D) AppleWebKit/537.36 (KHTML, like Gecko) Version/4.0 Chrome/39.0.0.0 Mobile Safari/537.36 X-Tingyun-Id/p35OnrDoP8k;c=2;r=1392755971; hebao/7.0.109 NetType/wifi";
-        UserAgentInfo info = parser.getUserAgentInfo(uaExpr);
-        assertNotNull(info);
-        assertThat(info.getDeviceId().toString(), is("-"));
-
-        uaExpr = "qqlive 5.9.0 rv:5264 (iPad; iOS 10.3.2; zh-Hans_US)";
-        UserAgentInfo info1 = parser.getUserAgentInfo(uaExpr);
-        assertNotNull(info1);
-        uaExpr = "Mozilla/5.0 (Linux; Android 7.1.1; dazen 6 Build/NMF26O; wv) AppleWebKit/537.36 (KHTML, like Gecko) Version/4.0 Chrome/52.0.2743.100 Mobile Safari/537.36";
-        info = parser.getUserAgentInfo(uaExpr);
-        System.out.println(info);
-    }
-
-    @Test
     public void testScreen() {
         String uaExpr = "\tMozilla/5.0 (Linux; Android 6.0; DIG-TL10 Build/HUAWEIDIG-TL10; wv) AppleWebKit/537.36 (KHTML, like Gecko) Version/4.0 Chrome/55.0.2883.91 Mobile Safari/537.36 Fanli/6.5.0.57 (ID:2-56124686-63269809102938-12-3; WVC:WV; SCR:720*1208-2.0)";
         UserAgentInfo info = parser.getUserAgentInfo(uaExpr);
@@ -446,6 +433,18 @@ public class UserAgentParserTest {
         info = parser.getUserAgentInfo(uaExpr);
         System.out.println(info.getDeviceBrand());
 
+    }
+
+    @Test
+    public void testEnum() throws IOException {
+        UserAgentParser parser = UserAgentParser.getInstance();
+        String uaExpr = "Mozilla/4.0 (compatible; MSIE 8.0; Windows NT 4.0; WOW64; Trident/4.0; .NET4.0C; .NET4.0E; 360SE)";
+        UserAgentInfo info = parser.getUserAgentInfo(uaExpr);
+        System.out.println(info.getDeviceBrand());
+        DeviceType deviceType = parser.getDeviceType(info.getDeviceType().toString());
+        NetType netType = parser.getNetType(info.getNetType().toString());
+        OsType osType = parser.getOsType(info.getOsName().toString());
+        System.out.println(osType.getValue());
     }
 
     @Test

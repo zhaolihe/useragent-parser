@@ -1,7 +1,20 @@
 package com.tiger.useragent;
 
+import com.google.common.base.Function;
 import com.google.common.base.Strings;
+import com.tiger.useragent.browser.Browser;
+import com.tiger.useragent.browser.BrowserParser;
+import com.tiger.useragent.device.Device;
+import com.tiger.useragent.device.DeviceMap;
+import com.tiger.useragent.device.DeviceParser;
+import com.tiger.useragent.device.DevicePattern;
+import com.tiger.useragent.enums.DeviceType;
+import com.tiger.useragent.enums.NetType;
+import com.tiger.useragent.enums.OsType;
+import com.tiger.useragent.os.Os;
+import com.tiger.useragent.os.OsParser;
 import org.apache.commons.lang3.StringUtils;
+import org.apache.commons.lang3.tuple.Pair;
 import org.yaml.snakeyaml.Yaml;
 import org.yaml.snakeyaml.constructor.SafeConstructor;
 
@@ -9,6 +22,8 @@ import java.io.IOException;
 import java.io.InputStream;
 import java.util.List;
 import java.util.Map;
+import java.util.concurrent.ConcurrentHashMap;
+import java.util.concurrent.ConcurrentMap;
 import java.util.regex.Matcher;
 import java.util.regex.Pattern;
 
@@ -25,6 +40,10 @@ public class Parser {
     private BrowserParser browserParser;
     private DeviceParser deviceParser;
     private DeviceMap deviceMap;
+    protected static final Object LOCK = new Object();
+    private static final ConcurrentMap<String, DeviceType> dMap = new ConcurrentHashMap<>();
+    private static final ConcurrentMap<String, NetType> netMap = new ConcurrentHashMap<>();
+    private static final ConcurrentMap<String, OsType> osMap = new ConcurrentHashMap<>();
 
     private final static Pattern pattern = Pattern.compile("\\.net( clr | client )?(?<ver>\\d(\\.\\d)?)(\\.\\d+)*[ce;$) ]", Pattern.CASE_INSENSITIVE);
     private final static Pattern netTypePattern = Pattern.compile("\\W(WIFI|5G|4G|3G|2G)\\W*", Pattern.CASE_INSENSITIVE);
@@ -76,24 +95,24 @@ public class Parser {
         }
 
         Device device = parseDevice(agentString);
-        if (device.deviceType.equals(DeviceType.Spider)) {
-            return buildUserAgentInfo(Os.DEFAULT_OS, Browser.DEFAULT_BROWSER, device, DEFAULT_VALUE, DEFAULT_VALUE);
+        if (device.getDeviceType().equals(DeviceType.Spider)) {
+            return buildUserAgentInfo(Os.DEFAULT_OS, Browser.DEFAULT_BROWSER, device, Pair.of(DEFAULT_VALUE, NetType.Other), DEFAULT_VALUE);
         }
         Os os = parseOS(agentString);
         Browser browser = parseBrowser(agentString);
 //        String dotNet = parseDotNet(agentString);
-        String netType = parseNetType(agentString);
+        Pair<String, NetType> pair = parseNetType(agentString);
         String deviceId = parseDeviceId(agentString);
         if (os == null) {
             os = Os.DEFAULT_OS;
 
-        } else if (os.isTv) {
+        } else if (os.isTv()) {
             device = Device.DEFAULT_TV;
-        } else if (os.isMobile && !device.isMobile && !(device.deviceType == DeviceType.TV)) {
+        } else if (os.isMobile() && !device.isMobile() && (device.getDeviceType() != DeviceType.TV)) {
             device = Device.DEFAULT_PHONE_SCREEN;
         }
 
-        return buildUserAgentInfo(os, browser, device, netType, deviceId);
+        return buildUserAgentInfo(os, browser, device, pair, deviceId);
     }
 
     @Deprecated
@@ -109,13 +128,15 @@ public class Parser {
         return maxVersion.equals("") ? DEFAULT_VALUE : maxVersion;
     }
 
-    public String parseNetType(String agentString) {
+    public Pair<String, NetType> parseNetType(String agentString) {
         Matcher matcher = netTypePattern.matcher(agentString.toUpperCase());
         String result = "";
         if (matcher.find()) {
             result = matcher.group(1);
         }
-        return Strings.isNullOrEmpty(result) ? DEFAULT_VALUE : result;
+        String key = Strings.isNullOrEmpty(result) ? DEFAULT_VALUE : result;
+        NetType value = getNetType(key);
+        return Pair.of(key, value);
     }
 
     public String parseDeviceId(String agentString) {
@@ -140,37 +161,91 @@ public class Parser {
         return osParser.parse(agentString);
     }
 
-    private UserAgentInfo buildUserAgentInfo(Os os, Browser browser, Device device, String netType, String deviceId) {
+    public DeviceType getDeviceType(String deviceType) {
+        if (Strings.isNullOrEmpty(deviceType)) {
+            return DeviceType.Other;
+        }
+        String key = deviceType.trim();
+        if (!dMap.containsKey(key)) {
+            synchronized (LOCK) {
+                if (!dMap.containsKey(key)) {
+                    DeviceType item = DeviceType.parseOf(key);
+                    dMap.put(key, item);
+                }
+            }
+        }
+        return dMap.get(key);
+    }
+
+    public NetType getNetType(String netType) {
+        if (Strings.isNullOrEmpty(netType)) {
+            return NetType.Other;
+        }
+        String key = netType.trim();
+        if (!netMap.containsKey(key)) {
+            synchronized (LOCK) {
+                if (!netMap.containsKey(key)) {
+                    NetType item = NetType.parseOf(key);
+                    netMap.put(key, item);
+                }
+            }
+        }
+        return netMap.get(key);
+    }
+
+    public OsType getOsType(String os) {
+        if (Strings.isNullOrEmpty(os)) {
+            return OsType.Other;
+        }
+        String key = os.trim();
+        if (!osMap.containsKey(key)) {
+            synchronized (LOCK) {
+                if (!osMap.containsKey(key)) {
+                    OsType item = OsType.parseOf(key);
+                    osMap.put(key, item);
+                }
+            }
+        }
+        return osMap.get(key);
+    }
+
+    private UserAgentInfo buildUserAgentInfo(Os os, Browser browser, Device device, Pair<String, NetType> netTypePair, String deviceId) {
         UserAgentInfo userAgentInfo = new UserAgentInfo();
         String detail;
+        String version;
 
         // OS to OsInfo
-        if (StringUtils.isEmpty(os.major)) {
-            detail = os.family;
+        if (StringUtils.isEmpty(os.getMajor())) {
+            detail = os.getFamily();
         } else {
-            detail = StringUtils.isEmpty(os.minor) ? os.family + " " + os.major
-                    : os.family + " " + os.major + "." + os.minor;
+            detail = StringUtils.isEmpty(os.getMinor()) ? os.getFamily() + " " + os.getMajor()
+                    : os.getFamily() + " " + os.getMajor() + "." + os.getMinor();
         }
-        userAgentInfo.setOsName(os.brand);
+        version = detail.replace(os.getBrand(), "").trim();
+        userAgentInfo.setOsName(os.getBrand());
         userAgentInfo.setOsDetail(detail);
+        userAgentInfo.setOsType(getOsType(os.getBrand()).getValue());
+        userAgentInfo.setOsVersion(version);
 
         // Browser to BrowserInfo
-        if (StringUtils.isEmpty(browser.major)) {
-            detail = browser.family;
+        if (StringUtils.isEmpty(browser.getMajor())) {
+            detail = browser.getFamily();
         } else {
-            detail = StringUtils.isEmpty(browser.minor) ? browser.family + " " + browser.major
-                    : browser.family + " " + browser.major + "." + browser.minor;
+            detail = StringUtils.isEmpty(browser.getMinor()) ? browser.getFamily() + " " + browser.getMajor()
+                    : browser.getFamily() + " " + browser.getMajor() + "." + browser.getMinor();
         }
-        userAgentInfo.setBrowserName(browser.brand);
+        userAgentInfo.setBrowserName(browser.getBrand());
         userAgentInfo.setBrowserDetail(detail);
 
-        userAgentInfo.setDeviceBrand(device.brand);
-        userAgentInfo.setDeviceName(device.family);
-        userAgentInfo.setDeviceType(device.deviceType.toString());
-        userAgentInfo.setIsMobile(device.isMobile);
+        String deviceType = device.getDeviceType().toString();
+        userAgentInfo.setDeviceBrand(device.getBrand());
+        userAgentInfo.setDeviceName(device.getFamily());
+        userAgentInfo.setDeviceType(deviceType);
+        userAgentInfo.setIsMobile(device.isMobile());
+        userAgentInfo.setIntDeviceType(getDeviceType(deviceType).getValue());
 
-        userAgentInfo.setNetType(netType);
-        userAgentInfo.setDeviceId(deviceId);
+        userAgentInfo.setNetType(netTypePair.getKey());
+        userAgentInfo.setIntNetType(netTypePair.getValue().getValue());
         return userAgentInfo;
     }
 }
