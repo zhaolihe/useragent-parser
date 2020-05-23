@@ -200,7 +200,7 @@ public class Parser {
         String version;
 
         // OS to OsInfo
-        if (StringUtils.isEmpty(os.getMajor())) {
+        if ("-".equalsIgnoreCase(os.getFamily()) || StringUtils.isEmpty(os.getMajor())) {
             detail = os.getFamily();
         } else {
             detail = StringUtils.isEmpty(os.getMinor()) ? os.getFamily() + " " + os.getMajor()

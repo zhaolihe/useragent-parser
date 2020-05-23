@@ -59,13 +59,13 @@
 # Symbian or Java
 # Mozilla/5.0 (Windows; U; Windows NT 6.0; en-US; Desktop) AppleWebKit/534.13 (KHTML, like Gecko) UCBrowser/8.9.0.25
 - regex: 'Windows.+UCBrowser'
-  os_replacement: 'Symbian'
+  os_replacement: 'Windows Phone'
   is_mobile_replacement: 'true'
 
 ##########
 # Android
 ##########
-- regex: '(Android)[/\- ]?(\d+)\.(\d+)(?:[.\-]([a-z0-9]+))?'
+- regex: '([A,a]ndroid)[/\- ]?(\d+)(?:[.\-]([a-z0-9]+))?'
   is_mobile_replacement: 'true'
 
 - regex: '(Android) Donut'
@@ -185,19 +185,18 @@
 # Mac OS
 # http://en.wikipedia.org/wiki/Mac_OS_X#Versions
 ##########
-- regex: '(Mac OS X) (\d+)[_.](\d+)(?:[_.](\d+))?'
-  brand_replacement: 'Mac'
+- regex: '(Mac X) (\d+)[_.](\d+)(?:[_.](\d+))?'
+  os_replacement: 'Mac'
 
 # IE on Mac doesn't specify version number
 - regex: 'Mac_PowerPC'
-  brand_replacement: 'Mac'
-  os_replacement: 'Mac OS'
+  os_replacement: 'Mac'
 
 # builds before tiger don't seem to specify version?
 
 # ios devices spoof (mac os x), so including intel/ppc prefixes
 - regex: '(?:PPC|Intel) (Mac OS X)'
-  brand_replacement: 'Mac'
+  os_replacement: 'Mac'
 
 ##########
 # iOS
@@ -240,13 +239,16 @@
   os_replacement: 'iOS'
   is_mobile_replacement: 'true'
 
+- regex: '([iI][oO][sS])[\/\;\\\-\ ]?(\d+)(?:[\.\-](\d+))?'
+  os_replacement: 'iOS'
+  is_mobile_replacement: 'true'
+
 ##########
 # Darwin
 # https://nl.wikipedia.org/wiki/Darwin_OS
 #########
 
 - regex: '(CFNetwork/\d+\.\d+\.\d+\.d+) Darwin'
-  brand_replacement: 'iOS'
   os_replacement: 'iOS'
   is_mobile_replacement: 'true'
 

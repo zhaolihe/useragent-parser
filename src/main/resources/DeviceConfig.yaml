@@ -142,6 +142,8 @@
 - regex: '\b(SM)\-([A-Z]\d+)'
   brand_replacement: 'Samsung'
   device_type_replacement: 'phone'
+  device_replacement: '$1-$2'
+
 - regex: '\b(SCH|GT|SGH|SPH|SHV)[\-_ ](\w+)'
   brand_replacement: 'Samsung'
   device_type_replacement: 'phone'
@@ -289,7 +291,7 @@
 # OPPO
 # http://www.oppo.com/?q=service/uaprof
 ##########
-- regex: '(OPPO|oppo)[\W_]?(\w+)'
+- regex: '(OPPO|oppo)[\W_]?([a-zA-Z0-9]+)'
   brand_replacement: 'OPPO'
 - regex: '\W(P\w{5})\W'
   brand_replacement: 'OPPO'
@@ -337,9 +339,9 @@
   brand_replacement: 'Meizu'
   device_replacement: 'M570 $2'
 
-- regex: 'MX(\d+) (\w+([\s]\w+)?) Build'
+- regex: 'M(X?\d+) (\w+([\s]\w+)?)? Build'
   brand_replacement: 'Meizu'
-  device_replacement: 'MX$1 $2'
+  device_replacement: 'M$1 $2'
 
 ##########
 # Meitu
@@ -430,6 +432,11 @@
   device_type_replacement: 'TV'
 
 - regex: 'OTTSDK(.*)(BRAVIA)'
+  brand_replacement: 'Sony'
+  device_replacement: '$2'
+  device_type_replacement: 'TV'
+
+- regex: '(BRAVIA)[\/\;\\\-\ ]?(\w+)'
   brand_replacement: 'Sony'
   device_replacement: '$2'
   device_type_replacement: 'TV'
@@ -602,11 +609,15 @@
 #########
 #ONEPLUS
 ########
-- regex: '(ONEPLUS) (\w+\d+)\w+'
+- regex: '(ONEPLUS) ([a-zA-Z]\d+)\w+'
   brand_replacement: 'OnePlus'
 
-- regex: '(OnePlus) (\w+\d+)\s+'
+- regex: '(OnePlus) ([A-Z]\d+)\s+'
   brand_replacement: 'OnePlus'
+
+- regex: '(GM|HD|IN)(\d+)'
+  brand_replacement: 'OnePlus'
+  device_replacement: '$1$2'
 
 ########
 #DESAY
