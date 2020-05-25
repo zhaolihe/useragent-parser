@@ -1,4 +1,4 @@
-package com.tiger.useragent;
+package com.tiger.useragent.device;
 
 
 import com.google.common.collect.Maps;

@@ -1,9 +1,8 @@
-package com.tiger.useragent;
+package com.tiger.useragent.os;
 
 import com.google.common.base.Strings;
 import com.google.common.collect.Lists;
 
-import java.util.ArrayList;
 import java.util.List;
 import java.util.Map;
 
@@ -13,10 +12,10 @@ import java.util.Map;
  * email : dayingzhaolihe@126.com
  * date : 2017/5/9
  */
-class OsParser {
+public class OsParser {
     private final List<OsPattern> patterns;
 
-    OsParser(List<OsPattern> patterns) {
+    public OsParser(List<OsPattern> patterns) {
         this.patterns = patterns;
     }
 

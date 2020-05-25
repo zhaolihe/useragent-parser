@@ -1,11 +1,9 @@
-package com.tiger.useragent;
+package com.tiger.useragent.device;
 
 import com.google.common.base.Strings;
+import com.tiger.useragent.enums.DeviceType;
 import org.apache.commons.lang3.ArrayUtils;
-import org.apache.commons.lang3.StringUtils;
 
-import java.util.ArrayList;
-import java.util.List;
 import java.util.Map;
 import java.util.regex.Matcher;
 import java.util.regex.Pattern;
@@ -77,6 +75,9 @@ public class DevicePattern {
         String brand = null, family = null;
         DeviceType deviceType = deviceTypeReplacement;
         boolean isMobile = isMobileReplacement;
+        if (deviceType == DeviceType.Other && isMobile) {
+            deviceType = DeviceType.Phone;
+        }
 
         if (!Strings.isNullOrEmpty(brandReplacement)) {
             brand = brandReplacement;
@@ -101,17 +102,17 @@ public class DevicePattern {
         if (family1 == null) {
             family1 = DEFAULT_VALUE;
         }
-        String screenSize = parseScreenSize(agentString);
+//        String screenSize = parseScreenSize(agentString);
         if (null == family) {
             family = "";
         }
-        return brand == null ? null : new Device(brand, family, deviceType, isMobile, screenSize);
+        return brand == null ? null : new Device(brand, family, deviceType, isMobile, DEFAULT_VALUE);
     }
 
-    private String parseScreenSize(String agentString){
+    private String parseScreenSize(String agentString) {
         Matcher matcher = screenSizePattern.matcher(agentString);
         return matcher.find() ? matcher.group(1) : DEFAULT_VALUE;
     }
 
-    private final static Pattern screenSizePattern = Pattern.compile("\\W(\\d{3,4}[x\\*]\\d{3,4})\\W*",Pattern.CASE_INSENSITIVE);
+    private final static Pattern screenSizePattern = Pattern.compile("\\W(\\d{3,4}[x\\*]\\d{3,4})\\W*", Pattern.CASE_INSENSITIVE);
 }

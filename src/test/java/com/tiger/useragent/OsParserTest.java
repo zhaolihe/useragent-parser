@@ -1,5 +1,9 @@
 package com.tiger.useragent;
 
+import com.tiger.useragent.browser.Browser;
+import com.tiger.useragent.enums.DeviceType;
+import com.tiger.useragent.os.Os;
+import com.tiger.useragent.os.OsParser;
 import org.junit.BeforeClass;
 import org.junit.Test;
 import org.yaml.snakeyaml.Yaml;
@@ -46,7 +50,7 @@ public class OsParserTest {
         String uaString = "Mozilla/5.0 (Windows; U; Windows NT 5.1; en-US) AppleWebKit/534.3 (KHTML, like Gecko) Chrome/6.0.472.55 Safari/534.3";
 
         Os os = parse(uaString);
-        assertThat(os.brand, is("Windows"));
+        assertThat(os.getBrand(), is("Windows"));
     }
 
     @Test
@@ -74,7 +78,7 @@ public class OsParserTest {
         };
         for (String ua : uas) {
             Os os = parse(ua);
-            System.out.println(os.brand + "$$" + os.family + " " + os.major + "." + os.minor);
+            System.out.println(os.getBrand() + "$$" + os.getFamily() + " " + os.getMajor() + "." + os.getMinor());
         }
     }
 

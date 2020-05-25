@@ -141,16 +141,22 @@
 
 - regex: '\b(SM)\-([A-Z]\d+)'
   brand_replacement: 'Samsung'
+  device_type_replacement: 'phone'
+  device_replacement: '$1-$2'
+
 - regex: '\b(SCH|GT|SGH|SPH|SHV)[\-_ ](\w+)'
   brand_replacement: 'Samsung'
+  device_type_replacement: 'phone'
 - regex: '(SAMSUNG)\; (\w+)'
   brand_replacement: 'Samsung'
+  device_type_replacement: 'phone'
 - regex: '(SAMSUNG|Samsung|samsung)[\W_]?(\w+)?'
   brand_replacement: 'Samsung'
-
+  device_type_replacement: 'phone'
 - regex: 'Build/JRO03C'
   brand_replacement: 'Samsung'
   device_replacement: 'Galaxy'
+  device_type_replacement: 'phone'
 
 ##########
 # Xiaomi
@@ -158,37 +164,46 @@
 ##########
 - regex: '\b([M|m][I|i])[_\- ](\w+)'
   brand_replacement: 'Xiaomi'
+  device_type_replacement: 'phone'
 
 - regex: '\b(HM)[_\- ](\w+)'
   brand_replacement: 'Xiaomi'
   device_replacement: '红米 $2'
+  device_type_replacement: 'phone'
 
 - regex: '\b(HM)(\w+)'
   brand_replacement: 'Xiaomi'
   device_replacement: '红米 $2'
+  device_type_replacement: 'phone'
 
 - regex: '\b(HM)'
   brand_replacement: 'Xiaomi'
   device_replacement: '红米'
+  device_type_replacement: 'phone'
 
 - regex: '\b(HONGMIM)(\d+)?'
   brand_replacement: 'Xiaomi'
   device_replacement: '红米 $2'
+  device_type_replacement: 'phone'
 
 - regex: '([R|r]edmi) (\w+([\s]\w+)?) Build'
   brand_replacement: 'Xiaomi'
   device_replacement: '红米 $2'
+  device_type_replacement: 'phone'
 
 - regex: '(Redmi) (\w+([\s]\w+)?) MIUI'
   brand_replacement: 'Xiaomi'
   device_replacement: '红米 $2'
+  device_type_replacement: 'phone'
 
 - regex: '\b(Xiaomi)'
   brand_replacement: 'Xiaomi'
+  device_type_replacement: 'phone'
 
 - regex: '(XiaoMi) (\w+([\s,-]\w+)?) Build/'
   brand_replacement: 'Xiaomi'
   device_replacement: '$2'
+  device_type_replacement: 'phone'
 
 - regex: '(XIAOMI) (\w+\d+) Build/'
   brand_replacement: 'Xiaomi'
@@ -201,6 +216,7 @@
   brand_replacement: 'Huawei'
 
 - regex: '(HUAWEI|Huawei|huawei)[\s]?(\w+[ -]\w+)'
+  device_type_replacement: 'phone'
   brand_replacement: 'Huawei'
 
 - regex: '(HUAWEI|Huawei|huawei)[\W_]?(\w+)'
@@ -213,25 +229,17 @@
 - regex: '(HONOR|Honor)[\W_]?(\w+)'
   brand_replacement: 'Huawei'
   device_replacement: 'Honor'
+  device_type_replacement: 'phone'
 
-- regex: '(\w{3}-DL[1|0]0)'
+- regex: '(\b\w{3}-\w{2}\d{2}\b)'
   brand_replacement: 'Huawei'
-  device_replacement: '$1'
-
-- regex: '(\w{3}-CL[1|0]0)'
-  brand_replacement: 'Huawei'
-  device_replacement: '$1'
-
-- regex: '(\w{3}-AL[1|0]0)'
-  brand_replacement: 'Huawei'
-  device_replacement: '$1'
-
-- regex: '(\w{3}-TL[1|0]0)'
-  brand_replacement: 'Huawei'
+  device_type_replacement: 'phone'
   device_replacement: '$1'
 
 - regex: '(HUAWEI); (\w+\d+-\w+\d+)'
   brand_replacement: 'Huawei'
+  device_type_replacement: 'phone'
+
 - regex: '(HW)-(\w\d+(\w+)?)/'
   brand_replacement: 'Huawei'
 - regex: '(HW)-(\w+\d+)-\w+'
@@ -283,7 +291,7 @@
 # OPPO
 # http://www.oppo.com/?q=service/uaprof
 ##########
-- regex: '(OPPO|oppo)[\W_]?(\w+)'
+- regex: '(OPPO|oppo)[\W_]?([a-zA-Z0-9]+)'
   brand_replacement: 'OPPO'
 - regex: '\W(P\w{5})\W'
   brand_replacement: 'OPPO'
@@ -331,9 +339,9 @@
   brand_replacement: 'Meizu'
   device_replacement: 'M570 $2'
 
-- regex: 'MX(\d+) (\w+([\s]\w+)?) Build'
+- regex: 'M(X?\d+) (\w+([\s]\w+)?)? Build'
   brand_replacement: 'Meizu'
-  device_replacement: 'MX$1 $2'
+  device_replacement: 'M$1 $2'
 
 ##########
 # Meitu
@@ -398,6 +406,7 @@
 - regex: '([ |;])(\d+-[a|A]01) Build/'
   brand_replacement: '360'
 
+
 ######
 # TV
 ######
@@ -423,6 +432,11 @@
   device_type_replacement: 'TV'
 
 - regex: 'OTTSDK(.*)(BRAVIA)'
+  brand_replacement: 'Sony'
+  device_replacement: '$2'
+  device_type_replacement: 'TV'
+
+- regex: '(BRAVIA)[\/\;\\\-\ ]?(\w+)'
   brand_replacement: 'Sony'
   device_replacement: '$2'
   device_type_replacement: 'TV'
@@ -595,11 +609,15 @@
 #########
 #ONEPLUS
 ########
-- regex: '(ONEPLUS) (\w+\d+)\w+'
+- regex: '(ONEPLUS) ([a-zA-Z]\d+)\w+'
   brand_replacement: 'OnePlus'
 
-- regex: '(OnePlus) (\w+\d+)\s+'
+- regex: '(OnePlus) ([A-Z]\d+)\s+'
   brand_replacement: 'OnePlus'
+
+- regex: '(GM|HD|IN)(\d+)'
+  brand_replacement: 'OnePlus'
+  device_replacement: '$1$2'
 
 ########
 #DESAY

@@ -125,8 +125,9 @@ S9,,Samsung,,Galaxy S9,,Phone,,5.8
 ##########
 CVTM628_PC821,,Samsung,,TV,,TV,,60
 X3-50,,Letv,,X3,,TV,,50
-C42SD320,,CANTV,,TV,,60
+C42SD320,,CANTV,,CANTV,,TV,,60
 W40K,,whaley,,微鲸TV,,TV,,40
+9S52_K6S,,Skyworth,,Skyworth,,TV,,55
 
 
 ##########

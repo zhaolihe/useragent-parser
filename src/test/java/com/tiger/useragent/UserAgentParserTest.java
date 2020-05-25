@@ -2,6 +2,9 @@ package com.tiger.useragent;
 
 import com.google.common.base.Function;
 import com.google.common.base.Strings;
+import com.tiger.useragent.enums.DeviceType;
+import com.tiger.useragent.enums.NetType;
+import com.tiger.useragent.enums.OsType;
 import org.junit.BeforeClass;
 import org.junit.Test;
 
@@ -38,7 +41,7 @@ public class UserAgentParserTest {
     public void testUserAgentParser() throws IOException {
         final String userAgent = "Mozilla/5.0 (Windows; U; Windows NT 5.1; en-US) AppleWebKit/534.3 (KHTML, like Gecko) Chrome/6.0.472.55 Safari/534.3";
         UserAgentInfo info = parser.getUserAgentInfo(userAgent);
-        assertThat(info.getBrowserDetail().toString(), is("chrome 6.0"));
+        assertThat(info.getBrowserDetail().toString(), is("Chrome 6.0"));
     }
 
     @Test
@@ -77,7 +80,7 @@ public class UserAgentParserTest {
             }
         };
         List<String> systems = Arrays.asList("Mac", "Windows", "iOS", "Android");
-        List<String> browsers = Arrays.asList("Safari", "IE", "firefox", "Chrome", "opera", "Maxthon", "QQ", "360", "android", "Taobao", "LieBao", "Sogou");
+        List<String> browsers = Arrays.asList("Safari", "IE", "Firefox", "Chrome", "Opera", "Maxthon", "QQ", "360", "android", "Taobao", "LieBao", "Sogou");
         List<String> deviceTypes = Arrays.asList("PC", "Phone", "Pad");
         UserAgentParser ua = function.apply("");
         for (String str : uas) {
@@ -264,22 +267,6 @@ public class UserAgentParserTest {
         UserAgentInfo info = parser.getUserAgentInfo(uaExpr);
         assertNotNull(info);
         assertThat(info.getBrowserName().toString(), is("Douban"));
-    }
-
-    @Test
-    public void testDevice() {
-//        String uaExpr = "Mozilla/5.0 (iPhone; CPU iPhone OS 11_1_2 like Mac OS X) AppleWebKit/604.3.5 (KHTML, like Gecko) Mobile/15B202 QQ/7.2.8.478 V1_IPH_SQ_7.2.8_1_APP_A Pixel/640 Core/UIWebView Device/Apple(Unknown iOS device) NetType/WIFI QBWebViewType/1";
-        String uaExpr = "Mozilla/5.0 (Linux; Android 5.1; M651CY Build/LMY47D) AppleWebKit/537.36 (KHTML, like Gecko) Version/4.0 Chrome/39.0.0.0 Mobile Safari/537.36 X-Tingyun-Id/p35OnrDoP8k;c=2;r=1392755971; hebao/7.0.109 NetType/wifi";
-        UserAgentInfo info = parser.getUserAgentInfo(uaExpr);
-        assertNotNull(info);
-        assertThat(info.getDeviceId().toString(), is("-"));
-
-        uaExpr = "qqlive 5.9.0 rv:5264 (iPad; iOS 10.3.2; zh-Hans_US)";
-        UserAgentInfo info1 = parser.getUserAgentInfo(uaExpr);
-        assertNotNull(info1);
-        uaExpr = "Mozilla/5.0 (Linux; Android 7.1.1; dazen 6 Build/NMF26O; wv) AppleWebKit/537.36 (KHTML, like Gecko) Version/4.0 Chrome/52.0.2743.100 Mobile Safari/537.36";
-        info = parser.getUserAgentInfo(uaExpr);
-        System.out.println(info);
     }
 
     @Test

@@ -1,27 +1,28 @@
-package com.tiger.useragent;
+package com.tiger.useragent.browser;
 
 /**
  * com.tiger.useragent
  * author : zhaolihe
  * email : dayingzhaolihe@126.com
- * date : 2017/5/8
+ * date : 2017/5/5
  */
-public class Os {
-    static final Os DEFAULT_OS = new Os("-", "-", "0", "0", false, false);
+public class Browser {
+    public static final Browser DEFAULT_BROWSER = new Browser("-", "-", null, null);
+    //品牌
     final String brand;
     final String family;
     final String major;
     final String minor;
-    final boolean isMobile;
-    final boolean isTv;
 
-    public Os(String brand, String family, String major, String minor, boolean isMobile, boolean isTv) {
+    public Browser(String brand, String family, String major, String minor) {
         this.brand = brand;
         this.family = family;
         this.major = major;
         this.minor = minor;
-        this.isMobile = isMobile;
-        this.isTv = isTv;
+    }
+
+    public static Browser getDefaultBrowser() {
+        return DEFAULT_BROWSER;
     }
 
     public String getBrand() {
@@ -38,13 +39,5 @@ public class Os {
 
     public String getMinor() {
         return minor;
-    }
-
-    public boolean isMobile() {
-        return isMobile;
-    }
-
-    public boolean isTv() {
-        return isTv;
     }
 }
