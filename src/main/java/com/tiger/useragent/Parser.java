@@ -197,7 +197,7 @@ public class Parser {
     private UserAgentInfo buildUserAgentInfo(Os os, Browser browser, Device device, Pair<String, NetType> netTypePair, String deviceId) {
         UserAgentInfo userAgentInfo = new UserAgentInfo();
         String detail;
-        String version;
+        String osVersion;
 
         // OS to OsInfo
         if ("-".equalsIgnoreCase(os.getFamily()) || StringUtils.isEmpty(os.getMajor())) {
@@ -206,11 +206,11 @@ public class Parser {
             detail = StringUtils.isEmpty(os.getMinor()) ? os.getFamily() + " " + os.getMajor()
                     : os.getFamily() + " " + os.getMajor() + "." + os.getMinor();
         }
-        version = detail.replace(os.getBrand(), "").trim();
+        osVersion = detail.replace(os.getBrand(), "").trim();
         userAgentInfo.setOsName(os.getBrand());
         userAgentInfo.setOsDetail(detail);
         userAgentInfo.setOsType(getOsType(os.getBrand()).getValue());
-        userAgentInfo.setOsVersion(version);
+        userAgentInfo.setOsVersion(osVersion);
 
         // Browser to BrowserInfo
         if (StringUtils.isEmpty(browser.getMajor())) {
@@ -219,8 +219,10 @@ public class Parser {
             detail = StringUtils.isEmpty(browser.getMinor()) ? browser.getFamily() + " " + browser.getMajor()
                     : browser.getFamily() + " " + browser.getMajor() + "." + browser.getMinor();
         }
+        String browserVersion = detail.replace(browser.getBrand(), "").trim();
         userAgentInfo.setBrowserName(browser.getBrand());
         userAgentInfo.setBrowserDetail(detail);
+        userAgentInfo.setBrowserVersion(browserVersion);
 
         String deviceType = device.getDeviceType().toString();
         userAgentInfo.setDeviceBrand(device.getBrand());

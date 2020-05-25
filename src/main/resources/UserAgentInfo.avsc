@@ -10,6 +10,7 @@
      {"name": "os_version", "type": "string", "default": "-"},
      {"name": "browser_name", "type": "string", "default": "-"},
      {"name": "browser_detail", "type": "string", "default": "-"},
+     {"name": "browser_version", "type": "string", "default": "-"},
      {"name": "device_brand", "type": "string", "default": "-"},
      {"name": "device_name", "type": "string", "default": "-"},
      {"name": "device_type", "type": "string", "default": "-"},

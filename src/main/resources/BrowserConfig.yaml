@@ -695,19 +695,19 @@
 ##########
 - regex: '(ipod).*version/(\d+)\.(\d+)'
   brand_replacement: 'Safari'
-  family_replacement: 'Safari Mobile'
+  family_replacement: 'Safari'
 - regex: '(iphone).*version/(\d+)\.(\d+)'
   brand_replacement: 'Safari'
-  family_replacement: 'Safari Mobile'
+  family_replacement: 'Safari'
 - regex: '(ipad).*version/(\d+)\.(\d+)'
   brand_replacement: 'Safari'
-  family_replacement: 'Safari Mobile'
+  family_replacement: 'Safari'
 - regex: '(ipod|iphone|ipad);.*cpu.*os (\d+)(?:_\d+)?_(\d+).*mobile'
   brand_replacement: 'Safari'
-  family_replacement: 'Safari Mobile'
+  family_replacement: 'Safari'
 - regex: '(ipod|iphone|ipad)'
   brand_replacement: 'Safari'
-  family_replacement: 'Safari Mobile'
+  family_replacement: 'Safari'
 
 ##########
 # nokia browsers
