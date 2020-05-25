@@ -41,7 +41,7 @@ public class UserAgentParserTest {
     public void testUserAgentParser() throws IOException {
         final String userAgent = "Mozilla/5.0 (Windows; U; Windows NT 5.1; en-US) AppleWebKit/534.3 (KHTML, like Gecko) Chrome/6.0.472.55 Safari/534.3";
         UserAgentInfo info = parser.getUserAgentInfo(userAgent);
-        assertThat(info.getBrowserDetail().toString(), is("chrome 6.0"));
+        assertThat(info.getBrowserDetail().toString(), is("Chrome 6.0"));
     }
 
     @Test
@@ -80,7 +80,7 @@ public class UserAgentParserTest {
             }
         };
         List<String> systems = Arrays.asList("Mac", "Windows", "iOS", "Android");
-        List<String> browsers = Arrays.asList("Safari", "IE", "firefox", "Chrome", "opera", "Maxthon", "QQ", "360", "android", "Taobao", "LieBao", "Sogou");
+        List<String> browsers = Arrays.asList("Safari", "IE", "Firefox", "Chrome", "Opera", "Maxthon", "QQ", "360", "android", "Taobao", "LieBao", "Sogou");
         List<String> deviceTypes = Arrays.asList("PC", "Phone", "Pad");
         UserAgentParser ua = function.apply("");
         for (String str : uas) {

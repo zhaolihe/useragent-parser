@@ -302,19 +302,16 @@
 
 - regex: '(sogoumobilebrowser)[ |/]?([\d|.]*)'
   family_replacement: 'Sogou'
-  brand_replacement: 'Sogou'
 
 - regex: '(sogoumse)'
   family_replacement: 'Sogou'
-  brand_replacement: 'Sogou'
 
 ##########
 # QQ Browser
 # http://cooperate.qq.com/manage_notice_detail.jsp?id=42
 ##########
 - regex: '(mqqbrowser)[ /](\d+)\.?(\d+)?'
-  brand_replacement: 'QQ'
-  family_replacement: 'QQ Mobile'
+  family_replacement: 'QQ'
 - regex: '(qqbrowser)[ /](\d+)\.(\d+)'
   family_replacement: 'QQ'
 - regex: '(qqlivebrowser|qqlivehdbrowser)[ /](\d+)\.(\d+)'
@@ -469,29 +466,31 @@
 # Firefox
 ##########
 - regex: '(pale[mm]oon)/(\d+)\.(\d+)'
-  brand_replacement: 'Firefox'
-  family_replacement: 'Pale Moon'
+  family_replacement: 'Firefox'
 
 - regex: '(fennec)/(\d+)\.(\d+)'
-  brand_replacement: 'Firefox'
-  family_replacement: 'Firefox Mobile'
+  family_replacement: 'Firefox'
 
 - regex: 'mobile.*(firefox)/(\d+)\.(\d+)'
-  brand_replacement: 'Firefox'
-  family_replacement: 'Firefox Mobile'
+  family_replacement: 'Firefox'
 
 - regex: '(namoroka|shiretoko|minefield)/(\d+)\.(\d+)\.(\d+(?:pre)?)'
-  brand_replacement: 'Firefox'
+  family_replacement: 'Firefox'
+
 - regex: '(namoroka|shiretoko|minefield)/(\d+)\.(\d+)([ab]\d+[a-z]*)?'
-  brand_replacement: 'Firefox'
+  family_replacement: 'Firefox'
 
 # Firefox alpha or beta version
 - regex: '(firefox)/(\d+)\.(\d+)([ab]\d+[a-z]*)'
+  family_replacement: 'Firefox'
+
 - regex: '(firefox)-(?:\d+\.\d+)?/(\d+)\.(\d+)([ab]\d+[a-z]*)'
+  family_replacement: 'Firefox'
 
 - regex: '(firefox).*tablet browser (\d+)\.(\d+)\.(\d+)'
+  family_replacement: 'Firefox'
 - regex: '(mozilladeveloperpreview)/(\d+)\.(\d+)([ab]\d+[a-z]*)?'
-  brand_replacement: 'Firefox'
+  family_replacement: 'Firefox'
 
 # Tizen Browser (second case included in browser/major.minor regex)
 - regex: '(slp browser)/(\d+)\.(\d+)'
@@ -515,28 +514,26 @@
 # Opera will stop at 9.80 and hide the real version in the Version string.
 # see: http://dev.opera.com/articles/view/opera-ua-string-changes/
 - regex: '(opera tablet).*version/(\d+)\.(\d+)(?:\.(\d+))?'
-  brand_replacement: 'Opera'
+  family_replacement: 'Opera'
 
 - regex: '(opera)/.+opera mobi.+version/(\d+)\.(\d+)'
-  brand_replacement: 'Opera'
-  family_replacement: 'Opera Mobile'
+  family_replacement: 'Opera'
 
 - regex: 'opera mobi'
-  brand_replacement: 'Opera'
-  family_replacement: 'Opera Mobile'
+  family_replacement: 'Opera'
 
 - regex: '(opera mini)/(\d+)\.(\d+)'
-  brand_replacement: 'Opera'
+  family_replacement: 'Opera'
 
 - regex: '(opera mini)/att/(\d+)\.(\d+)'
-  brand_replacement: 'Opera'
+  family_replacement: 'Opera'
 
 - regex: '(opera)/9.80.*version/(\d+)\.(\d+)(?:\.(\d+))?'
+  family_replacement: 'Opera'
 
 # Opera 14 for Android uses a WebKit render engine.
 - regex: '(?:mobile safari).*(opr)/(\d+)\.(\d+)\.(\d+)'
-  brand_replacement: 'Opera'
-  family_replacement: 'Opera Mobile'
+  family_replacement: 'Opera'
 # Opera 15 for Desktop is similar to Chrome but includes an "OPR" Version string.
 - regex: '(?:chrome).*(opr)/(\d+)\.(\d+)\.(\d+)'
   family_replacement: 'Opera'
@@ -552,20 +549,17 @@
 # SamsungBrowser
 ########
 - regex: '(samsungbrowser)/(\d+)\.(\d+)'
-  brand_replacement: 'Samsung'
+  family_replacement: 'Samsung'
 
 ##########
 # Chrome Mobile
 ##########
 - regex: '(crmo)/(\d+)\.(\d+)\.(\d+)\.(\d+)'
-  brand_replacement: 'Chrome'
-  family_replacement: 'Chrome Mobile'
+  family_replacement: 'Chrome'
 - regex: '(crios)/(\d+)\.(\d+)\.(\d+)\.(\d+)'
-  brand_replacement: 'Chrome'
-  family_replacement: 'Chrome Mobile iOS'
+  family_replacement: 'Chrome'
 - regex: '(chrome)/(\d+)\.(\d+)\.(\d+)\.(\d+) Mobile'
-  brand_replacement: 'Chrome'
-  family_replacement: 'Chrome Mobile'
+  family_replacement: 'Chrome'
 
 # Chrome Frame must come before MSIE.
 - regex: '(chromeframe)/(\d+)\.(\d+)\.(\d+)'
@@ -591,12 +585,15 @@
 # Opera
 ##########
 - regex: '(opera)[/ ]?(\d+)\.(\d+)\.?(\d+)?'
+  family_replacement: 'Opera'
 
 ##########
 # Firefox
 ##########
 - regex: '(firefox)/(\d+)\.(\d+)\.(\d+)'
+  family_replacement: 'Firefox'
 - regex: '(firefox)/(\d+)\.(\d+)(pre|[ab]\d+[a-z]*)?'
+  family_replacement: 'Firefox'
 
 ##########
 # 360
@@ -612,15 +609,15 @@
 
 - regex: '(chrome/42.0.2311.152)'
   brand_replacement: '360'
-  family_replacement: '360SE v8'
+  family_replacement: '360 v8'
 
 - regex: '(chrome/31.0.1650.63)'
   brand_replacement: '360'
-  family_replacement: '360SE v7'
+  family_replacement: '360 v7'
 
 - regex: '(chrome/20.0.1132.57|Chrome/21.0.1180.89)'
   brand_replacement: '360'
-  family_replacement: '360SE v6'
+  family_replacement: '360 v6'
 
 # 360EE
 # v7.0, v7.1 fake Chrome/24.0.1312.57
@@ -629,11 +626,11 @@
 
 - regex: '(chrome/45.0.2454.101)'
   brand_replacement: '360'
-  family_replacement: '360EE v8'
+  family_replacement: '360 v8'
 
 - regex: '(chrome/24.0.1312.57|Chrome/26.0.1410.64)'
   brand_replacement: '360'
-  family_replacement: '360EE v7'
+  family_replacement: '360 v7'
 
 
 
@@ -641,27 +638,23 @@
 # Chrome
 ##########
 - regex: '(chromium|chrome)/(\d+)\.(\d+)\.(\d+)\.(\d+)'
-  brand_replacement: 'Chrome'
+  family_replacement: 'Chrome'
 - regex: '(chromium|chrome)/(\d+)\.(\d+)\.?(\d+)?'
-  brand_replacement: 'Chrome'
+  family_replacement: 'Chrome'
 - regex: '(chrome)/(\d+)\.(\d+)\.?(\d+)?'
-  brand_replacement: 'Chrome'
   family_replacement: 'Chrome'
 - regex: '(chrome)'
-  brand_replacement: 'Chrome'
   family_replacement: 'Chrome'
 
 ##########
 # IE Mobile
 ##########
 - regex: '(iemobile)[ /](\d+)\.(\d+)'
-  brand_replacement: 'IE'
-  family_replacement: 'IE Mobile'
+  family_replacement: 'IE'
 # desktop mode
 # http://www.anandtech.com/show/3982/windows-phone-7-review
 - regex: '(msie) (\d+)\.(\d+).*xblwp7'
-  brand_replacement: 'IE'
-  family_replacement: 'IE Large Screen'
+  family_replacement: 'IE'
 
 #### END MAIN CASES ####
 ##########################################################################
@@ -689,24 +682,20 @@
 - regex: '(letv)'
   family_replacement: 'Letv'
 - regex: '(letv)'
+  family_replacement: 'Letv'
 
 ##########
 # Mobile Safari
 ##########
 - regex: '(ipod).*version/(\d+)\.(\d+)'
-  brand_replacement: 'Safari'
   family_replacement: 'Safari'
 - regex: '(iphone).*version/(\d+)\.(\d+)'
-  brand_replacement: 'Safari'
   family_replacement: 'Safari'
 - regex: '(ipad).*version/(\d+)\.(\d+)'
-  brand_replacement: 'Safari'
   family_replacement: 'Safari'
 - regex: '(ipod|iphone|ipad);.*cpu.*os (\d+)(?:_\d+)?_(\d+).*mobile'
-  brand_replacement: 'Safari'
   family_replacement: 'Safari'
 - regex: '(ipod|iphone|ipad)'
-  brand_replacement: 'Safari'
   family_replacement: 'Safari'
 
 ##########
@@ -714,19 +703,19 @@
 # based on: http://www.developer.nokia.com/Community/Wiki/User-Agent_headers_for_Nokia_devices
 ##########
 - regex: '^(nokia)'
-  family_replacement: 'Nokia Browser'
+  family_replacement: 'Nokia'
 - regex: '(nokiabrowser|browserng)/(\d+)\.(\d+)'
-  family_replacement: 'Nokia Browser'
+  family_replacement: 'Nokia'
 - regex: '(series60)/5\.0'
-  family_replacement: 'Nokia Browser'
+  family_replacement: 'Nokia'
   v1_replacement: '7'
   v2_replacement: '0'
 - regex: '(series60)/(\d+)\.(\d+)'
-  family_replacement: 'Nokia Browser'
+  family_replacement: 'Nokia'
 - regex: '(s40ovibrowser)/(\d+)\.(\d+)\.(\d+)\.(\d+)'
-  family_replacement: 'Ovi Browser'
+  family_replacement: 'Nokia'
 - regex: '(nokia)[en]?(\d+)'
-  family_replacement: 'Nokia Browser'
+  family_replacement: 'Nokia'
 
 # BlackBerry devices
 - regex: '(bb10);'
@@ -763,6 +752,7 @@
   family_replacement: 'Safari'
 # Safari didn't provide "Version/d.d.d" prior to 3.0
 - regex: '(safari)/(\d+)'
+  family_replacement: 'Safari'
 
 ##########
 # IE
