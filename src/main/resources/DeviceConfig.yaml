@@ -166,6 +166,11 @@
   brand_replacement: 'Xiaomi'
   device_type_replacement: 'phone'
 
+- regex: '\b([M|m][I|i][0-9])[_\- ]([a-zA-Z0-9]+[- ][a-zA-Z0-9]+)'
+  brand_replacement: 'Xiaomi'
+  device_replacement: '$1 $2'
+  device_type_replacement: 'phone'
+
 - regex: '\b(HM)[_\- ](\w+)'
   brand_replacement: 'Xiaomi'
   device_replacement: '红米 $2'
