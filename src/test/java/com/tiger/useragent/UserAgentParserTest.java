@@ -143,7 +143,7 @@ public class UserAgentParserTest {
 
     @Test
     public void testMeizuMX4() {
-        String uaExpr = "Mozilla/5.0 (Linux; U; Android 4.4.5; zh-cn; MX4 Pro Build/JLS36C) AppleWebKit/537.36 (KHTML, like Gecko) Version/4.0 Mobile Safari/537.36";
+        String uaExpr = "Mozilla%2F5.0%20(Linux%3B%20Android%205.1.1%3B%20vivo%20Xplay5A%20Build%2FLMY47V)%20AppleWebKit%2F537.36%20(KHTML%2C%20like%20Gecko)%20Version%2F4.0%20Chrome%2F39.0.0.0%20Mobile%20Safari%2F537.36";
         UserAgentInfo info = parser.getUserAgentInfo(uaExpr);
         assertNotNull(info);
         assertThat(info.getDeviceBrand().toString(), is("Meizu"));
