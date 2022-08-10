@@ -1,49 +1,47 @@
 package com.tiger.useragent.device;
 
-import com.google.common.base.Strings;
-import com.google.common.collect.Lists;
+import org.apache.commons.lang3.StringUtils;
 
+import java.util.ArrayList;
 import java.util.List;
 import java.util.Map;
 
-/**
- * com.tiger.useragent
- * author : zhaolihe
- * email : dayingzhaolihe@126.com
- * date : 2017/5/9
- */
 public class DeviceParser {
-    private List<DevicePattern> patterns;
+  private final List<DevicePattern> patterns;
 
-    public DeviceParser(List<DevicePattern> patterns) {
-        this.patterns = patterns;
+  public DeviceParser(List<DevicePattern> patterns) {
+    this.patterns = patterns;
+  }
+
+  public static List<DevicePattern> patternsFromList(List<Map<String, String>> configList) {
+    List<DevicePattern> configPatterns = new ArrayList<>();
+    for (Map<String, String> configMap : configList) {
+      configPatterns.add(DevicePattern.patternFromMap(configMap));
+    }
+    return configPatterns;
+  }
+
+  public Device parse(String agentString) {
+    if (StringUtils.isEmpty(agentString)) {
+      return Device.DEFAULT_PC_SCREEN;
     }
 
-    public static List<DevicePattern> patternsFromList(List<Map<String, String>> configList) {
-        List<DevicePattern> configPatterns = Lists.newArrayList();
-        for (Map<String, String> configMap : configList) {
-            configPatterns.add(DevicePattern.patternFromMap(configMap));
-        }
-        return configPatterns;
+    Device device;
+    for (DevicePattern p : patterns) {
+      if ((device = p.match(agentString)) != null) {
+        return device;
+      }
     }
+    return getDefaultDevice(agentString);
+  }
 
-    public Device parse(String agentString) {
-        if (Strings.isNullOrEmpty(agentString)) {
-            return Device.DEFAULT_PC_SCREEN;
-        }
+  private Device getDefaultDevice(String input) {
+    String lower = input.toLowerCase();
 
-        Device device;
-        for (DevicePattern p : patterns) {
-            if ((device = p.match(agentString)) != null) {
-                return device;
-            }
-        }
-        String lower = agentString.toLowerCase();
-        if (lower.contains("ottsdk")){
-            return Device.DEFAULT_TV;
-        }else if(lower.contains("android") || lower.contains("phone") || lower.contains("mobile")){
-            return Device.DEFAULT_PHONE_SCREEN;
-        }
-        return Device.DEFAULT_PC_SCREEN;
-    }
+    return lower.contains("ottsdk")
+        ? Device.DEFAULT_TV
+        : (lower.contains("android") || lower.contains("phone") || lower.contains("mobile")
+            ? Device.DEFAULT_PHONE_SCREEN
+            : Device.DEFAULT_PC_SCREEN);
+  }
 }
