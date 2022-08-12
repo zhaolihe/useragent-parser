@@ -31,10 +31,7 @@
 #########
 # 风行
 ########
-- regex: '(funshion)[ |/]?([\d|.]*)'
-  family_replacement: 'Funshion'
-  brand_replacement: 'Funshion'
-- regex: '(Fengxing)[ |/]?([\d|.]*)'
+- regex: '(funshion|Fengxing)[ |/]?([\d|.]*)'
   family_replacement: 'Funshion'
   brand_replacement: 'Funshion'
 
@@ -44,14 +41,6 @@
 - regex: '(doubanapp)'
   family_replacement: 'Douban'
   brand_replacement: 'Douban'
-
-##########
-# QQ
-#########
-- regex: '(qq)[ /]([\d.]*)'
-  family_replacement: 'QQ'
-  brand_replacement: 'QQ'
-
 
 #########
 # ImgoTV
@@ -124,6 +113,13 @@
 - regex: '(qqlive)/(\d+)\.(\d+)(\.(\d+))?'
 - regex: '(qqlive)'
 
+##########
+# QQ
+#########
+- regex: '(qq)[ /]([\d.]*)'
+  family_replacement: 'QQ'
+  brand_replacement: 'QQ'
+
 ############
 # QingtingFM
 ############
@@ -143,10 +139,7 @@
 ##########
 # Iqiyi
 ##########
-- regex: '(iqiyiversion)/(\d+)\.(\d+)(\.(\d+))?'
-  brand_replacement: 'iQiyi'
-  family_replacement: 'iQiyi'
-- regex: '(iqiyiad)/(\d+)\.(\d+)(\.(\d+))?'
+- regex: '(iqiyiversion|iqiyiad)/(\d+)\.(\d+)(\.(\d+))?'
   brand_replacement: 'iQiyi'
   family_replacement: 'iQiyi'
 - regex: '(iqiyiad)'

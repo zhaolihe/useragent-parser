@@ -1,55 +1,46 @@
 package com.tiger.useragent.enums;
 
-import com.google.common.base.Enums;
 import org.apache.commons.lang3.StringUtils;
 
-/**
- * com.tiger.useragent.enums.NetType
- *
- * @author: zhaolihe
- * @email: dayingzhaolihe@126.com
- * @date 2020-05-22 11:47:00
- */
 public enum NetType {
-    Other(0, "-"),
-    Wifi(1, "wifi"),
-    _2G(2,"2g"),
-    _3G(3,"3g"),
-    _4G(4,"4g"),
-    _5G(5,"5g");
+  Other(0, "-"),
+  Wifi(1, "wifi"),
+  _2G(2, "2g"),
+  _3G(3, "3g"),
+  _4G(4, "4g"),
+  _5G(5, "5g");
 
-    NetType(int value, String name) {
-        this.value = value;
-        this.name = name;
+  NetType(int value, String name) {
+    this.value = value;
+    this.name = name;
+  }
+
+  public static NetType parseOf(final String name) {
+    if (StringUtils.isEmpty(name)) {
+      return NetType.Other;
+    }
+    for (NetType item : NetType.values()) {
+      if (name.equalsIgnoreCase(item.name)) {
+        return item;
+      }
     }
 
-    public static NetType parseOf(final String name) {
-        if (StringUtils.isEmpty(name)) {
-            return NetType.Other;
-        }
-        for (NetType item : NetType.values()) {
-            if (name.equalsIgnoreCase(item.name)) {
-                return item;
-            }
-        }
+    return NetType.Other;
+  }
 
-        return NetType.Other;
+  public static NetType parseOf(final int value) {
+    for (NetType item : NetType.values()) {
+      if (value == item.getValue()) {
+        return item;
+      }
     }
+    return NetType.Other;
+  }
 
-    public static NetType parseOf(final int value) {
-        for (NetType item : NetType.values()) {
-            if (value == item.getValue()) {
-                return item;
-            }
-        }
-        return NetType.Other;
-    }
+  public int getValue() {
+    return this.value;
+  }
 
-    public int getValue() {
-        return this.value;
-    }
-
-
-    private final int value;
-    private final String name;
+  private final int value;
+  private final String name;
 }
